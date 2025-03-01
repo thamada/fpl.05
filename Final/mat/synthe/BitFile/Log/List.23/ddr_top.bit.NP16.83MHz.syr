@@ -1,0 +1,2206 @@
+Release 6.2.03i - xst G.31a
+Copyright (c) 1995-2004 Xilinx, Inc.  All rights reserved.
+--> Parameter TMPDIR set to __projnav
+CPU : 0.00 / 1.70 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Parameter xsthdpdir set to ./xst
+CPU : 0.00 / 1.70 s | Elapsed : 0.00 / 1.00 s
+ 
+--> Reading design: ddr_top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) HDL Analysis
+  4) HDL Synthesis
+  5) Advanced HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Low Level Synthesis
+  7) Final Report
+     7.1) Device utilization summary
+     7.2) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : ddr_top.prj
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+Verilog Include Directory          : 
+
+---- Target Parameters
+Output File Name                   : ddr_top
+Output Format                      : NGC
+Target Device                      : xc2vp70-5-ff1517
+
+---- Source Options
+Top Module Name                    : ddr_top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+FSM Style                          : lut
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+ROM Style                          : Auto
+Mux Extraction                     : YES
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : YES
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+Resource Sharing                   : YES
+Multiplier Style                   : auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 500
+Add Generic Clock Buffer(BUFG)     : 16
+Register Duplication               : YES
+Equivalent register Removal        : YES
+Slice Packing                      : YES
+Pack IO Registers into IOBs        : auto
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : NO
+Global Optimization                : AllClockNets
+RTL Output                         : Yes
+Write Timing Constraints           : NO
+Hierarchy Separator                : _
+Bus Delimiter                      : <>
+Case Specifier                     : maintain
+Slice Utilization Ratio            : 100
+Slice Utilization Ratio Delta      : 5
+
+---- Other Options
+lso                                : ddr_top.lso
+Read Cores                         : YES
+cross_clock_analysis               : NO
+verilog2001                        : YES
+Optimize Instantiated Primitives   : NO
+tristate2logic                     : No
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling vhdl file C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd in Library work.
+Entity <dpram> (Architecture <rtl>) compiled.
+Compiling vhdl file C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd in Library work.
+Entity <pg_fix_sub_32_1> (Architecture <rtl>) compiled.
+Entity <pg_adder_RCA_SUB_32_1> (Architecture <rtl>) compiled.
+Entity <pg_conv_ftol_32_17_8_4> (Architecture <rtl>) compiled.
+Entity <unreg_add_sub> (Architecture <rtl>) compiled.
+Entity <penc_31_5> (Architecture <rtl>) compiled.
+Entity <unreg_shift_ftol_30_10> (Architecture <rtl>) compiled.
+Entity <bram_rom_8408_10_8_1> (Architecture <rtl>) compiled.
+Entity <pg_pdelay_10> (Architecture <rtl>) compiled.
+Entity <pg_log_shift_1> (Architecture <rtl>) compiled.
+Entity <pg_pdelay_5> (Architecture <rtl>) compiled.
+Entity <pg_log_unsigned_add_itp_17_8_6_4> (Architecture <rtl>) compiled.
+Entity <lcell_rom_a106_6_10_1> (Architecture <rtl>) compiled.
+Entity <lcell_rom_a906_6_9_1> (Architecture <rtl>) compiled.
+Entity <pg_umult_6_9_0> (Architecture <rtl>) compiled.
+Entity <pg_adder_RCA_SUB_17_0> (Architecture <rtl>) compiled.
+Entity <pg_adder_RCA_SUB_16_0> (Architecture <rtl>) compiled.
+Entity <pg_adder_RCA_SUB_11_0> (Architecture <rtl>) compiled.
+Entity <pg_adder_RCA_ADD_16_0> (Architecture <rtl>) compiled.
+Entity <pg_log_shift_m1> (Architecture <rtl>) compiled.
+Entity <pg_log_mul_17_1> (Architecture <rtl>) compiled.
+Entity <pg_adder_RCA_ADD_15_1> (Architecture <rtl>) compiled.
+Entity <pg_pdelay_14> (Architecture <rtl>) compiled.
+Entity <pg_log_div_17_1> (Architecture <rtl>) compiled.
+Entity <pg_adder_RCA_SUB_15_1> (Architecture <rtl>) compiled.
+Entity <pg_log_sdiv_17_1> (Architecture <rtl>) compiled.
+Entity <pg_adder_RCA_SUB_16_1> (Architecture <rtl>) compiled.
+Entity <pg_conv_ltof_17_8_57_2> (Architecture <rtl>) compiled.
+Entity <unreg_shift_ltof_9_7_56> (Architecture <rtl>) compiled.
+Entity <bram_rom_8f28_8_8_1> (Architecture <rtl>) compiled.
+Entity <pg_fix_accum_57_64_4> (Architecture <rtl>) compiled.
+Entity <fix_accum_reg_1> (Architecture <rtl>) compiled.
+Entity <fix_accum_reg_last_1> (Architecture <rtl>) compiled.
+Entity <pg_lcell> (Architecture <schematic>) compiled.
+Compiling vhdl file C:/cygwin/home/Administrator/pgfpga/project/../adr_dec.vhd in Library work.
+Entity <adr_dec> (Architecture <rtl>) compiled.
+Compiling vhdl file C:/cygwin/home/Administrator/pgfpga/project/../pg_pipe.vhd in Library work.
+Entity <pg_pipe> (Architecture <std>) compiled.
+Entity <pipe> (Architecture <std>) compiled.
+Compiling vhdl file C:/cygwin/home/Administrator/pgfpga/project/../calc.vhd in Library work.
+Entity <calc> (Architecture <rtl>) compiled.
+Compiling vhdl file C:/cygwin/home/Administrator/pgfpga/project/../pipe_sts.vhd in Library work.
+Entity <pipe_sts> (Architecture <rtl>) compiled.
+Compiling vhdl file C:/cygwin/home/Administrator/pgfpga/project/../setn.vhd in Library work.
+Entity <setn> (Architecture <rtl>) compiled.
+Compiling vhdl file C:/cygwin/home/Administrator/pgfpga/project/../jmem.vhd in Library work.
+Entity <jmem> (Architecture <rtl>) compiled.
+Compiling vhdl file C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd in Library work.
+Entity <ddr_top> (Architecture <RTL>) compiled.
+Entity <pmetor> (Architecture <rtl>) compiled.
+Entity <CLK_MULDIV> (Architecture <rtl>) compiled.
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing Entity <ddr_top> (Architecture <RTL>).
+Entity <ddr_top> analyzed. Unit <ddr_top> generated.
+
+Analyzing generic Entity <CLK_MULDIV> (Architecture <rtl>).
+	CLKFX_MULTIPLY = 5
+	CLKFX_DIVIDE = 2
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 606: Unconnected output port 'CLK90' of component 'DCM'.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 606: Unconnected output port 'CLK180' of component 'DCM'.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 606: Unconnected output port 'CLK270' of component 'DCM'.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 606: Unconnected output port 'CLK2X' of component 'DCM'.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 606: Unconnected output port 'CLK2X180' of component 'DCM'.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 606: Unconnected output port 'CLKDV' of component 'DCM'.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 606: Unconnected output port 'CLKFX180' of component 'DCM'.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 606: Unconnected output port 'PSDONE' of component 'DCM'.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 606: Unconnected output port 'STATUS' of component 'DCM'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 606: Generating a Black Box for component <DCM>.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 623: Generating a Black Box for component <IBUFG>.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 624: Generating a Black Box for component <BUFG>.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd line 625: Generating a Black Box for component <BUFG>.
+Entity <CLK_MULDIV> analyzed. Unit <CLK_MULDIV> generated.
+
+Analyzing Entity <adr_dec> (Architecture <rtl>).
+Entity <adr_dec> analyzed. Unit <adr_dec> generated.
+
+Analyzing generic Entity <pg_pipe> (Architecture <std>).
+	JDATA_WIDTH = 113
+Entity <pg_pipe> analyzed. Unit <pg_pipe> generated.
+
+Analyzing generic Entity <pipe> (Architecture <std>).
+	JDATA_WIDTH = 113
+Entity <pipe> analyzed. Unit <pipe> generated.
+
+Analyzing Entity <pg_fix_sub_32_1> (Architecture <rtl>).
+Entity <pg_fix_sub_32_1> analyzed. Unit <pg_fix_sub_32_1> generated.
+
+Analyzing Entity <pg_adder_RCA_SUB_32_1> (Architecture <rtl>).
+Entity <pg_adder_RCA_SUB_32_1> analyzed. Unit <pg_adder_RCA_SUB_32_1> generated.
+
+Analyzing Entity <pg_conv_ftol_32_17_8_4> (Architecture <rtl>).
+Entity <pg_conv_ftol_32_17_8_4> analyzed. Unit <pg_conv_ftol_32_17_8_4> generated.
+
+Analyzing generic Entity <unreg_add_sub> (Architecture <rtl>).
+	WIDTH = 31
+	DIRECTION = "ADD"
+Entity <unreg_add_sub> analyzed. Unit <unreg_add_sub> generated.
+
+Analyzing Entity <penc_31_5> (Architecture <rtl>).
+Entity <penc_31_5> analyzed. Unit <penc_31_5> generated.
+
+Analyzing Entity <unreg_shift_ftol_30_10> (Architecture <rtl>).
+Entity <unreg_shift_ftol_30_10> analyzed. Unit <unreg_shift_ftol_30_10> generated.
+
+Analyzing Entity <bram_rom_8408_10_8_1> (Architecture <rtl>).
+Entity <bram_rom_8408_10_8_1> analyzed. Unit <bram_rom_8408_10_8_1> generated.
+
+Analyzing generic Entity <unreg_add_sub> (Architecture <rtl>).
+	WIDTH = 5
+	DIRECTION = "ADD"
+Entity <unreg_add_sub> analyzed. Unit <unreg_add_sub0> generated.
+
+Analyzing generic Entity <pg_pdelay_10> (Architecture <rtl>).
+	PG_WIDTH = 17
+Entity <pg_pdelay_10> analyzed. Unit <pg_pdelay_10> generated.
+
+Analyzing generic Entity <pg_log_shift_1> (Architecture <rtl>).
+	PG_WIDTH = 17
+Entity <pg_log_shift_1> analyzed. Unit <pg_log_shift_1> generated.
+
+Analyzing generic Entity <pg_pdelay_5> (Architecture <rtl>).
+	PG_WIDTH = 17
+Entity <pg_pdelay_5> analyzed. Unit <pg_pdelay_5> generated.
+
+Analyzing Entity <pg_log_unsigned_add_itp_17_8_6_4> (Architecture <rtl>).
+Entity <pg_log_unsigned_add_itp_17_8_6_4> analyzed. Unit <pg_log_unsigned_add_itp_17_8_6_4> generated.
+
+Analyzing Entity <pg_adder_RCA_SUB_17_0> (Architecture <rtl>).
+Entity <pg_adder_RCA_SUB_17_0> analyzed. Unit <pg_adder_RCA_SUB_17_0> generated.
+
+Analyzing Entity <pg_adder_RCA_SUB_16_0> (Architecture <rtl>).
+Entity <pg_adder_RCA_SUB_16_0> analyzed. Unit <pg_adder_RCA_SUB_16_0> generated.
+
+Analyzing Entity <lcell_rom_a106_6_10_1> (Architecture <rtl>).
+Entity <lcell_rom_a106_6_10_1> analyzed. Unit <lcell_rom_a106_6_10_1> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0110001100000101
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>1011000001110001
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell1> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0101100001110111
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell2> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>1101101101000001
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell3> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0110011001011101
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell4> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>1101010001001001
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell5> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>1100110100010001
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell6> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0011110011001011
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell7> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000001111000111
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell8> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000000000111111
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell9> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>1001001110010011
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell10> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>1011101110101010
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell11> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>1000100100111000
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell12> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0111100010010011
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell13> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000011110001001
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell14> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000000001111000
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell15> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000000000000111
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell16> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000000000011010
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell17> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000000001111001
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell18> generated.
+
+Analyzing Entity <lcell_rom_a906_6_9_1> (Architecture <rtl>).
+Entity <lcell_rom_a906_6_9_1> analyzed. Unit <lcell_rom_a906_6_9_1> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>1101110101100100
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell19> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0010111101011111
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell20> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0100011110100010
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell21> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0111110111101011
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell22> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0010100111100110
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell23> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0001101101001011
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell24> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>1111100011011001
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell25> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000011111000111
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell26> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0101100010010010
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell27> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0011010100001010
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell28> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>1111001101010010
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell29> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000111100110111
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell30> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000000011110001
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell31> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000000000001111
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell32> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000000001000110
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell33> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000000000111110
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell34> generated.
+
+Analyzing generic Entity <pg_lcell> (Architecture <schematic>).
+	MASK = <u>0000000000000001
+	FF = 0
+Entity <pg_lcell> analyzed. Unit <pg_lcell35> generated.
+
+Analyzing Entity <pg_umult_6_9_0> (Architecture <rtl>).
+Entity <pg_umult_6_9_0> analyzed. Unit <pg_umult_6_9_0> generated.
+
+Analyzing Entity <pg_adder_RCA_SUB_11_0> (Architecture <rtl>).
+Entity <pg_adder_RCA_SUB_11_0> analyzed. Unit <pg_adder_RCA_SUB_11_0> generated.
+
+Analyzing Entity <pg_adder_RCA_ADD_16_0> (Architecture <rtl>).
+Entity <pg_adder_RCA_ADD_16_0> analyzed. Unit <pg_adder_RCA_ADD_16_0> generated.
+
+Analyzing generic Entity <pg_log_shift_m1> (Architecture <rtl>).
+	PG_WIDTH = 17
+Entity <pg_log_shift_m1> analyzed. Unit <pg_log_shift_m1> generated.
+
+Analyzing Entity <pg_log_mul_17_1> (Architecture <rtl>).
+Entity <pg_log_mul_17_1> analyzed. Unit <pg_log_mul_17_1> generated.
+
+Analyzing Entity <pg_adder_RCA_ADD_15_1> (Architecture <rtl>).
+Entity <pg_adder_RCA_ADD_15_1> analyzed. Unit <pg_adder_RCA_ADD_15_1> generated.
+
+Analyzing generic Entity <pg_pdelay_14> (Architecture <rtl>).
+	PG_WIDTH = 17
+Entity <pg_pdelay_14> analyzed. Unit <pg_pdelay_14> generated.
+
+Analyzing Entity <pg_log_div_17_1> (Architecture <rtl>).
+Entity <pg_log_div_17_1> analyzed. Unit <pg_log_div_17_1> generated.
+
+Analyzing Entity <pg_adder_RCA_SUB_15_1> (Architecture <rtl>).
+Entity <pg_adder_RCA_SUB_15_1> analyzed. Unit <pg_adder_RCA_SUB_15_1> generated.
+
+Analyzing Entity <pg_log_sdiv_17_1> (Architecture <rtl>).
+Entity <pg_log_sdiv_17_1> analyzed. Unit <pg_log_sdiv_17_1> generated.
+
+Analyzing Entity <pg_adder_RCA_SUB_16_1> (Architecture <rtl>).
+Entity <pg_adder_RCA_SUB_16_1> analyzed. Unit <pg_adder_RCA_SUB_16_1> generated.
+
+Analyzing Entity <pg_conv_ltof_17_8_57_2> (Architecture <rtl>).
+Entity <pg_conv_ltof_17_8_57_2> analyzed. Unit <pg_conv_ltof_17_8_57_2> generated.
+
+Analyzing Entity <bram_rom_8f28_8_8_1> (Architecture <rtl>).
+Entity <bram_rom_8f28_8_8_1> analyzed. Unit <bram_rom_8f28_8_8_1> generated.
+
+Analyzing Entity <unreg_shift_ltof_9_7_56> (Architecture <rtl>).
+Entity <unreg_shift_ltof_9_7_56> analyzed. Unit <unreg_shift_ltof_9_7_56> generated.
+
+Analyzing Entity <pg_fix_accum_57_64_4> (Architecture <rtl>).
+Entity <pg_fix_accum_57_64_4> analyzed. Unit <pg_fix_accum_57_64_4> generated.
+
+Analyzing generic Entity <fix_accum_reg_1> (Architecture <rtl>).
+	WIDTH = 16
+WARNING:Xst:819 - C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd line 3327: The following signals are missing in the process sensitivity list:
+   zeros.
+Entity <fix_accum_reg_1> analyzed. Unit <fix_accum_reg_1> generated.
+
+Analyzing generic Entity <fix_accum_reg_last_1> (Architecture <rtl>).
+	WIDTH = 16
+WARNING:Xst:819 - C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd line 3411: The following signals are missing in the process sensitivity list:
+   zeros.
+Entity <fix_accum_reg_last_1> analyzed. Unit <fix_accum_reg_last_1> generated.
+
+Analyzing Entity <calc> (Architecture <rtl>).
+Entity <calc> analyzed. Unit <calc> generated.
+
+Analyzing Entity <pipe_sts> (Architecture <rtl>).
+Entity <pipe_sts> analyzed. Unit <pipe_sts> generated.
+
+Analyzing Entity <setn> (Architecture <rtl>).
+Entity <setn> analyzed. Unit <setn> generated.
+
+Analyzing Entity <jmem> (Architecture <rtl>).
+Entity <jmem> analyzed. Unit <jmem> generated.
+
+Analyzing Entity <dpram> (Architecture <rtl>).
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+WARNING:Xst:753 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Unconnected output port 'doa' of component 'RAMB16_S1_S1'.
+WARNING:Xst:766 - C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd line 52: Generating a Black Box for component <RAMB16_S1_S1>.
+Entity <dpram> analyzed. Unit <dpram> generated.
+
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Synthesizing Unit <dpram>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../dpram.vhd.
+Unit <dpram> synthesized.
+
+
+Synthesizing Unit <fix_accum_reg_last_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 16-bit addsub for signal <$n0003> created at line 3412.
+    Found 16-bit register for signal <reg_vmp0>.
+    Found 1-bit register for signal <run1>.
+    Found 16-bit addsub for signal <sum>.
+    Found 48 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  17 D-type flip-flop(s).
+	inferred   2 Adder/Subtracter(s).
+	inferred  48 Multiplexer(s).
+Unit <fix_accum_reg_last_1> synthesized.
+
+
+Synthesizing Unit <fix_accum_reg_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 1-bit register for signal <cout>.
+    Found 1-bit register for signal <addsubd>.
+    Found 17-bit subtractor for signal <$n0005> created at line 3331.
+    Found 16-bit adder carry out for signal <$n0007> created at line 3329.
+    Found 16-bit register for signal <reg_vmp0>.
+    Found 1-bit register for signal <run1>.
+    Found 17-bit addsub for signal <sum>.
+    Found 33 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  19 D-type flip-flop(s).
+	inferred   3 Adder/Subtracter(s).
+	inferred  33 Multiplexer(s).
+Unit <fix_accum_reg_1> synthesized.
+
+
+Synthesizing Unit <unreg_shift_ltof_9_7_56>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <control<6>> is never used.
+WARNING:Xst:646 - Signal <c5<4:0>> is assigned but never used.
+WARNING:Xst:1780 - Signal <o0> is never used or assigned.
+WARNING:Xst:646 - Signal <o6<71:64>> is assigned but never used.
+WARNING:Xst:646 - Signal <o6<7:0>> is assigned but never used.
+WARNING:Xst:1780 - Signal <o6d> is never used or assigned.
+    Found 10-bit shifter logical left for signal <o1>.
+    Found 164 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred 164 Multiplexer(s).
+	inferred   1 Combinational logic shifter(s).
+Unit <unreg_shift_ltof_9_7_56> synthesized.
+
+
+Synthesizing Unit <bram_rom_8f28_8_8_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 256x8-bit ROM for signal <$n0001> created at line 3108.
+    Found 8-bit register for signal <outdata>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   8 D-type flip-flop(s).
+Unit <bram_rom_8f28_8_8_1> synthesized.
+
+
+Synthesizing Unit <pg_adder_RCA_SUB_16_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 16-bit register for signal <z>.
+    Found 16-bit subtractor for signal <sum>.
+    Summary:
+	inferred  16 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <pg_adder_RCA_SUB_16_1> synthesized.
+
+
+Synthesizing Unit <pg_adder_RCA_SUB_15_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 15-bit register for signal <z>.
+    Found 15-bit subtractor for signal <sum>.
+    Summary:
+	inferred  15 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <pg_adder_RCA_SUB_15_1> synthesized.
+
+
+Synthesizing Unit <pg_adder_RCA_ADD_15_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 15-bit register for signal <z>.
+    Found 15-bit adder for signal <sum>.
+    Summary:
+	inferred  15 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <pg_adder_RCA_ADD_15_1> synthesized.
+
+
+Synthesizing Unit <pg_lcell35>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell35> synthesized.
+
+
+Synthesizing Unit <pg_lcell34>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell34> synthesized.
+
+
+Synthesizing Unit <pg_lcell33>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell33> synthesized.
+
+
+Synthesizing Unit <pg_lcell32>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell32> synthesized.
+
+
+Synthesizing Unit <pg_lcell31>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell31> synthesized.
+
+
+Synthesizing Unit <pg_lcell30>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell30> synthesized.
+
+
+Synthesizing Unit <pg_lcell29>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell29> synthesized.
+
+
+Synthesizing Unit <pg_lcell28>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell28> synthesized.
+
+
+Synthesizing Unit <pg_lcell27>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell27> synthesized.
+
+
+Synthesizing Unit <pg_lcell26>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell26> synthesized.
+
+
+Synthesizing Unit <pg_lcell25>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell25> synthesized.
+
+
+Synthesizing Unit <pg_lcell24>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell24> synthesized.
+
+
+Synthesizing Unit <pg_lcell23>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell23> synthesized.
+
+
+Synthesizing Unit <pg_lcell22>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell22> synthesized.
+
+
+Synthesizing Unit <pg_lcell21>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell21> synthesized.
+
+
+Synthesizing Unit <pg_lcell20>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell20> synthesized.
+
+
+Synthesizing Unit <pg_lcell19>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell19> synthesized.
+
+
+Synthesizing Unit <pg_lcell18>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell18> synthesized.
+
+
+Synthesizing Unit <pg_lcell17>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell17> synthesized.
+
+
+Synthesizing Unit <pg_lcell16>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell16> synthesized.
+
+
+Synthesizing Unit <pg_lcell15>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell15> synthesized.
+
+
+Synthesizing Unit <pg_lcell14>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell14> synthesized.
+
+
+Synthesizing Unit <pg_lcell13>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell13> synthesized.
+
+
+Synthesizing Unit <pg_lcell12>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell12> synthesized.
+
+
+Synthesizing Unit <pg_lcell11>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell11> synthesized.
+
+
+Synthesizing Unit <pg_lcell10>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell10> synthesized.
+
+
+Synthesizing Unit <pg_lcell9>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell9> synthesized.
+
+
+Synthesizing Unit <pg_lcell8>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell8> synthesized.
+
+
+Synthesizing Unit <pg_lcell7>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell7> synthesized.
+
+
+Synthesizing Unit <pg_lcell6>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell6> synthesized.
+
+
+Synthesizing Unit <pg_lcell5>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell5> synthesized.
+
+
+Synthesizing Unit <pg_lcell4>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell4> synthesized.
+
+
+Synthesizing Unit <pg_lcell3>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell3> synthesized.
+
+
+Synthesizing Unit <pg_lcell2>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell2> synthesized.
+
+
+Synthesizing Unit <pg_lcell1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell1> synthesized.
+
+
+Synthesizing Unit <pg_lcell>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+Unit <pg_lcell> synthesized.
+
+
+Synthesizing Unit <pg_adder_RCA_ADD_16_0>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+    Found 16-bit adder for signal <sum>.
+    Summary:
+	inferred   1 Adder/Subtracter(s).
+Unit <pg_adder_RCA_ADD_16_0> synthesized.
+
+
+Synthesizing Unit <pg_adder_RCA_SUB_11_0>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+    Found 11-bit subtractor for signal <sum>.
+    Summary:
+	inferred   1 Adder/Subtracter(s).
+Unit <pg_adder_RCA_SUB_11_0> synthesized.
+
+
+Synthesizing Unit <pg_umult_6_9_0>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+    Found 9x6-bit multiplier for signal <s>.
+    Summary:
+	inferred   1 Multiplier(s).
+Unit <pg_umult_6_9_0> synthesized.
+
+
+Synthesizing Unit <lcell_rom_a906_6_9_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:1780 - Signal <adr1<3:0>> is never used or assigned.
+WARNING:Xst:1780 - Signal <adr2<4:0>> is never used or assigned.
+    Found 1-bit register for signal <adr2<5>>.
+    Found 9-bit register for signal <lc_5_0>.
+    Found 9-bit register for signal <lc_5_1>.
+    Found 27 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  19 D-type flip-flop(s).
+	inferred  27 Multiplexer(s).
+Unit <lcell_rom_a906_6_9_1> synthesized.
+
+
+Synthesizing Unit <lcell_rom_a106_6_10_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:1780 - Signal <adr1<3:0>> is never used or assigned.
+WARNING:Xst:1780 - Signal <adr2<4:0>> is never used or assigned.
+    Found 1-bit register for signal <adr2<5>>.
+    Found 10-bit register for signal <lc_5_0>.
+    Found 10-bit register for signal <lc_5_1>.
+    Found 30 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  21 D-type flip-flop(s).
+	inferred  30 Multiplexer(s).
+Unit <lcell_rom_a106_6_10_1> synthesized.
+
+
+Synthesizing Unit <pg_adder_RCA_SUB_16_0>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+    Found 16-bit subtractor for signal <sum>.
+    Summary:
+	inferred   1 Adder/Subtracter(s).
+Unit <pg_adder_RCA_SUB_16_0> synthesized.
+
+
+Synthesizing Unit <pg_adder_RCA_SUB_17_0>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+    Found 17-bit subtractor for signal <sum>.
+    Summary:
+	inferred   1 Adder/Subtracter(s).
+Unit <pg_adder_RCA_SUB_17_0> synthesized.
+
+
+Synthesizing Unit <unreg_add_sub0>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 5-bit adder for signal <result>.
+    Summary:
+	inferred   1 Adder/Subtracter(s).
+Unit <unreg_add_sub0> synthesized.
+
+
+Synthesizing Unit <bram_rom_8408_10_8_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 1024x8-bit ROM for signal <$n0001> created at line 1431.
+    Found 8-bit register for signal <outdata>.
+    Summary:
+	inferred   1 ROM(s).
+	inferred   8 D-type flip-flop(s).
+Unit <bram_rom_8408_10_8_1> synthesized.
+
+
+Synthesizing Unit <unreg_shift_ftol_30_10>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 10-bit 16-to-1 multiplexer for signal <c0xxxx>.
+    Found 10-bit 16-to-1 multiplexer for signal <c1xxxx>.
+    Found 10 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  30 Multiplexer(s).
+Unit <unreg_shift_ftol_30_10> synthesized.
+
+
+Synthesizing Unit <penc_31_5>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <a<0>> is never used.
+Unit <penc_31_5> synthesized.
+
+
+Synthesizing Unit <unreg_add_sub>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 31-bit adder for signal <result>.
+    Summary:
+	inferred   1 Adder/Subtracter(s).
+Unit <unreg_add_sub> synthesized.
+
+
+Synthesizing Unit <pg_adder_RCA_SUB_32_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 32-bit register for signal <z>.
+    Found 32-bit subtractor for signal <sum>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+Unit <pg_adder_RCA_SUB_32_1> synthesized.
+
+
+Synthesizing Unit <pg_fix_accum_57_64_4>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:646 - Signal <carry<0>> is assigned but never used.
+    Found 16-bit register for signal <fx_1_1>.
+    Found 16-bit register for signal <fx_2_1>.
+    Found 16-bit register for signal <fx_2_2>.
+    Found 3-bit shift register for signal <fx_3_3>.
+    Summary:
+	inferred  48 D-type flip-flop(s).
+	inferred  16 Shift register(s).
+Unit <pg_fix_accum_57_64_4> synthesized.
+
+
+Synthesizing Unit <pg_conv_ltof_17_8_57_2>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 57-bit register for signal <fixdata>.
+    Found 7-bit register for signal <exp1>.
+    Found 1-bit register for signal <nz1>.
+    Found 1-bit register for signal <sign1>.
+    Summary:
+	inferred  66 D-type flip-flop(s).
+Unit <pg_conv_ltof_17_8_57_2> synthesized.
+
+
+Synthesizing Unit <pg_log_sdiv_17_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 2-bit register for signal <z<16:15>>.
+    Found 1-bit xor2 for signal <$n0000> created at line 2613.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <pg_log_sdiv_17_1> synthesized.
+
+
+Synthesizing Unit <pg_log_div_17_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 2-bit register for signal <z<16:15>>.
+    Found 1-bit xor2 for signal <$n0000> created at line 2550.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <pg_log_div_17_1> synthesized.
+
+
+Synthesizing Unit <pg_pdelay_14>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 14-bit shift register for signal <x14>.
+    Summary:
+	inferred  17 Shift register(s).
+Unit <pg_pdelay_14> synthesized.
+
+
+Synthesizing Unit <pg_log_mul_17_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 2-bit register for signal <z<16:15>>.
+    Found 1-bit xor2 for signal <$n0000> created at line 2432.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <pg_log_mul_17_1> synthesized.
+
+
+Synthesizing Unit <pg_log_shift_m1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+WARNING:Xst:647 - Input <x<16>> is never used.
+WARNING:Xst:647 - Input <x<0>> is never used.
+Unit <pg_log_shift_m1> synthesized.
+
+
+Synthesizing Unit <pg_log_unsigned_add_itp_17_8_6_4>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:646 - Signal <itp_subz<1:0>> is assigned but never used.
+WARNING:Xst:646 - Signal <itp_c1dx<7:0>> is assigned but never used.
+    Found 17-bit register for signal <z>.
+    Found 16-bit register for signal <d1>.
+    Found 1-bit register for signal <d_isz1>.
+    Found 1-bit register for signal <d_isz4>.
+    Found 1-bit register for signal <df1>.
+    Found 1-bit register for signal <df4>.
+    Found 10-bit register for signal <itp_c0d2>.
+    Found 10-bit register for signal <itp_c1dx2>.
+    Found 6-bit register for signal <itp_dx1>.
+    Found 1-bit register for signal <sign2>.
+    Found 1-bit register for signal <sign3>.
+    Found 1-bit register for signal <sign6>.
+    Found 16-bit register for signal <x3>.
+    Found 16-bit register for signal <x4>.
+    Found 16-bit register for signal <x7>.
+    Found 33 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred 114 D-type flip-flop(s).
+	inferred  33 Multiplexer(s).
+Unit <pg_log_unsigned_add_itp_17_8_6_4> synthesized.
+
+
+Synthesizing Unit <pg_pdelay_5>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 5-bit shift register for signal <x5>.
+    Summary:
+	inferred  17 Shift register(s).
+Unit <pg_pdelay_5> synthesized.
+
+
+Synthesizing Unit <pg_log_shift_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+WARNING:Xst:647 - Input <x<16>> is never used.
+WARNING:Xst:647 - Input <x<14>> is never used.
+Unit <pg_log_shift_1> synthesized.
+
+
+Synthesizing Unit <pg_pdelay_10>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+    Found 10-bit shift register for signal <x10>.
+    Summary:
+	inferred  17 Shift register(s).
+Unit <pg_pdelay_10> synthesized.
+
+
+Synthesizing Unit <pg_conv_ftol_32_17_8_4>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+WARNING:Xst:1780 - Signal <sign0r> is never used or assigned.
+WARNING:Xst:1780 - Signal <sign> is never used or assigned.
+    Found 3-bit shift register for signal <logdata<16>>.
+    Found 3-bit shift register for signal <logdata<15>>.
+    Found 5-bit register for signal <logdata<12:8>>.
+    Found 5-bit register for signal <c2>.
+    Found 5-bit register for signal <c3>.
+    Found 31-bit register for signal <d3r>.
+    Found 30-bit register for signal <d4>.
+    Found 10-bit register for signal <d6>.
+    Found 31 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  86 D-type flip-flop(s).
+	inferred  31 Multiplexer(s).
+	inferred   2 Shift register(s).
+Unit <pg_conv_ftol_32_17_8_4> synthesized.
+
+
+Synthesizing Unit <pg_fix_sub_32_1>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_module.vhd.
+Unit <pg_fix_sub_32_1> synthesized.
+
+
+Synthesizing Unit <pipe>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_pipe.vhd.
+WARNING:Xst:647 - Input <p_adrovp> is never used.
+WARNING:Xst:647 - Input <rst> is never used.
+WARNING:Xst:647 - Input <p_adrivp> is never used.
+    Found 32-bit register for signal <p_datao>.
+    Found 7-bit shift register for signal <p_runret>.
+    Found 17-bit register for signal <ieps2>.
+    Found 19-bit shift register for signal <run<18>>.
+    Found 32-bit register for signal <xi>.
+    Found 32-bit register for signal <yi>.
+    Found 32-bit register for signal <zi>.
+    Found 130 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred 145 D-type flip-flop(s).
+	inferred 130 Multiplexer(s).
+	inferred   2 Shift register(s).
+Unit <pipe> synthesized.
+
+
+Synthesizing Unit <jmem>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../jmem.vhd.
+WARNING:Xst:647 - Input <rst> is never used.
+WARNING:Xst:647 - Input <radr<16>> is never used.
+WARNING:Xst:647 - Input <radr<1:0>> is never used.
+WARNING:Xst:647 - Input <wadr<16>> is never used.
+Unit <jmem> synthesized.
+
+
+Synthesizing Unit <setn>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../setn.vhd.
+    Found 32-bit register for signal <nreg>.
+    Summary:
+	inferred  32 D-type flip-flop(s).
+Unit <setn> synthesized.
+
+
+Synthesizing Unit <pipe_sts>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pipe_sts.vhd.
+WARNING:Xst:1780 - Signal <cntr> is never used or assigned.
+WARNING:Xst:1780 - Signal <sts> is never used or assigned.
+WARNING:Xst:1780 - Signal <sts_reg> is never used or assigned.
+    Register <status<6>> equivalent to <status<7>> has been removed
+    Register <status<5>> equivalent to <status<7>> has been removed
+    Register <status<4>> equivalent to <status<7>> has been removed
+    Register <status<3>> equivalent to <status<7>> has been removed
+    Register <status<2>> equivalent to <status<7>> has been removed
+    Register <status<1>> equivalent to <status<7>> has been removed
+    Register <status<0>> equivalent to <status<7>> has been removed
+    Found 1-bit register for signal <status<7>>.
+    Found 1-bit register for signal <rund>.
+    Summary:
+	inferred   2 D-type flip-flop(s).
+Unit <pipe_sts> synthesized.
+
+
+Synthesizing Unit <calc>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../calc.vhd.
+WARNING:Xst:647 - Input <n<31:18>> is never used.
+WARNING:Xst:1780 - Signal <comp_rtn> is never used or assigned.
+WARNING:Xst:1780 - Signal <adr_cnt> is never used or assigned.
+WARNING:Xst:1780 - Signal <comp_adr> is never used or assigned.
+    Found 1-bit register for signal <run>.
+    Found 18-bit down counter for signal <mema_dc>.
+    Found 1-bit register for signal <start_r>.
+    Summary:
+	inferred   1 Counter(s).
+	inferred   2 D-type flip-flop(s).
+Unit <calc> synthesized.
+
+
+Synthesizing Unit <pg_pipe>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../pg_pipe.vhd.
+WARNING:Xst:646 - Signal <runret<15:1>> is assigned but never used.
+    Found 32-bit 16-to-1 multiplexer for signal <$n0033>.
+    Found 32 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred  64 Multiplexer(s).
+Unit <pg_pipe> synthesized.
+
+
+Synthesizing Unit <adr_dec>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../adr_dec.vhd.
+WARNING:Xst:647 - Input <clk> is never used.
+WARNING:Xst:647 - Input <adr<31:19>> is never used.
+WARNING:Xst:647 - Input <adr<15:0>> is never used.
+Unit <adr_dec> synthesized.
+
+
+Synthesizing Unit <CLK_MULDIV>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd.
+Unit <CLK_MULDIV> synthesized.
+
+
+Synthesizing Unit <ddr_top>.
+    Related source file is C:/cygwin/home/Administrator/pgfpga/project/../ddr_top.vhd.
+WARNING:Xst:646 - Signal <rLED> is assigned but never used.
+WARNING:Xst:646 - Signal <jmem_adr<31:17>> is assigned but never used.
+WARNING:Xst:646 - Signal <is_fo> is assigned but never used.
+    Found 32-bit tristate buffer for signal <ODBUS>.
+    Found 3-bit adder for signal <$n0026> created at line 404.
+    Found 32-bit register for signal <adr>.
+    Found 32-bit register for signal <idata>.
+    Found 32-bit register for signal <Mtridata_ODBUS> created at line 418.
+    Found 1-bit register for signal <Mtrien_ODBUS> created at line 418.
+    Found 32-bit register for signal <odata_ipw>.
+    Found 32-bit 4-to-1 multiplexer for signal <odata_jmem>.
+    Found 3-bit register for signal <state>.
+    Found 1-bit register for signal <we>.
+    Found 32 1-bit 2-to-1 multiplexers.
+    Summary:
+	inferred 130 D-type flip-flop(s).
+	inferred   1 Adder/Subtracter(s).
+	inferred  64 Multiplexer(s).
+	inferred  32 Tristate(s).
+Unit <ddr_top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Advanced RAM inference ...
+INFO:Xst:1647 - Data output of ROM <Mrom__n0001> in block <bram_rom_8408_10_8_1> is tied to register <outdata> in block <bram_rom_8408_10_8_1>.
+INFO:Xst:1650 - The register is removed and the ROM is implemented as read-only block RAM.
+INFO:Xst:1647 - Data output of ROM <Mrom__n0001> in block <bram_rom_8f28_8_8_1> is tied to register <outdata> in block <bram_rom_8f28_8_8_1>.
+INFO:Xst:1650 - The register is removed and the ROM is implemented as read-only block RAM.
+Advanced multiplier inference ...
+Advanced Registered AddSub inference ...
+Dynamic shift register inference ...
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Block RAMs                       : 96
+ 1024x8-bit single-port block RAM  : 48
+ 256x8-bit single-port block RAM   : 48
+# Multipliers                      : 48
+ 9x6-bit multiplier                : 48
+# Adders/Subtractors               : 993
+ 32-bit subtractor                 : 48
+ 31-bit adder                      : 48
+ 5-bit adder                       : 48
+ 11-bit subtractor                 : 48
+ 16-bit adder                      : 48
+ 15-bit adder                      : 64
+ 15-bit subtractor                 : 16
+ 16-bit subtractor                 : 96
+ 16-bit adder carry out            : 144
+ 17-bit subtractor                 : 192
+ 17-bit addsub                     : 144
+ 16-bit addsub                     : 96
+ 3-bit adder                       : 1
+# Counters                         : 1
+ 18-bit down counter               : 1
+# Registers                        : 6476
+ 1-bit register                    : 5062
+ 32-bit register                   : 117
+ 17-bit register                   : 16
+ 5-bit register                    : 96
+ 30-bit register                   : 48
+ 31-bit register                   : 48
+ 6-bit register                    : 48
+ 7-bit register                    : 48
+ 10-bit register                   : 240
+ 9-bit register                    : 96
+ 15-bit register                   : 80
+ 16-bit register                   : 576
+ 3-bit register                    : 1
+# Shift Registers                  : 2256
+ 7-bit shift register              : 16
+ 19-bit shift register             : 16
+ 4-bit shift register              : 48
+ 3-bit shift register              : 816
+ 10-bit shift register             : 816
+ 5-bit shift register              : 272
+ 14-bit shift register             : 272
+# Multiplexers                     : 1380
+ 32-bit 4-to-1 multiplexer         : 1
+ 32-bit 2-to-1 multiplexer         : 50
+ 32-bit 16-to-1 multiplexer        : 1
+ 17-bit 2-to-1 multiplexer         : 176
+ 31-bit 2-to-1 multiplexer         : 48
+ 16-bit 2-to-1 multiplexer         : 432
+ 1-bit 2-to-1 multiplexer          : 48
+ 10-bit 16-to-1 multiplexer        : 96
+ 10-bit 2-to-1 multiplexer         : 192
+ 9-bit 2-to-1 multiplexer          : 144
+ 72-bit 2-to-1 multiplexer         : 48
+ 40-bit 2-to-1 multiplexer         : 48
+ 24-bit 2-to-1 multiplexer         : 48
+ 12-bit 2-to-1 multiplexer         : 48
+# Logic shifters                   : 48
+ 10-bit shifter logical left       : 48
+# Tristates                        : 1
+ 32-bit tristate buffer            : 1
+# Xors                             : 128
+ 1-bit xor2                        : 128
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1710 - FF/Latch  <itp_c1dx2_9> (without init value) is constant in block <pg_log_unsigned_add_itp_17_8_6_4>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <itp_c1dx2_7> (without init value) is constant in block <pg_log_unsigned_add_itp_17_8_6_4>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <itp_c1dx2_8> (without init value) is constant in block <pg_log_unsigned_add_itp_17_8_6_4>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <z_14> is unconnected in block <u1>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u26>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u27>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <u28>.
+WARNING:Xst:1291 - FF/Latch <exp1_6> is unconnected in block <pg_conv_ltof_17_8_57_2>.
+WARNING:Xst:1710 - FF/Latch  <lc_5_1_9> (without init value) is constant in block <lcell_rom_a106_6_10_1>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <lc_5_1_3> (without init value) is constant in block <lcell_rom_a106_6_10_1>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <lc_5_1_4> (without init value) is constant in block <lcell_rom_a106_6_10_1>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <lc_5_1_5> (without init value) is constant in block <lcell_rom_a106_6_10_1>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <lc_5_1_6> (without init value) is constant in block <lcell_rom_a106_6_10_1>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <lc_5_1_7> (without init value) is constant in block <lcell_rom_a106_6_10_1>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <lc_5_1_8> (without init value) is constant in block <lcell_rom_a106_6_10_1>.
+WARNING:Xst:1710 - FF/Latch  <lc_5_1_8> (without init value) is constant in block <lcell_rom_a906_6_9_1>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <lc_5_1_3> (without init value) is constant in block <lcell_rom_a906_6_9_1>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <lc_5_1_4> (without init value) is constant in block <lcell_rom_a906_6_9_1>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <lc_5_1_5> (without init value) is constant in block <lcell_rom_a906_6_9_1>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <lc_5_1_6> (without init value) is constant in block <lcell_rom_a906_6_9_1>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <lc_5_1_7> (without init value) is constant in block <lcell_rom_a906_6_9_1>.
+
+Optimizing unit <ddr_top> ...
+
+Optimizing unit <adr_dec> ...
+
+Optimizing unit <penc_31_5> ...
+
+Optimizing unit <calc> ...
+
+Optimizing unit <setn> ...
+
+Optimizing unit <pg_adder_RCA_SUB_32_1> ...
+
+Optimizing unit <fix_accum_reg_1> ...
+
+Optimizing unit <fix_accum_reg_last_1> ...
+
+Optimizing unit <dpram> ...
+
+Optimizing unit <jmem> ...
+
+Optimizing unit <pg_conv_ftol_32_17_8_4> ...
+
+Optimizing unit <pg_log_sdiv_17_1> ...
+
+Optimizing unit <pg_conv_ltof_17_8_57_2> ...
+
+Optimizing unit <pg_fix_accum_57_64_4> ...
+
+Optimizing unit <lcell_rom_a106_6_10_1> ...
+
+Optimizing unit <lcell_rom_a906_6_9_1> ...
+
+Optimizing unit <pg_log_unsigned_add_itp_17_8_6_4> ...
+
+Optimizing unit <pipe> ...
+
+Optimizing unit <pg_pipe> ...
+Loading device for application Xst from file '2vp70.nph' in environment C:/Xilinx.
+
+Mapping all equations...
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe0_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe10_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe0_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe0_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe0_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe11_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe11_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe11_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe1_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe11_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe1_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe1_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe1_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe12_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe12_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe12_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe2_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe12_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe2_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe8_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe8_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe8_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe7_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe8_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe7_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe7_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe7_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe9_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe9_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe9_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe6_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe9_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe6_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe6_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe6_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe10_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe10_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe10_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe3_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe3_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe3_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe14_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe14_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe14_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe4_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe14_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe4_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe4_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe4_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe15_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe15_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe15_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe5_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe15_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe5_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe5_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe5_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe13_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe13_u13_d1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe3_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe13_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe2_u13_x3_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe2_u13_x3_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1710 - FF/Latch  <unit1_upipe13_u13_sign2> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe6_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe6_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe2_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe2_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe5_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe5_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe2_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe5_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe5_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe7_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe7_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe2_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe7_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe7_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe1_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe1_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe1_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe1_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe3_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe4_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe0_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe0_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe4_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe0_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe0_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe3_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe4_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe4_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe3_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe3_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe6_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe6_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe10_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe10_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe10_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe10_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe11_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe11_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe11_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe11_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe12_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe12_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe12_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe12_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe13_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe13_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe13_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe13_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe14_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe14_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe14_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe14_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe15_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe15_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe15_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe15_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe8_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe8_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe8_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe8_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe9_u13_x4_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe9_u13_x4_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe9_u13_itp_dx1_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe9_u13_sign3> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe0_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe10_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe13_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe3_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe3_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe3_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe13_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe13_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe8_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe8_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe7_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe14_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe4_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe4_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe4_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe14_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe14_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe7_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe7_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe8_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe15_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe5_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe5_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe5_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe15_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe15_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe10_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe10_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe0_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe9_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe9_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe6_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe11_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe1_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe1_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe1_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe11_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe11_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe6_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe6_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe12_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe12_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe2_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe2_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe2_u13_sign6> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe12_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe0_u13_x7_0> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe9_u13_x7_14> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe12_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe15_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe7_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe6_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe10_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe3_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe8_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe1_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe0_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe5_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe4_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe2_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe14_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe11_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe13_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch  <unit1_upipe9_u13_z_16> (without init value) is constant in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_31> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_19> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_20> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_21> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_22> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_23> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_24> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_25> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_26> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_27> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_28> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_29> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <adr_30> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe15_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe15_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe15_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe15_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe15_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe14_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe14_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe14_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe14_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe14_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe13_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe13_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe13_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe13_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe13_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe12_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe12_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe12_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe12_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe12_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe11_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe11_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe11_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe11_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe11_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe10_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe10_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe10_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe10_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe10_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe9_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe9_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe9_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe9_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe9_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe8_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe8_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe8_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe8_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe8_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe7_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe7_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe7_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe7_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe7_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe6_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe6_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe6_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe6_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe6_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe0_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe0_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe0_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe1_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe1_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe1_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe1_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe1_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe2_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe2_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe2_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe2_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe2_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe3_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe3_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe3_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe3_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe3_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe4_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe4_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe4_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe4_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe4_u23_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe5_Mshreg_p_runret_88> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe5_Mshreg_p_runret_srl_71> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe5_u25_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe5_u24_u1_z_14> is unconnected in block <ddr_top>.
+WARNING:Xst:1291 - FF/Latch <unit1_upipe5_u23_u1_z_14> is unconnected in block <ddr_top>.
+Building and optimizing final netlist ...
+Register unit1_upipe5_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe5_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe15_u30_u0_run1 equivalent to unit1_upipe15_u31_u0_run1 has been removed
+Register unit1_upipe15_u29_u0_run1 equivalent to unit1_upipe15_u31_u0_run1 has been removed
+Register unit1_upipe15_u29_u1_run1 equivalent to unit1_upipe15_u30_u1_run1 has been removed
+Register unit1_upipe15_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe15_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe15_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe15_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe15_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe15_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe5_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe5_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe14_u30_u0_run1 equivalent to unit1_upipe14_u31_u0_run1 has been removed
+Register unit1_upipe14_u29_u0_run1 equivalent to unit1_upipe14_u31_u0_run1 has been removed
+Register unit1_upipe14_u29_u1_run1 equivalent to unit1_upipe14_u30_u1_run1 has been removed
+Register unit1_upipe14_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe14_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe14_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe14_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe14_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe14_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe13_u30_u0_run1 equivalent to unit1_upipe13_u31_u0_run1 has been removed
+Register unit1_upipe13_u29_u0_run1 equivalent to unit1_upipe13_u31_u0_run1 has been removed
+Register unit1_upipe13_u29_u1_run1 equivalent to unit1_upipe13_u30_u1_run1 has been removed
+Register unit1_upipe13_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe13_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe13_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe13_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe13_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe13_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe12_u30_u0_run1 equivalent to unit1_upipe12_u31_u0_run1 has been removed
+Register unit1_upipe12_u29_u0_run1 equivalent to unit1_upipe12_u31_u0_run1 has been removed
+Register unit1_upipe12_u29_u1_run1 equivalent to unit1_upipe12_u30_u1_run1 has been removed
+Register unit1_upipe12_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe12_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe12_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe12_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe12_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe12_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe11_u30_u0_run1 equivalent to unit1_upipe11_u31_u0_run1 has been removed
+Register unit1_upipe11_u29_u0_run1 equivalent to unit1_upipe11_u31_u0_run1 has been removed
+Register unit1_upipe11_u29_u1_run1 equivalent to unit1_upipe11_u30_u1_run1 has been removed
+Register unit1_upipe11_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe11_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe11_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe11_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe11_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe11_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe5_u29_u0_run1 equivalent to unit1_upipe5_u30_u0_run1 has been removed
+Register unit1_upipe10_u30_u0_run1 equivalent to unit1_upipe10_u31_u0_run1 has been removed
+Register unit1_upipe10_u29_u0_run1 equivalent to unit1_upipe10_u31_u0_run1 has been removed
+Register unit1_upipe10_u29_u1_run1 equivalent to unit1_upipe10_u30_u1_run1 has been removed
+Register unit1_upipe10_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe10_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe10_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe10_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe10_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe10_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe5_u29_u1_run1 equivalent to unit1_upipe5_u30_u1_run1 has been removed
+Register unit1_upipe5_u29_u2_run1 equivalent to unit1_upipe5_u30_u2_run1 has been removed
+Register unit1_upipe9_u30_u0_run1 equivalent to unit1_upipe9_u31_u0_run1 has been removed
+Register unit1_upipe9_u29_u0_run1 equivalent to unit1_upipe9_u31_u0_run1 has been removed
+Register unit1_upipe9_u29_u1_run1 equivalent to unit1_upipe9_u30_u1_run1 has been removed
+Register unit1_upipe9_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe9_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe9_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe9_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe9_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe9_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe8_u30_u0_run1 equivalent to unit1_upipe8_u31_u0_run1 has been removed
+Register unit1_upipe8_u29_u0_run1 equivalent to unit1_upipe8_u31_u0_run1 has been removed
+Register unit1_upipe8_u29_u1_run1 equivalent to unit1_upipe8_u30_u1_run1 has been removed
+Register unit1_upipe8_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe8_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe8_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe8_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe8_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe8_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe5_u30_u0_run1 equivalent to unit1_upipe5_u31_u0_run1 has been removed
+Register unit1_upipe5_u30_u1_run1 equivalent to unit1_upipe5_u31_u1_run1 has been removed
+Register unit1_upipe7_u30_u0_run1 equivalent to unit1_upipe7_u31_u0_run1 has been removed
+Register unit1_upipe7_u29_u0_run1 equivalent to unit1_upipe7_u31_u0_run1 has been removed
+Register unit1_upipe7_u29_u1_run1 equivalent to unit1_upipe7_u30_u1_run1 has been removed
+Register unit1_upipe7_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe7_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe7_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe7_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe7_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe7_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe5_u30_u2_run1 equivalent to unit1_upipe5_u31_u2_run1 has been removed
+Register unit1_upipe6_u30_u0_run1 equivalent to unit1_upipe6_u31_u0_run1 has been removed
+Register unit1_upipe6_u29_u0_run1 equivalent to unit1_upipe6_u31_u0_run1 has been removed
+Register unit1_upipe6_u29_u1_run1 equivalent to unit1_upipe6_u30_u1_run1 has been removed
+Register unit1_upipe6_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe6_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe6_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe6_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe6_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe6_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe5_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe5_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe0_u30_u0_run1 equivalent to unit1_upipe0_u31_u0_run1 has been removed
+Register unit1_upipe0_u29_u0_run1 equivalent to unit1_upipe0_u31_u0_run1 has been removed
+Register unit1_upipe0_u29_u1_run1 equivalent to unit1_upipe0_u30_u1_run1 has been removed
+Register unit1_upipe0_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe0_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe0_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe0_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe0_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe0_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe1_u30_u0_run1 equivalent to unit1_upipe1_u31_u0_run1 has been removed
+Register unit1_upipe1_u29_u0_run1 equivalent to unit1_upipe1_u31_u0_run1 has been removed
+Register unit1_upipe1_u29_u1_run1 equivalent to unit1_upipe1_u30_u1_run1 has been removed
+Register unit1_upipe1_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe1_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe1_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe1_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe1_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe1_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe2_u30_u0_run1 equivalent to unit1_upipe2_u31_u0_run1 has been removed
+Register unit1_upipe2_u29_u0_run1 equivalent to unit1_upipe2_u31_u0_run1 has been removed
+Register unit1_upipe2_u29_u1_run1 equivalent to unit1_upipe2_u30_u1_run1 has been removed
+Register unit1_upipe2_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe2_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe2_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe2_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe2_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe2_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe3_u30_u0_run1 equivalent to unit1_upipe3_u31_u0_run1 has been removed
+Register unit1_upipe3_u29_u0_run1 equivalent to unit1_upipe3_u31_u0_run1 has been removed
+Register unit1_upipe3_u29_u1_run1 equivalent to unit1_upipe3_u30_u1_run1 has been removed
+Register unit1_upipe3_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe3_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe3_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe3_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe3_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe3_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe4_u30_u0_run1 equivalent to unit1_upipe4_u31_u0_run1 has been removed
+Register unit1_upipe4_u29_u0_run1 equivalent to unit1_upipe4_u31_u0_run1 has been removed
+Register unit1_upipe4_u29_u1_run1 equivalent to unit1_upipe4_u30_u1_run1 has been removed
+Register unit1_upipe4_u15_itp_c1_rom_adr2_5 equivalent to unit1_upipe4_u15_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe4_u14_itp_c1_rom_adr2_5 equivalent to unit1_upipe4_u14_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe4_u13_itp_c1_rom_adr2_5 equivalent to unit1_upipe4_u13_itp_c0_rom_adr2_5 has been removed
+Register unit1_upipe15_u30_u1_run1 equivalent to unit1_upipe15_u31_u1_run1 has been removed
+Register unit1_upipe15_u29_u2_run1 equivalent to unit1_upipe15_u30_u2_run1 has been removed
+Register unit1_upipe15_u29_u3_run1 equivalent to unit1_upipe15_u30_u3_run1 has been removed
+Register unit1_upipe14_u30_u1_run1 equivalent to unit1_upipe14_u31_u1_run1 has been removed
+Register unit1_upipe14_u29_u2_run1 equivalent to unit1_upipe14_u30_u2_run1 has been removed
+Register unit1_upipe14_u29_u3_run1 equivalent to unit1_upipe14_u30_u3_run1 has been removed
+Register unit1_upipe13_u30_u1_run1 equivalent to unit1_upipe13_u31_u1_run1 has been removed
+Register unit1_upipe13_u29_u2_run1 equivalent to unit1_upipe13_u30_u2_run1 has been removed
+Register unit1_upipe13_u29_u3_run1 equivalent to unit1_upipe13_u30_u3_run1 has been removed
+Register unit1_upipe12_u30_u1_run1 equivalent to unit1_upipe12_u31_u1_run1 has been removed
+Register unit1_upipe12_u29_u2_run1 equivalent to unit1_upipe12_u30_u2_run1 has been removed
+Register unit1_upipe12_u29_u3_run1 equivalent to unit1_upipe12_u30_u3_run1 has been removed
+Register unit1_upipe11_u30_u1_run1 equivalent to unit1_upipe11_u31_u1_run1 has been removed
+Register unit1_upipe11_u29_u2_run1 equivalent to unit1_upipe11_u30_u2_run1 has been removed
+Register unit1_upipe11_u29_u3_run1 equivalent to unit1_upipe11_u30_u3_run1 has been removed
+Register unit1_upipe5_u29_u3_run1 equivalent to unit1_upipe5_u30_u3_run1 has been removed
+Register unit1_upipe10_u30_u1_run1 equivalent to unit1_upipe10_u31_u1_run1 has been removed
+Register unit1_upipe10_u29_u2_run1 equivalent to unit1_upipe10_u30_u2_run1 has been removed
+Register unit1_upipe10_u29_u3_run1 equivalent to unit1_upipe10_u30_u3_run1 has been removed
+Register unit1_upipe9_u30_u1_run1 equivalent to unit1_upipe9_u31_u1_run1 has been removed
+Register unit1_upipe9_u29_u2_run1 equivalent to unit1_upipe9_u30_u2_run1 has been removed
+Register unit1_upipe9_u29_u3_run1 equivalent to unit1_upipe9_u30_u3_run1 has been removed
+Register unit1_upipe5_u30_u3_run1 equivalent to unit1_upipe5_u31_u3_run1 has been removed
+Register unit1_upipe8_u30_u1_run1 equivalent to unit1_upipe8_u31_u1_run1 has been removed
+Register unit1_upipe8_u29_u2_run1 equivalent to unit1_upipe8_u30_u2_run1 has been removed
+Register unit1_upipe8_u29_u3_run1 equivalent to unit1_upipe8_u30_u3_run1 has been removed
+Register unit1_upipe7_u30_u1_run1 equivalent to unit1_upipe7_u31_u1_run1 has been removed
+Register unit1_upipe7_u29_u2_run1 equivalent to unit1_upipe7_u30_u2_run1 has been removed
+Register unit1_upipe7_u29_u3_run1 equivalent to unit1_upipe7_u30_u3_run1 has been removed
+Register unit1_upipe6_u30_u1_run1 equivalent to unit1_upipe6_u31_u1_run1 has been removed
+Register unit1_upipe6_u29_u2_run1 equivalent to unit1_upipe6_u30_u2_run1 has been removed
+Register unit1_upipe6_u29_u3_run1 equivalent to unit1_upipe6_u30_u3_run1 has been removed
+Register unit1_upipe0_u30_u1_run1 equivalent to unit1_upipe0_u31_u1_run1 has been removed
+Register unit1_upipe0_u29_u2_run1 equivalent to unit1_upipe0_u30_u2_run1 has been removed
+Register unit1_upipe0_u29_u3_run1 equivalent to unit1_upipe0_u30_u3_run1 has been removed
+Register unit1_upipe1_u30_u1_run1 equivalent to unit1_upipe1_u31_u1_run1 has been removed
+Register unit1_upipe1_u29_u2_run1 equivalent to unit1_upipe1_u30_u2_run1 has been removed
+Register unit1_upipe1_u29_u3_run1 equivalent to unit1_upipe1_u30_u3_run1 has been removed
+Register unit1_upipe2_u30_u1_run1 equivalent to unit1_upipe2_u31_u1_run1 has been removed
+Register unit1_upipe2_u29_u2_run1 equivalent to unit1_upipe2_u30_u2_run1 has been removed
+Register unit1_upipe2_u29_u3_run1 equivalent to unit1_upipe2_u30_u3_run1 has been removed
+Register unit1_upipe3_u30_u1_run1 equivalent to unit1_upipe3_u31_u1_run1 has been removed
+Register unit1_upipe3_u29_u2_run1 equivalent to unit1_upipe3_u30_u2_run1 has been removed
+Register unit1_upipe3_u29_u3_run1 equivalent to unit1_upipe3_u30_u3_run1 has been removed
+Register unit1_upipe4_u30_u1_run1 equivalent to unit1_upipe4_u31_u1_run1 has been removed
+Register unit1_upipe4_u29_u2_run1 equivalent to unit1_upipe4_u30_u2_run1 has been removed
+Register unit1_upipe4_u29_u3_run1 equivalent to unit1_upipe4_u30_u3_run1 has been removed
+Register unit1_upipe15_u30_u2_run1 equivalent to unit1_upipe15_u31_u2_run1 has been removed
+Register unit1_upipe15_u30_u3_run1 equivalent to unit1_upipe15_u31_u3_run1 has been removed
+Register unit1_upipe14_u30_u2_run1 equivalent to unit1_upipe14_u31_u2_run1 has been removed
+Register unit1_upipe14_u30_u3_run1 equivalent to unit1_upipe14_u31_u3_run1 has been removed
+Register unit1_upipe13_u30_u2_run1 equivalent to unit1_upipe13_u31_u2_run1 has been removed
+Register unit1_upipe13_u30_u3_run1 equivalent to unit1_upipe13_u31_u3_run1 has been removed
+Register unit1_upipe12_u30_u2_run1 equivalent to unit1_upipe12_u31_u2_run1 has been removed
+Register unit1_upipe12_u30_u3_run1 equivalent to unit1_upipe12_u31_u3_run1 has been removed
+Register unit1_upipe11_u30_u2_run1 equivalent to unit1_upipe11_u31_u2_run1 has been removed
+Register unit1_upipe11_u30_u3_run1 equivalent to unit1_upipe11_u31_u3_run1 has been removed
+Register unit1_upipe10_u30_u2_run1 equivalent to unit1_upipe10_u31_u2_run1 has been removed
+Register unit1_upipe10_u30_u3_run1 equivalent to unit1_upipe10_u31_u3_run1 has been removed
+Register unit1_upipe9_u30_u2_run1 equivalent to unit1_upipe9_u31_u2_run1 has been removed
+Register unit1_upipe9_u30_u3_run1 equivalent to unit1_upipe9_u31_u3_run1 has been removed
+Register unit1_upipe8_u30_u2_run1 equivalent to unit1_upipe8_u31_u2_run1 has been removed
+Register unit1_upipe8_u30_u3_run1 equivalent to unit1_upipe8_u31_u3_run1 has been removed
+Register unit1_upipe7_u30_u2_run1 equivalent to unit1_upipe7_u31_u2_run1 has been removed
+Register unit1_upipe7_u30_u3_run1 equivalent to unit1_upipe7_u31_u3_run1 has been removed
+Register unit1_upipe6_u30_u2_run1 equivalent to unit1_upipe6_u31_u2_run1 has been removed
+Register unit1_upipe6_u30_u3_run1 equivalent to unit1_upipe6_u31_u3_run1 has been removed
+Register unit1_upipe0_u30_u2_run1 equivalent to unit1_upipe0_u31_u2_run1 has been removed
+Register unit1_upipe0_u30_u3_run1 equivalent to unit1_upipe0_u31_u3_run1 has been removed
+Register unit1_upipe1_u30_u2_run1 equivalent to unit1_upipe1_u31_u2_run1 has been removed
+Register unit1_upipe1_u30_u3_run1 equivalent to unit1_upipe1_u31_u3_run1 has been removed
+Register unit1_upipe2_u30_u2_run1 equivalent to unit1_upipe2_u31_u2_run1 has been removed
+Register unit1_upipe2_u30_u3_run1 equivalent to unit1_upipe2_u31_u3_run1 has been removed
+Register unit1_upipe3_u30_u2_run1 equivalent to unit1_upipe3_u31_u2_run1 has been removed
+Register unit1_upipe3_u30_u3_run1 equivalent to unit1_upipe3_u31_u3_run1 has been removed
+Register unit1_upipe4_u30_u2_run1 equivalent to unit1_upipe4_u31_u2_run1 has been removed
+Register unit1_upipe4_u30_u3_run1 equivalent to unit1_upipe4_u31_u3_run1 has been removed
+Found area constraint ratio of 100 (+ 5) on block ddr_top, actual ratio is 99.
+FlipFlop adr_8 has been replicated 1 time(s)
+FlipFlop adr_18 has been replicated 1 time(s)
+FlipFlop adr_17 has been replicated 1 time(s)
+FlipFlop adr_9 has been replicated 1 time(s)
+FlipFlop adr_10 has been replicated 1 time(s)
+FlipFlop adr_11 has been replicated 1 time(s)
+FlipFlop adr_18 has been replicated 1 time(s)
+FlipFlop adr_4 has been replicated 1 time(s)
+FlipFlop adr_5 has been replicated 1 time(s)
+FlipFlop adr_17 has been replicated 1 time(s)
+FlipFlop adr_0 has been replicated 2 time(s)
+FlipFlop adr_1 has been replicated 3 time(s)
+FlipFlop adr_2 has been replicated 3 time(s)
+FlipFlop adr_3 has been replicated 1 time(s)
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : ddr_top.ngr
+Top Level Output File Name         : ddr_top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : NO
+
+Design Statistics
+# IOs                              : 101
+
+Macro Statistics :
+# RAM                              : 96
+#      1024x8-bit single-port block RAM: 48
+#      256x8-bit single-port block RAM: 48
+# Registers                        : 6478
+#      1-bit register              : 5065
+#      10-bit register             : 240
+#      15-bit register             : 80
+#      16-bit register             : 576
+#      17-bit register             : 16
+#      30-bit register             : 48
+#      31-bit register             : 48
+#      32-bit register             : 117
+#      5-bit register              : 96
+#      6-bit register              : 48
+#      7-bit register              : 48
+#      9-bit register              : 96
+# Counters                         : 1
+#      18-bit down counter         : 1
+# Shift Registers                  : 2256
+#      10-bit shift register       : 816
+#      14-bit shift register       : 272
+#      19-bit shift register       : 16
+#      3-bit shift register        : 816
+#      4-bit shift register        : 48
+#      5-bit shift register        : 272
+#      7-bit shift register        : 16
+# Multiplexers                     : 1380
+#      10-bit 16-to-1 multiplexer  : 96
+#      2-to-1 multiplexer          : 1282
+#      32-bit 16-to-1 multiplexer  : 1
+#      32-bit 4-to-1 multiplexer   : 1
+# Tristates                        : 1
+#      32-bit tristate buffer      : 1
+# Logic shifters                   : 48
+#      10-bit shifter logical left : 48
+# Adders/Subtractors               : 992
+#      11-bit subtractor           : 48
+#      15-bit adder                : 64
+#      15-bit subtractor           : 16
+#      16-bit adder                : 48
+#      16-bit adder carry out      : 144
+#      16-bit addsub               : 96
+#      16-bit subtractor           : 96
+#      17-bit addsub               : 144
+#      17-bit subtractor           : 192
+#      31-bit adder                : 48
+#      32-bit subtractor           : 48
+#      5-bit adder                 : 48
+# Multipliers                      : 48
+#      9x6-bit multiplier          : 48
+
+Cell Usage :
+# BELS                             : 86612
+#      GND                         : 1
+#      LUT1                        : 2945
+#      LUT2                        : 15772
+#      LUT2_L                      : 1
+#      LUT3                        : 19500
+#      LUT4                        : 9527
+#      LUT4_D                      : 22
+#      LUT4_L                      : 6
+#      MUXCY                       : 15666
+#      MUXF5                       : 4049
+#      MUXF6                       : 1840
+#      MUXF7                       : 992
+#      VCC                         : 1
+#      XORCY                       : 16290
+# FlipFlops/Latches                : 27826
+#      FD                          : 17634
+#      FDCE                        : 1
+#      FDE                         : 7306
+#      FDR                         : 1987
+#      FDRS                        : 705
+#      FDS                         : 193
+# RAMS                             : 224
+#      RAMB16_S18                  : 48
+#      RAMB16_S1_S1                : 128
+#      RAMB16_S36                  : 48
+# Shifters                         : 2257
+#      SRL16E                      : 2225
+#      SRLC16E                     : 32
+# Clock Buffers                    : 2
+#      BUFG                        : 2
+# IO Buffers                       : 101
+#      IBUF                        : 44
+#      IBUFG                       : 1
+#      OBUF                        : 24
+#      OBUFT                       : 32
+# DCMs                             : 1
+#      DCM                         : 1
+# MULTs                            : 48
+#      MULT18X18                   : 48
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 2vp70ff1517-5 
+
+ Number of Slices:                   29022  out of  33088    87%  
+ Number of Slice Flip Flops:         27826  out of  66176    42%  
+ Number of 4 input LUTs:             50030  out of  66176    75%  
+ Number of bonded IOBs:                101  out of    964    10%  
+ Number of BRAMs:                      224  out of    328    68%  
+ Number of MULT18X18s:                  48  out of    328    14%  
+ Number of GCLKs:                        2  out of     16    12%  
+ Number of DCMs:                         1  out of      8    12%  
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+CK133                              | dcm0_dcm0:CLK0         | 299   |
+CK133                              | dcm0_dcm0:CLKFX        | 30136 |
+-----------------------------------+------------------------+-------+
+
+Timing Summary:
+---------------
+Speed Grade: -5
+
+   Minimum period: 32.590ns (Maximum Frequency: 30.684MHz)
+   Minimum input arrival time before clock: 4.306ns
+   Maximum output required time after clock: 4.527ns
+   Maximum combinational path delay: 4.567ns
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+-------------------------------------------------------------------------
+Timing constraint: Default period analysis for Clock 'CK133'
+Delay:               6.518ns (Levels of Logic = 5)
+  Source:            adr_16 (FF)
+  Destination:       unit1_upipe15_xi_31 (FF)
+  Source Clock:      CK133 rising
+  Destination Clock: CK133 rising 2.5X
+
+  Data Path: adr_16 to unit1_upipe15_xi_31
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             12   0.419   0.832  adr_16 (adr_16)
+     LUT4_L:I3->LO         1   0.351   0.100  p_we1 (p_we)
+     LUT2:I1->O            6   0.351   0.676  unit1_Ker160606_SW0 (N711779)
+     LUT4_D:I3->O         15   0.351   0.897  unit1_Ker160606 (unit1_N160608)
+     LUT4_D:I3->O          1   0.351   0.468  unit1__n00471 (unit1_we<13>)
+     LUT4:I2->O           16   0.351   0.910  unit1_upipe13__n003616_1 (unit1_upipe13__n003616_1)
+     FDE:CE                    0.461          unit1_upipe13_xi_9
+    ----------------------------------------
+    Total                      6.518ns (2.635ns logic, 3.883ns route)
+                                       (40.4% logic, 59.6% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET IN BEFORE for Clock 'CK133'
+Offset:              4.306ns (Levels of Logic = 3)
+  Source:            CBUS<0> (PAD)
+  Destination:       adr_0 (FF)
+  Destination Clock: CK133 rising
+
+  Data Path: CBUS<0> to adr_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             4   0.969   0.650  CBUS_0_IBUF (CBUS_0_IBUF)
+     LUT2:I0->O            1   0.351   0.468  _n0019_SW0 (N662250)
+     LUT4:I3->O           38   0.351   1.056  _n0019 (_n0019)
+     FDE:CE                    0.461          adr_0
+    ----------------------------------------
+    Total                      4.306ns (2.132ns logic, 2.174ns route)
+                                       (49.5% logic, 50.5% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default OFFSET OUT AFTER for Clock 'CK133'
+Offset:              4.527ns (Levels of Logic = 1)
+  Source:            Mtrien_ODBUS (FF)
+  Destination:       ODBUS<31> (PAD)
+  Source Clock:      CK133 rising
+
+  Data Path: Mtrien_ODBUS to ODBUS<31>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             32   0.419   1.043  Mtrien_ODBUS (Mtrien_ODBUS)
+     OBUFT:T->O                3.065          ODBUS_1_OBUFT (ODBUS<1>)
+    ----------------------------------------
+    Total                      4.527ns (3.484ns logic, 1.043ns route)
+                                       (77.0% logic, 23.0% route)
+
+-------------------------------------------------------------------------
+Timing constraint: Default path analysis
+Delay:               4.567ns (Levels of Logic = 2)
+  Source:            RST (PAD)
+  Destination:       SD_TP<9> (PAD)
+
+  Data Path: RST to SD_TP<9>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             1   0.969   0.468  RST_IBUF (SD_TP_9_OBUF)
+     OBUF:I->O                 3.130          SD_TP_9_OBUF (SD_TP<9>)
+    ----------------------------------------
+    Total                      4.567ns (4.099ns logic, 0.468ns route)
+                                       (89.8% logic, 10.2% route)
+
+=========================================================================
+CPU : 955.42 / 957.83 s | Elapsed : 956.00 / 957.00 s
+ 
+--> 
+
+Total memory usage is 849916 kilobytes
+
+

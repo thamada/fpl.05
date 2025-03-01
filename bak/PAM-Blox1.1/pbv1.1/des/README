@@ -1,0 +1,15 @@
+DES stands for Data Encryption Standard. It is an encryption 
+algorithm which takes a 64bit key (56bit value plus 8 bit parity)
+and encrypts data in 64bit blocks.  The algorithm uses 16 iterations
+of identical operations performed with a set of 48bit subkeys.
+Subkeys are permutations of the original key.
+
+"des" is an implementation of DES on the DEC Pamette board
+using PamDC interface and Pamblox abstraction level modules.  The
+main design sits in LCA1 of the Pamette board, with SRAM interface
+to the upper SRAM in LCA0.  The design uses a fixed key to 
+encrypt incoming data from the upper SRAM and outputs encrypted 
+data to the lower SRAM.  Data is shited in and out of the design 
+in 16bit chunks, interpreted in little endian mode.  For testing 
+purposes, a MSB of 1 indicates valid data.
+

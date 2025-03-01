@@ -1,0 +1,598 @@
+\section{PGR : Processors Generator for Reconfigurable systems}
+\label{sec:PGR}
+
+\subsection{Design flow in PGR}
+
+The design flow is simple in PGR package.
+Figure\ref{PGRFLOW} shows the outlined design flow in PGR package.
+First of all, a user writes a
+description code using PGR Description Language (PGDL; described in
+Section \ref{SecPGDL}) which defines the dataflow in an FBA.  The user
+gives the PGDL file to PGR package, then PGR package generates 1)
+hardware descriptions such as HDL files, CAD project files etc, 2) a
+bit-level software emulator in C, 3) a API library.  Then, the user
+connects the software emulator to their already written simulation
+code through the APIs and verify their design in bit-level.  After,
+user sets up the FBA using generated hardware specifications.  The
+form of API for the FBA is quite same as that for the software
+emulator, so the user can execute own application only by changing the
+API object files to haldle the FBA. No correction is necessary for
+user.
+
+\begin{figure}[htb]
+\begin{center}
+  \includegraphics[angle=+0,width=12cm]{./mat/designflow.eps}
+  \caption{TABLE vs TABLE+POLY}
+  \label{PGRFLOW}
+\end{center}
+\end{figure}
+
+
+\subsection{PgModules : PGR Parametrized Arithmetic Modules}
+
+PgModules(PGR parametrized arithmetic modules) implement fixed-point, 
+FP and logarithmic number system (LNS) AMs and 
+are the most low-level components for PGR package.
+These modules include addition, subtraction, multiplication, division, and square-root, etc. 
+Currently, PGR package supports
+29 parametrized AMs as shown in table \ref{tabpgmod}.
+
+In this table, modules with {\tt pg\_float} correspond to FP
+arithmetics.  We define internal FP(m,n) format (1-bit
+for a sign flag, 1-bit for a non-zero expression, $m$-bit for
+exponent, and $n$-bit for mantissa). The $m$ and $n$ can be changed
+arbitrary up to FP(8, 23) which corresponds to the IEEE single
+precision.
+
+For example, in the PGDL, we can generate an FP addition module
+as follows;
+\begin{verbatim}
+pg_float_add(x,y,z,26,16,1);
+\end{verbatim}
+This example calculates $z = x + y$. 
+Here, the arguments \verb|x| and \verb|y| are the inputs, the output is \verb|z|.
+And \verb|26| and \verb|16| express length of the variables corresponding to FP(8,16).
+And the last, \verb|1| specifies the number of pipeline stages of this module.
+Note that for the rounding operation, we have implemented nine types
+of several options that also can be changed by a hidden argument in the PGDL.
+If this argument is omitted like above example, a rounding to the nearest even is selected.
+
+\begin{table}
+  \begin{center}
+    \caption{List of PgModules}
+
+    \begin{minipage}{.45\linewidth}
+      \begin{tabular}{ll}
+	\hline
+	floating-point format & \\
+	\hline
+	    {\tt pg\_float\_add}           &  $+$\\
+	    {\tt pg\_float\_unsigned\_add} &  $+$\\
+	    {\tt pg\_float\_sub}           &  $-$\\
+	    {\tt pg\_float\_unsigned\_sub} &  $-$\\
+	    {\tt pg\_float\_mult}          &  $\times$\\
+	    {\tt pg\_float\_div}           &  $/$ \\
+	    {\tt pg\_float\_sqrt}          &  $\sqrt{x}$ \\
+	    {\tt pg\_float\_square}        &  $x^2$\\
+	    {\tt pg\_float\_recipro}       &  $x^{-1}$\\
+	    {\tt pg\_float\_expadd}        &  $x \cdot 2^{N}$\\
+	    {\tt pg\_float\_negate}        &  $-x$\\
+	    {\tt pg\_float\_compare}       &  $==$\\
+	    {\tt pg\_float\_compare\_abs}  &  $==$\\
+	    {\tt pg\_float\_compz}         &  $>0$\\
+	    {\tt pg\_float\_compz\_abs}    &  $>0$\\
+	    {\tt pg\_float\_accum}         &  $+=$\\
+	    {\tt pg\_float\_unsigned\_accum}& $+=$\\
+	    {\tt pg\_float\_fixaccum}      &  $+=$\\
+	    \hline
+      \end{tabular}
+    \end{minipage}
+    \hspace{2.3pc}
+    \begin{minipage}{.45\linewidth}
+      \begin{tabular}{ll}
+	\hline
+	fixed-point format & \\
+	\hline
+	{\tt pg\_fix\_addsub}          &  $+$, $-$\\
+	{\tt pg\_fix\_mult}            &  $\times$\\
+	{\tt pg\_fix\_unsigned\_mult}  &  $\times$ (unsigned)\\
+	{\tt pg\_fix\_accum}           &  accumulate\\
+	\hline
+	LNS format& \\
+	\hline
+	{\tt pg\_log\_add}             &  $+$\\
+	{\tt pg\_log\_unsigned\_add}   &  $+$ (unsigned)\\
+	{\tt pg\_log\_muldiv}          &  $\times$, $/$\\
+	{\tt pg\_log\_shift}           &  $\sqrt{x}$, $x^2$\\
+	\hline
+	format conversion & \\
+	\hline
+	{\tt pg\_conv\_fixtofloat}     &  fix $\Rightarrow$ float\\
+	{\tt pg\_conv\_floattofix}     &  float $\Rightarrow$ fix\\
+	{\tt pg\_conv\_ftol}           &  fix $\Rightarrow$ log\\
+	{\tt pg\_conv\_ltof}           &  log $\Rightarrow$ fix\\
+	\hline
+      \end{tabular}
+  \label{tabpgmod}
+    \end{minipage}
+  \end{center}
+\end{table}
+
+Modules {\tt pg\_fix\_addsub} and {\tt
+pg\_fix\_accum} are FIX adder/subtracter and
+accumulator, respectively.  Modules {\tt pg\_log\_muldiv} and {\tt
+pg\_log\_add} are LNS multiplier/divider and adder, respectively.
+
+In the format of LNS, a positive,
+non-zero real number $x$ is represented by its base-2 logarithm $y$ as
+$x=2^{y}$.
+The LNS is useful because operation such as multiplication and square root
+are easier to implement than in the usual FP format.
+For more details of the LNS, see GRAPE-5 paper\cite{KFMT00}.
+
+In tables \ref{tabpg_float_sqrt}, \ref{tabpg_log_unsigned_add}, we show
+resource consumption and clock frequency of FP square root and LNS unsigned add AMs.
+Despite we have implemented all of the parametrized AMs
+from full scratch, the obtained performance results
+are almost same as other implementations such as \cite{LKM02}.
+
+
+\begin{figure}[htb]
+\begin{center}
+  \begin{minipage}{.45\linewidth}
+      \includegraphics[angle=+0,width=7cm]{./mat/synthe/logadd/Graph/slice.eps}
+      \caption{TABLE vs TABLE+POLY}
+      \label{LADD_SLICE}
+  \end{minipage}
+  \hspace{2.7pc}
+  \begin{minipage}{.45\linewidth}
+    \includegraphics[angle=+0, width=6cm]{./mat/5model.eps}
+    \caption{PGR five layers model.}
+    \label{fig5model}
+  \end{minipage}
+\end{center}
+\end{figure}
+
+
+
+In some relevant works,
+Ho et.al.\cite{THYL04} has used Symmetric Table Addition Method(STAM)\cite{SS99} for their FEUs.
+In the STAM, the multiplications for polynomial are replaced by adders and tables. This method is  
+suitable for old-fashioned FPGAs which have no embedded multiplier.
+
+In PGR packages, we We use the first order or second order polynomial
+to take advantages of embedded multipliers, and the coefficients are
+based on the Chebyshev expansion. 
+
+To show effectiveness of our approach, Figure \ref{LADD_SLICE} shows
+the resources consumption as a function of mantissa bitwidth of LNS
+unsigned adder mapped on a Xilinx XC2VP FPGA.  In this figure,
+``TABLE'' and ``TABLE+POLY'' show results using table lookup(not using
+the polynomial) and polynomial approximation.
+It is clear that the resource consumptions  of ``TABLE'' increases exponentially. 
+In contrast, ``TABLE+POLY'' consumes resources almost linearly.
+
+The modules of ``TABLE'' uses only slices -- the block RAMs and
+built-in multipliers are not used --, and the modules of ``TABLE+POLY''
+uses slices and one built-in multiplier.  At the point of near 5-bit,
+the two lines are crossed so we leave the optionality in this module
+to explore tradeoffs.
+%%--------------------------------------------------------------------------------
+
+
+\begin{table}
+  \begin{center}
+    \begin{minipage}{.45\linewidth}
+      \caption{FP Square Root}
+      \begin{center}
+	\begin{tabular}{cccrr}
+	  \hline
+	  exp. & mant. & stages & MHz & slices\\
+	  \hline
+	  8   &  8 & 5 & 215.517 & 86 \\
+	      &    & 4 & 157.754 & 71 \\
+	      &    & 1 &  79.971 & 51 \\
+	  \hline
+	  8   & 16 & 5 & 188.964 & 140 \\
+	      &    & 3 & 127.959 & 116 \\
+	      &    & 1 &  56.500 &  84 \\
+	  \hline
+	  8   & 23 & 5 & 141.243 & 425 \\
+	      &    & 3 & 104.998 & 392 \\
+	      &    & 1 &  70.210 & 374 \\
+	  \hline
+	\end{tabular}
+      \end{center}
+      \label{tabpg_float_sqrt}
+    \end{minipage}
+    \hspace{2.0pc}
+    \begin{minipage}{.45\linewidth}
+      \caption{LNS Unsigned Adder}
+      \begin{center}
+	\begin{tabular}{clcrr}
+	  \hline
+	  exp. & mant. & stages & MHz & slices\\
+	  \hline
+	  7   &  ~5 & 5 & 201.077 & 94 \\
+	      &           & 3 & 151.207 & 72 \\
+	      &           & 1 &  64.545 & 57 \\
+	  \hline
+	  7   &  ~8 & 6 & 195.369 & 116 \\
+	      &                & 4 & 156.961 & 100 \\
+	      &                & 1 &  58.828 &  86 \\
+	  \hline
+	  20   & 11 & 7 & 218.293 & 191 \\
+	       &                & 4 & 148.721 & 125 \\
+	       &                & 1 &  53.562 & 115 \\
+	  \hline
+	\end{tabular}
+      \end{center}
+      \label{tabpg_log_unsigned_add}
+    \end{minipage}
+  \end{center}
+\end{table}
+
+
+\subsection{PGR five layers model}
+
+To make PGR software independent on a specific hardware,
+we create PGR five layers model which divide 
+an FBA into five parts.
+Figure \ref{fig5model} shows PGR five layers model, 
+and it's composed of User Program Layer(UPL), API Layer(APL),
+Device Driver Layer(DDL), I/O \& Control Logic Layer(ICL) and
+Arithmetic Logic Layer(ALL).
+
+The UPL is a user application which communicates with an FBA through the APL.
+The APL contains the top level API implementations that
+doesn't depend on an individual FBA.
+The DDL consists of both a low level communication library and a device driver software. 
+The ICL is a glue logic such as the PCI interface logic and 
+local I/O logic on an FBA.
+The ALL corresponds to a {\it computing core} explained in Section 1
+and is composed of AMs and control logics.
+
+
+\begin{figure}[htb]
+\begin{center}
+    \includegraphics[angle=+0,width=12cm]{./mat/PROGRAPE-3.eps}
+    \caption{PROGRAPE-3 prototype system: Four Xilinx XC2VP70 FPGA devices are mounted on single board. We use Opteron 2.4GHz machines as host computers and the PCI64 interface between the host and PROGRAPE-3 board.}
+    \label{photopg3}
+\end{center}
+\end{figure}
+
+\subsection{PGDL: PGR Description Language}
+\label{SecPGDL}
+In this subsection, we illustrate how pipeline processors(or computing cores)
+are described in the PGDL and how such description is converted 
+into HDL sources for pipelined processors.
+
+With the current version of PGR package, 
+it is specially tuned to generate pipelined processors
+for particle-based simulations as explained already.
+It is expressed as the following summation form;
+%\begin{equation}
+$f_i = \sum_{j = 1}^{n} F(\boldmath{p}_i, \boldmath{p}_j),$
+%\end{equation}
+where $f_i$ is summation for $i$-th data, $\boldmath{p}_i$ are
+some values associated with $i$-th data, and
+$F$ expresses calculations where $i$-th and $j$-th data are as inputs.
+
+As an example target, we consider the following artificial calculations;
+$f_i = \sum_j^n {a_i a_j}.\mbox{(i=1,...,n)}$
+%\begin{equation}
+%f_i = \sum_j^n {a_i a_j}.\qquad (i=1,...,n)
+%\end{equation}
+Figure \ref{fig4} shows the block diagram for this example.
+Here, $a_i$ and $a_j$ are scalar values for $i$-th and
+$j$-th elements, respectively.
+This target simply calculates a product of $a_i$ and $a_j$, 
+and sums the product up for all $j$.
+
+Figure \ref{fig5} shows the PGDL description of this target function.
+In this example, one already sees essential ingredients of an FBA:
+data, their representation, functional form of arithmetic operations
+between data $i$ and $j$.
+The lines \verb|1| and \verb|2| define the bit-length as FP(8,16).
+These definitions are actually used in the next block
+(lines \verb|3|, \verb|4| and \verb|5| starting with ``/''),
+which defines the layout of registers and memory unit.
+For the data $a_i$ (and $a_j$), we use FP(8,16) format.
+The line ``/NPIPE'' specifies a number pipeline processors (10 processors in this case).
+The final part describes the target function itself using
+parametrized AMs. It has C-like appearance, but
+actually defines the hardware modules and their interconnection.
+
+From such PGDL description, the following ALL (as shown in figure \ref{fig4})
+is generated; the $i$-th data is stored in the on-chip memory,
+and new data ($j$-th data) is supplied at each clock cycle.
+The $i$-th data is unchanged during one calculation, and 
+the result ($f_i$) is stored in the register.
+
+
+\begin{figure}[htb]
+  \begin{center}
+    \begin{minipage}{.45\linewidth}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\includegraphics[angle=+0,width=6.5cm]{./mat/simple.eps}
+\caption{Block diagram of the example processors(PEs).}
+\label{fig4}
+\end{center}
+
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{minipage}
+    \hspace{2.3pc}
+    \begin{minipage}{.45\linewidth}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\scriptsize
+\begin{verbatim}
+1 #define NFLO 26
+2 #define NMAN 16
+3 /JPSET x,  aj[], float, NFLO, NMAN;
+4 /IPSET y,  ai[], float, NFLO, NMAN;
+5 /FOSET z,  fi[], float, NFLO, NMAN;
+6 /NPIPE 10;
+7 pg_float_mult  (x,   y,  xy, NFLO, NMAN, 1);
+8 pg_float_accum (xy,  z,      NFLO, NMAN, 1);
+\end{verbatim}
+\caption{An example of design entry file written in PGDL}
+\label{fig5}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{minipage}
+  \end{center}
+\end{figure}
+
+\section{Application}
+\label{sec:Appli}
+
+To show the possibility of PGR package, we have implemented gravitational
+force (as shown in eq. (1)) pipeline for astrophysical many-body simulations
+Figure \ref{figgravfloat_pgdl} and \ref{figgrav5_pgdl}
+show PGDL descriptions for this gravitational force pipeline
+using 26-bit FP operations and 17-bit LNS operations, respectively.
+Note there are a several differences between two descriptions.
+We check accuracy and resource consumption of the different implementations 
+to test whether PGR package generates effective implementations.
+In Figure \ref{SrError}, we present relative error($=\frac{|\vec{f_{\rm host}}-\vec{f_{\rm fba}}|}{|\vec{f_{\rm host}}|}$, where $\vec{f_{\rm host}}$ is the double precision result, $\vec{f_{\rm fba}}$ is the result by FBA) of our implementations.
+And Figure \ref{AreaComp} shows their resource consumptions.
+
+\begin{figure}[htb]
+  \begin{center}
+    \begin{minipage}{.45\linewidth}
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      \includegraphics[angle=+0,width=7.5cm]{./mat/SrGraph.eps}
+      \caption{Pair-wise relative error for gravitational force calculation in the N-body problem.}
+      \label{SrError}
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{minipage}
+    \hspace{2.3pc}
+    \begin{minipage}{.45\linewidth}
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+      \includegraphics[angle=+0,width=7.5cm]{./mat/synthe/pipe/Graph.eps}
+      \caption{Area comparison of gravitational N-body implementations.}
+      \label{AreaComp}
+      %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{minipage}
+  \end{center}
+\end{figure}
+
+Figure \ref{fig_grav_float_delay} shows a data flow graph that corresponds to the FP pipeline.
+PGR package automatically inserts delay register, which are indicated by bold solid circles,
+for synchronizing each operation.
+
+On the real hardware (PROGRAPE-3 board in the present work), 
+24 FP and 64 LNS pipelines have been correctly working in parallel at 133.3MHz.
+Here, {\it correctly working} means that gravity force calculated by
+the PROGRAPE-3 board for $8192$ particles is exactly same with results
+obtained by software emulator.
+In table \ref{tabcompg5}, we compare two implementations of FP(8,16) and LNS(7,8)
+with the GRAPE-5 system\cite{KFMT00};
+actually, the LNS(7,8) pipeline is actually equivalent to the GRAPE-5.
+
+For each implementation, the peak throughput performance 
+of single PROGRAPE-3 board is 121.6 Gflops and 324.2 Gflops, respectively.
+Here, the number of floating-point operations per one interaction is 38.
+The peak performance of the LNS pipelines on single PROGRAPE-3
+board is five times faster than single GRAPE-5 board.
+And even if we use twice accuracy (i.e., the FP(8,16) pipelines),
+the performance is the still two times better than single GRAPE-5.
+
+Finally, figure \ref{MESURE-PERFORM} shows the measured performance of
+single PROGRAPE-3 board with the LNS implementation as a function of
+number of particles $N$. Here, we show the results for the
+direct-summation algorithm.  Because the calculation cost
+and data transfer cost scale $\propto N^2$ and $N$ respectively, the
+measured performance gradually approaches the peak throughput as the
+number of particles increases.
+
+\begin{figure}[htb]
+  \begin{center}
+    \begin{minipage}{.45\linewidth}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\scriptsize
+{\tiny
+\begin{verbatim}
+ 1 /* ------------------------------------------- MACRO */
+ 2 #define NFLO  26
+ 3 #define NMAN  16
+ 4 #define NFIX  57
+ 5 #define NACC  64
+ 6 #define NEXAD 39
+ 7 #define FSCALE (pow(2.0,NEXAD))
+ 8 #define NST_MULT 2
+ 9 /* ---------------------------------- API DEFINITION */
+10 /JPSET xj[3], x[][],  float, NFLO, NMAN;
+11 /JPSET mj,    m[],    float, NFLO, NMAN;
+12 /IPSET xi[3], x[][],  float, NFLO, NMAN;
+13 /IPSET ieps2, eps2,   float, NFLO, NMAN;
+14 /FOSET sx[3], a[][],  fix,   NACC, (-1.0/FSCALE);
+15 /CONST_FLOAT  fshif,  FSCALE,NFLO, NMAN;
+16 /NPIPE 6;
+17 /* ---------------------------------------- PIPELINE */
+18 pg_float_sub(xi,xj,dx,           NFLO, NMAN, 4);
+19 pg_float_mult(dx,dx, dx2, NFLO, NMAN, NST_MULT);
+20 pg_float_unsigned_add(dx2[0],dx2[1],x2y2, NFLO,NMAN,4);
+21 pg_float_unsigned_add(dx2[2],ieps2, z2e2, NFLO,NMAN,4);
+22 pg_float_unsigned_add(x2y2,  z2e2,  r2,   NFLO,NMAN,4);
+23 pg_float_sqrt(r2,r1,                NFLO,NMAN,3);
+24 pg_float_mult(r2,r1,r3,      NFLO,NMAN,NST_MULT);
+25 pg_float_recipro(r3,r3i,            NFLO,NMAN,2);
+26 pg_float_mult(r3i,mj,mf,     NFLO,NMAN,NST_MULT);
+27 pg_float_expadd(mf,mfo,       NEXAD,NFLO,NMAN,1);
+28 pg_float_mult(mfo,dx,fx,     NFLO,NMAN,NST_MULT);
+29 pg_float_fixaccum(fx,sx,  NFLO,NMAN,NFIX,NACC,4);
+\end{verbatim}
+}
+\caption{a PGDL for gravitational force calculation (using 26-bit FP arithmetics)}
+\label{figgravfloat_pgdl}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{minipage}
+    \hspace{2.3pc}
+    \begin{minipage}{.45\linewidth}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\scriptsize
+{\tiny
+\begin{verbatim}
+ 1 /* -------------------------------------------- MACRO */
+ 2 #define NPOS 32
+ 3 #define NLOG 17
+ 4 #define NMAN 8
+ 5 #define NCUT 6
+ 6 #define NFOR 57
+ 7 #define NACC 64
+ 8 #define xsize   (1000.0)
+ 9 #define mmin    (1.220703125e-04)
+10 #define xoffset (xsize/2.0)
+11 #define xscale  (pow(2.0,(double)NPOS)/xsize)
+12 #define mscale  (pow(2.0,95.38)/mmin)
+13 #define escale  (xscale*xscale)
+14 #define fshift  (1.74895e+9)
+15 #define fscale  (-xscale*xscale*fshift/mscale)
+16 /* ------------------------------------ API DEFINITION */
+17 /JPSET xj[3], x[][], ufix,      NPOS,xscale,xoffset;
+18 /JPSET mj,    m[],   log,       NLOG,NMAN,mscale;
+19 /IPSET xi[3], x[][], ufix,      NPOS,xscale,xoffset;
+20 /IPSET ieps2, eps2,  log,       NLOG,NMAN,escale;
+21 /FOSET sx[3], a[][], fix,       NACC,fscale;
+22 /CONST_LOG    fsft,  fshift,    NLOG, NMAN, 1.0;
+23 /NPIPE 17;
+24 /* ------------------------------------------ PIPELINE */
+25 pg_fix_addsub (SUB, xi, xj, xij,       NPOS, 1);
+26 pg_conv_ftol  (xij, dx,                NPOS,NLOG,NMAN,2);
+27 pg_log_shift  (1,dx,x2,                NLOG);
+28 pg_log_unsigned_add(x2[0],x2[1], x2y2, NLOG,NMAN,4,NCUT);
+29 pg_log_unsigned_add(x2[2],ieps2, z2e2, NLOG,NMAN,4,NCUT);
+30 pg_log_unsigned_add(x2y2,z2e2,   r2,   NLOG,NMAN,4,NCUT);
+31 pg_log_shift  (-1,   r2, r1,           NLOG);
+32 pg_log_muldiv (MUL,  r2, r1, r3,       NLOG,1);
+33 pg_log_muldiv (DIV,  mj, r3, mf,       NLOG,1);
+34 pg_log_muldiv (MUL,  mf, dx, fx,       NLOG,1);
+35 pg_log_muldiv (SDIV, fx, fsft, fxo,    NLOG,1);
+36 pg_conv_ltof  (fxo,  ffx,              NLOG,NMAN,NFOR,2);
+37 pg_fix_accum  (ffx,  sx,               NFOR,NACC,1);
+\end{verbatim}
+}
+\caption{a PGDL for gravitational force calculation (using 17-bit LNS)}
+\label{figgrav5_pgdl}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{minipage}
+  \end{center}
+\end{figure}
+
+
+\section{Comparison to relevant works}
+In scientific computations on FBAs,
+type conversions and scaling operations are confusing and
+designing APIs becomes troublesome inevitably.
+
+We note that a similar package to PGR has been reported in
+\cite{THYL04}.  The CAST(Computer Arithmetic Synthesis Tool) is a tool
+for implementing astrophysical many-body simulations.  We concern that
+the CAST seems not to meet the requirements (2,4,5,6) in our introduction.
+On the other hand, using PGR package, possible users, 
+who want to accelerate their particle simulations with an FBA,
+can concentrate on only writing a PGDL code.
+That is PGR package can drastically reduce the amount of work for such user.
+
+
+%Especially lacking requirement (4) of API generation,
+%they seemed to be making some mistakes in conversions or scaling operations.
+%In their figure 12a, the FP(8-bit precision of their FP
+%implementation is not better accurate than the GRAPE-3 which uses 5-bit precision.
+%Such inconsistencies seem to be due to by mistakes of scaling.
+%Let us add a few more words for their honor, their modules may be good
+%in accuracy but the implementation of APIs are wrong. 
+
+
+%%--------------------------------------------------------------------------------
+%\begin{figure}[htb]
+%\begin{center}
+%\includegraphics[angle=+0,width=8cm]{./mat/grav_float_nodelay.eps}
+%\caption{Simple data flow of gravitational force pipeline.}
+%\label{fig_grav_float_nodelay}
+%\end{center}
+%\end{figure}
+
+\begin{table*}
+\caption{Implementation result and comparison with other implementation}
+\begin{center}
+\begin{tabular}{lcccc}
+\hline
+                     & $~~$ GRAPE-5 $~~$   & \multicolumn{2}{c}{PROGRAPE-3}  & CRAY-XD1\\
+\hline
+Chips/board          &   8 ASICs      & \multicolumn{2}{c}{ 4 FPGAs}     & 1 FPGA  \\
+Chip technology      & 0.5 $\mu m$      & \multicolumn{2}{c}{ 0.13 $\mu m$}  & 0.13$\mu m$ \\
+Format :input        & FIX(32)          & FIX(32)   & FP(8,16)               & FIX(32)   \\
+Format :internal     & LNS(7,8)         & LNS(7,8)  & FP(8,16)               & LNS(7,8)  \\
+Format :accumulation & FIX(64)          & FIX(64)   & FIX(64)                & FIX(64)   \\
+Pair-wise error             & 10$^{-2.4}$  &  10$^{-2.4}$ & 10$^{-4.8}$ &  10$^{-2.4}$ \\
+PEs/chip             & 2                &   16      &   6                    & 10          \\
+Frequency (MHz)      & 80               & 133       &  133                   & 120         \\
+Perk performance(Gflops/board)          & 48.6      & 324.2     & 121.6      & 45.6      \\
+
+\hline
+\end{tabular}
+\end{center}
+\label{tabcompg5}
+\end{table*}
+
+
+\begin{figure}[htb]
+  \begin{center}
+    \begin{minipage}{.45\linewidth}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{center}
+\includegraphics[angle=+0,width=5.5cm]{./mat/grav_float_delay.eps}
+\caption{Data flow of the gravitational force pipeline.}
+\label{fig_grav_float_delay}
+\end{center}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{minipage}
+    \hspace{2.3pc}
+    \begin{minipage}{.45\linewidth}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+  \begin{center}
+    \includegraphics[angle=+0,width=7cm]{./mat/perform/graph.eps}
+    \caption{The measured calculation speed of single PROGRAPE-3 board in Gflops for the direct-summation algorithm, plotted as functions of the number of particles, N.}
+    \label{MESURE-PERFORM}
+  \end{center}
+    %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+    \end{minipage}
+  \end{center}
+\end{figure}
+
+
+
+
+
+\section{Conclusion}
+We have developed PGR package, a software which automatically
+generate communication software and the hardware descriptions (the
+hardware design of pipeline processors) for FBAs from a high-level
+description PGDL.  Using PGR package, we have implemented
+gravitational force pipelines used in astrophysical many-body simulations. 
+The PGDL description for the gravitational force pipelines is only a
+several tens of lines of a text file.  Regardless of a very simple
+description, the gravitational force pipelines are implemented successfully and
+the obtained performance reaches 100 Gflops on our hardware PROGRAPE-3.

@@ -1,0 +1,4 @@
+Executables:
+
+- sram read and write utilities for XC4010E and XC4020E
+  (the FPGA designs are taken from the sram example from PamDC)

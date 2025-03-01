@@ -1,0 +1,88 @@
+-- 2003/12/31 16:30
+-- for pgpgc2
+
+#define NPOS 20
+#define NLOG 14
+#define NMAN 5
+#define NACC 56
+#define xsize (200.0)
+#define mmin (1.220703125e-04)
+#define xoffset (xsize/2.0)
+#define xscale (pow(2.0,(double)NPOS)/xsize)
+#define mscale (pow(2.0,63.95)/mmin)
+#define escale (xscale*xscale)
+#define foffset (pow(2.0,19.0))
+#define fscale (-xscale*xscale*foffset/mscale)
+--mmin 0x17fe
+
+--/NPIPE 25
+/NPIPE 1
+/NVMP 1
+
+/JPSET xj,0,0,19,x[][0],ufix,NPOS,xscale,xoffset
+/JPSET yj,0,20,39,x[][1],ufix,NPOS,xscale,xoffset
+/JPSET zj,0,40,59,x[][2],ufix,NPOS,xscale,xoffset
+/JPSET mj,0,60,73,m[],log,NLOG,NMAN,mscale
+/IPSET xi,x[][0],ufix,NPOS,xscale,xoffset
+/IPSET yi,x[][1],ufix,NPOS,xscale,xoffset
+/IPSET zi,x[][2],ufix,NPOS,xscale,xoffset
+/IPSET ieps2,eps2,log,NLOG,NMAN,escale
+/FOSET sx,a[][0],fix,NACC,fscale
+/FOSET sy,a[][1],fix,NACC,fscale
+/FOSET sz,a[][2],fix,NACC,fscale
+/VALSET fx_ofst,0x1260,0,13
+/VALSET fy_ofst,0x1260,0,13
+/VALSET fz_ofst,0x1260,0,13
+/DATASET fx_ofst,01001001100000,0,13
+/DATASET fy_ofst,01001001100000,0,13
+/DATASET fz_ofst,01001001100000,0,13
+
+void force_gravity_on_emulator(x,m,eps2,a,n)
+	double x[][3];
+	double m[];
+	double eps2;
+	double a[][3];
+	int n;
+{
+  pg_rundelay(13);
+  pg_fix_addsub(SUB,xi,xj,xij,NPOS,1);
+  pg_fix_addsub(SUB,yi,yj,yij,NPOS,1);
+  pg_fix_addsub(SUB,zi,zj,zij,NPOS,1);
+  pg_conv_ftol(xij,dx,NPOS,NLOG,NMAN,4);
+  pg_conv_ftol(yij,dy,NPOS,NLOG,NMAN,4);
+  pg_conv_ftol(zij,dz,NPOS,NLOG,NMAN,4);
+
+  pg_pdelay(dx,dxr,NLOG,4);
+  pg_pdelay(dy,dyr,NLOG,4);
+  pg_pdelay(dz,dzr,NLOG,4);
+
+  pg_log_shift(1,dx,x2,NLOG);
+  pg_log_shift(1,dy,y2,NLOG);
+  pg_log_shift(1,dz,z2,NLOG);
+
+  pg_pdelay(ieps2,ieps2r,NLOG,5);
+  pg_log_unsigned_add(    x2,y2,x2y2,NLOG,NMAN,1);
+  pg_log_unsigned_add(z2,ieps2r,z2e2,NLOG,NMAN,1);
+  pg_log_unsigned_add(  x2y2,z2e2,r2,NLOG,NMAN,1);
+
+  pg_log_shift(-1,r2,r1,NLOG);
+  pg_log_muldiv(MUL,r2,r1,r3,NLOG,1);
+
+  pg_pdelay(mj,mjr,NLOG,8);
+  pg_log_muldiv(DIV,mjr,r3,mf,NLOG,1);
+  pg_log_muldiv(MUL,mf,dxr,fx,NLOG,1);
+  pg_log_muldiv(MUL,mf,dyr,fy,NLOG,1);
+  pg_log_muldiv(MUL,mf,dzr,fz,NLOG,1);
+
+  pg_log_muldiv(SDIV,fx,fx_ofst,fxo,NLOG,1);
+  pg_log_muldiv(SDIV,fy,fy_ofst,fyo,NLOG,1);
+  pg_log_muldiv(SDIV,fz,fz_ofst,fzo,NLOG,1);
+
+  pg_conv_ltof(fxo,ffx,NLOG,NMAN,49,1);
+  pg_conv_ltof(fyo,ffy,NLOG,NMAN,49,1);
+  pg_conv_ltof(fzo,ffz,NLOG,NMAN,49,1);
+  pg_fix_accum(ffx,sx,49,NACC,1,12);
+  pg_fix_accum(ffy,sy,49,NACC,1,12);
+  pg_fix_accum(ffz,sz,49,NACC,1,12); --6
+
+}

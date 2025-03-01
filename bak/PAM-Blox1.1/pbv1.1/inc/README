@@ -1,0 +1,30 @@
+/*---------------------------------------------------------*/
+/*  README                                                 */
+/*---------------------------------------------------------*/
+/* PAM-Blox version 1.1:                                   */
+/* object-oriented circuit generators for custom computing */
+/*                     Oskar Mencer                        */ 
+/*      Computer Architecture and Arithmetic Group         */
+/*                  Stanford University                    */
+/*                                                         */
+/* PAM-Blox are distributed under the GNU Public license   */
+/*      check GNUlicense.h for the license notice          */
+/*      check GNUlicense.txt for all the details           */
+/*                                                         */
+/*  Questions ? email: pamblox@umunhum.stanford.edu        */
+/*         Web: http://umunhum.stanford.edu/PAM-Blox/      */ 
+/***********************************************************/
+
+This directory contains PamTypes, PamBlox and PaModules.
+
+PamTypes:
+	- pamtypes.h : global PAM-Blox defines, variables, and classes
+
+PamBlox(templates):   
+	- pamblox.h  : basic arithmetic units. add, sub, inc, etc.
+
+PaModules(objects): 
+	- kcm16.h    : 16 bit Constant(k) Coefficient Multipliers
+	- sermult.h  : serial booth multipliers
+	- cordic.h   : CORDIC arithmetic units
+	 

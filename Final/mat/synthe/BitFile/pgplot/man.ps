@@ -1,0 +1,1008 @@
+%!PS-Adobe-3.0
+%%Title: man.txt
+%%For: 
+%%Creator: a2ps version 4.13
+%%CreationDate: Thu Jun 17 12:32:26 2004
+%%BoundingBox: 24 24 571 818
+%%DocumentData: Clean7Bit
+%%Orientation: Portrait
+%%Pages: 3
+%%PageOrder: Ascend
+%%DocumentMedia: A4 595 842 0 () ()
+%%DocumentNeededResources: font Courier
+%%+ font Courier-Bold
+%%+ font Courier-BoldOblique
+%%+ font Courier-Oblique
+%%+ font Helvetica
+%%+ font Helvetica-Bold
+%%+ font Symbol
+%%+ font Times-Bold
+%%+ font Times-Roman
+%%DocumentProcessColors: Black 
+%%DocumentSuppliedResources: procset a2ps-a2ps-hdr
+%%+ procset a2ps-black+white-Prolog
+%%+ encoding EUC-JPEncoding
+%%EndComments
+/a2psdict 200 dict def
+a2psdict begin
+%%BeginProlog
+%%Copyright: (c) 1988, 89, 90, 91, 92, 93 Miguel Santana
+%%Copyright: (c) 1995, 96, 97, 98 Akim Demaille, Miguel Santana
+% Check PostScript language level.
+/languagelevel where {
+  pop /gs_languagelevel languagelevel def
+} {
+  /gs_languagelevel 1 def
+} ifelse
+
+% EPSF import as in the Red Book
+/BeginInclude {
+  /b4_Inc_state save def    		% Save state for cleanup
+  /dict_count countdictstack def	% Count objects on dict stack
+  /op_count count 1 sub def		% Count objects on operand stack 
+  userdict begin
+    0 setgray 0 setlinecap
+    1 setlinewidth 0 setlinejoin
+    10 setmiterlimit [ ] 0 setdash newpath
+    gs_languagelevel 1 ne {
+      false setstrokeadjust false setoverprint 
+    } if
+} bind def
+
+/EndInclude {
+  count op_count sub { pos } repeat	% Clean up stacks
+  countdictstack dict_count sub { end } repeat
+  b4_Inc_state restore
+} bind def
+
+/BeginEPSF {
+  BeginInclude
+  /showpage { } def
+} bind def
+
+/EndEPSF {
+  EndInclude
+} bind def
+
+% Page prefeed
+/page_prefeed {         % bool -> -
+  statusdict /prefeed known {
+    statusdict exch /prefeed exch put
+  } {
+    pop
+  } ifelse
+} bind def
+
+/deffont {
+  findfont exch scalefont def
+} bind def
+
+/reencode_font {
+  findfont reencode 2 copy definefont pop def
+} bind def
+
+% Function c-show (str => -)
+% centers text only according to x axis.
+/c-show { 
+  dup stringwidth pop
+  2 div neg 0 rmoveto
+  show
+} bind def
+
+% Function l-show (str => -)
+% prints texts so that it ends at currentpoint
+/l-show {
+  dup stringwidth pop neg 
+  0 
+  rmoveto show
+} bind def
+
+% center-fit show (str w => -)
+% show centered, and scale currentfont so that the width is less than w
+/cfshow {
+  exch dup stringwidth pop
+  % If the title is too big, try to make it smaller
+  3 2 roll 2 copy
+  gt
+  { % if, i.e. too big
+    exch div
+    currentfont exch scalefont setfont
+  } { % ifelse
+    pop pop 
+  }
+  ifelse
+  c-show			% center title
+} bind def
+
+% Return the y size of the current font
+% - => fontsize
+/currentfontsize {
+  currentfont /FontType get 0 eq {
+    currentfont /FontMatrix get 3 get
+  }{
+    currentfont /FontMatrix get 3 get 1000 mul
+  } ifelse
+} bind def
+
+% reencode the font
+% <encoding-vector> <fontdict> -> <newfontdict>
+/reencode { %def
+  dup length 5 add dict begin
+    { %forall
+      1 index /FID ne 
+      { def }{ pop pop } ifelse
+    } forall
+    /Encoding exch def
+
+    % Use the font's bounding box to determine the ascent, descent,
+    % and overall height; don't forget that these values have to be
+    % transformed using the font's matrix.
+    % We use `load' because sometimes BBox is executable, sometimes not.
+    % Since we need 4 numbers an not an array avoid BBox from being executed
+    /FontBBox load aload pop
+    FontMatrix transform /Ascent exch def pop
+    FontMatrix transform /Descent exch def pop
+    /FontHeight Ascent Descent sub def
+
+    % Define these in case they're not in the FontInfo (also, here
+    % they're easier to get to.
+    /UnderlinePosition 1 def
+    /UnderlineThickness 1 def
+    
+    % Get the underline position and thickness if they're defined.
+    currentdict /FontInfo known {
+      FontInfo
+      
+      dup /UnderlinePosition known {
+	dup /UnderlinePosition get
+	0 exch FontMatrix transform exch pop
+	/UnderlinePosition exch def
+      } if
+      
+      dup /UnderlineThickness known {
+	/UnderlineThickness get
+	0 exch FontMatrix transform exch pop
+	/UnderlineThickness exch def
+      } if
+      
+    } if
+    currentdict 
+  end 
+} bind def
+
+% composite fonts for ASCII-EUC mixed string
+% Version 1.2 1/31/1990
+% Orignal Ken'ichi HANDA (handa@etl.go.jp)
+% Modified Norio Katayama (katayama@rd.nacsis.ac.jp),1998
+% Extend & Fix Koji Nakamaru (maru@on.cs.keio.ac.jp), 1999
+% Anyone can freely copy, modify, distribute this program.
+
+/copyfont {	% font-dic extra-entry-count  copyfont  font-dic
+	1 index maxlength add dict begin
+	{	1 index /FID ne 2 index /UniqueID ne and
+		{def} {pop pop} ifelse
+	} forall
+	currentdict
+	end
+} bind def
+
+/compositefont { % ASCIIFontName EUCFontName RomanScale RomanOffset Rot(T/F) compositefont font
+    /RomanRotation exch def
+    /RomanOffset exch def
+    /RomanScale exch def
+    userdict /fixeucfont_dict known not {
+	userdict begin
+	    /fixeucfont_dict 2 dict begin
+		/UpperByteEncoding [
+		    16#00 1 16#20 { pop 0 } for
+		    16#21 1 16#28 { 16#20 sub } for
+		    16#29 1 16#2F { pop 0 } for
+		    16#30 1 16#74 { 16#27 sub } for
+		    16#75 1 16#FF { pop 0 } for
+		] def
+	        /LowerByteEncoding [
+		    16#00 1 16#A0 { pop /.notdef } for
+		    16#A1 1 16#FE { 16#80 sub 16 2 string cvrs
+				    (cXX) dup 1 4 -1 roll
+				    putinterval cvn } for
+		    /.notdef
+		] def
+		currentdict
+	    end def
+	end
+    } if
+    findfont dup /FontType get 0 eq {
+	14 dict begin
+	    %
+	    % 7+8 bit EUC font
+	    %
+	    12 dict begin
+		/EUCFont exch def
+		/FontInfo (7+8 bit EUC font) readonly def
+		/PaintType 0 def
+		/FontType 0 def
+		/FontMatrix matrix def
+		% /FontName
+		/Encoding fixeucfont_dict /UpperByteEncoding get def
+		/FMapType 2 def
+		EUCFont /WMode known
+		{ EUCFont /WMode get /WMode exch def }
+		{ /WMode 0 def } ifelse
+		/FDepVector [
+		    EUCFont /FDepVector get 0 get
+		    [ 16#21 1 16#28 {} for 16#30 1 16#74 {} for ]
+		    {
+			13 dict begin
+			    /EUCFont EUCFont def
+			    /UpperByte exch 16#80 add def	
+			    % /FontName
+			    /FontInfo (EUC lower byte font) readonly def
+			    /PaintType 0 def
+			    /FontType 3 def
+			    /FontMatrix matrix def
+			    /FontBBox {0 0 0 0} def
+			    /Encoding
+				fixeucfont_dict /LowerByteEncoding get def
+			    % /UniqueID
+			    % /WMode
+			    /BuildChar {
+				gsave
+				exch dup /EUCFont get setfont
+				/UpperByte get
+				2 string
+				dup 0 4 -1 roll put
+				dup 1 4 -1 roll put
+				dup stringwidth setcharwidth
+				0 0 moveto show
+				grestore
+			    } bind def
+			    currentdict
+			end
+			/lowerbytefont exch definefont
+		    } forall
+		] def
+		currentdict
+	    end
+	    /eucfont exch definefont
+	    exch
+	    findfont 1 copyfont dup begin
+		RomanRotation {
+			/FontMatrix FontMatrix
+			[ 0 RomanScale neg RomanScale 0 RomanOffset neg 0 ]
+			matrix concatmatrix def
+		}{
+			/FontMatrix FontMatrix
+			[ RomanScale 0 0 RomanScale 0 RomanOffset ] matrix concatmatrix
+			def
+			/CDevProc
+			    {pop pop pop pop 0 exch -1000 exch 2 div 880} def
+		} ifelse
+	    end
+	    /asciifont exch definefont
+	    exch
+	    /FDepVector [ 4 2 roll ] def
+	    /FontType 0 def
+	    /WMode 0 def
+	    /FMapType 4 def
+	    /FontMatrix matrix def
+	    /Encoding [0 1] def
+	    /FontBBox {0 0 0 0} def
+%	    /FontHeight 1.0 def % XXXX
+	    /FontHeight RomanScale 1.0 ge { RomanScale }{ 1.0 } ifelse def
+	    /Descent -0.3 def   % XXXX
+	    currentdict
+	end
+	/tmpfont exch definefont
+	pop
+	/tmpfont findfont
+    }{
+	pop findfont 0 copyfont
+    } ifelse
+} def	
+
+/slantfont {	% FontName slant-degree  slantfont  font'
+    exch findfont 1 copyfont begin
+    [ 1 0 4 -1 roll 1 0 0 ] FontMatrix exch matrix concatmatrix
+    /FontMatrix exch def
+    currentdict
+    end
+} def
+
+% Function print line number (<string> # -)
+/# {
+  gsave
+    sx cw mul neg 2 div 0 rmoveto
+    f# setfont
+    c-show
+  grestore
+} bind def
+
+% -------- Some routines to enlight plain b/w printings ---------
+
+% Underline
+% width --
+/dounderline {
+  currentpoint
+  gsave
+    moveto
+    0 currentfont /Descent get currentfontsize mul rmoveto
+    0 rlineto
+    stroke
+  grestore
+} bind def
+
+% Underline a string
+% string --
+/dounderlinestring {
+  stringwidth pop
+  dounderline
+} bind def
+
+/UL {
+  /ul exch store
+} bind def
+
+% Draw a box of WIDTH wrt current font
+% width --
+/dobox {
+  currentpoint
+  gsave
+    newpath
+    moveto
+    0 currentfont /Descent get currentfontsize mul rmoveto
+    dup 0 rlineto
+    0 currentfont /FontHeight get currentfontsize mul rlineto
+    neg 0 rlineto
+    closepath
+    stroke
+  grestore
+} bind def
+
+/BX {
+  /bx exch store
+} bind def
+
+% Box a string
+% string --
+/doboxstring {
+  stringwidth pop
+  dobox
+} bind def
+
+%
+% ------------- Color routines ---------------
+%
+/FG /setrgbcolor load def
+
+% Draw the background
+% width --
+/dobackground {
+  currentpoint
+  gsave
+    newpath
+    moveto
+    0 currentfont /Descent get currentfontsize mul rmoveto
+    dup 0 rlineto
+    0 currentfont /FontHeight get currentfontsize mul rlineto
+    neg 0 rlineto
+    closepath
+    bgcolor aload pop setrgbcolor
+    fill
+  grestore
+} bind def
+
+% Draw bg for a string
+% string --
+/dobackgroundstring {
+  stringwidth pop
+  dobackground
+} bind def
+
+
+/BG {
+  dup /bg exch store
+  { mark 4 1 roll ] /bgcolor exch store } if
+} bind def
+
+
+/Show {
+  bg { dup dobackgroundstring } if
+  ul { dup dounderlinestring } if
+  bx { dup doboxstring } if
+  show
+} bind def
+
+% Function T(ab), jumps to the n-th tabulation in the current line
+/T {
+  cw mul x0 add
+  bg { dup currentpoint pop sub dobackground } if
+  ul { dup currentpoint pop sub dounderline } if
+  bx { dup currentpoint pop sub dobox } if
+  y0 moveto
+} bind def
+
+% Function n: move to the next line
+/n {
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+} bind def
+
+% Function N: show and move to the next line
+/N {
+  Show
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+} bind def
+
+/S {
+  Show
+} bind def
+
+%%BeginResource: procset a2ps-a2ps-hdr 2.0 2
+%%Copyright: (c) 1988, 89, 90, 91, 92, 93 Miguel Santana
+%%Copyright: (c) 1995, 96, 97, 98 Akim Demaille, Miguel Santana
+% Function title: prints page header.
+% <ct> <rt> <lt> are passed as argument
+/title { 
+  % 1. Draw the background
+  x v get y v get moveto
+  gsave
+    0 th 2 div neg rmoveto 
+    th setlinewidth
+    0.95 setgray
+    pw 0 rlineto stroke
+  grestore
+  % 2. Border it
+  gsave
+    0.7 setlinewidth
+    pw 0 rlineto
+    0 th neg rlineto
+    pw neg 0 rlineto
+    closepath stroke
+  grestore
+  % stk: ct rt lt
+  x v get y v get th sub 1 add moveto
+%%IncludeResource: font Helvetica
+  fHelvetica fnfs 0.8 mul scalefont setfont
+  % 3. The left title
+  gsave
+    dup stringwidth pop fnfs 0.8 mul add exch % leave space took on stack
+    fnfs 0.8 mul hm rmoveto
+    show			% left title
+  grestore
+  exch
+  % stk: ct ltw rt
+  % 4. the right title
+  gsave
+    dup stringwidth pop fnfs 0.8 mul add exch % leave space took on stack
+    dup
+    pw exch stringwidth pop fnfs 0.8 mul add sub
+    hm
+    rmoveto
+    show			% right title
+  grestore
+  % stk: ct ltw rtw
+  % 5. the center title
+  gsave
+    pw 3 1 roll
+    % stk: ct pw ltw rtw
+    3 copy 
+    % Move to the center of the left room
+    sub add 2 div hm rmoveto
+    % What is the available space in here?
+    add sub fnfs 0.8 mul sub fnfs 0.8 mul sub
+    % stk: ct space_left
+%%IncludeResource: font Helvetica-Bold
+  fHelvetica-Bold fnfs scalefont setfont
+    cfshow
+  grestore
+} bind def
+
+% Function border: prints virtual page border
+/border { %def
+  gsave				% print four sides
+    0 setgray
+    x v get y v get moveto
+    0.7 setlinewidth		% of the square
+    pw 0 rlineto
+    0 ph neg rlineto
+    pw neg 0 rlineto
+    closepath stroke
+  grestore
+} bind def
+
+% Function water: prints a water mark in background
+/water { %def
+  gsave
+    scx scy moveto rotate
+%%IncludeResource: font Times-Bold
+  fTimes-Bold 100 scalefont setfont
+    .97 setgray
+    dup stringwidth pop 2 div neg -50 rmoveto
+    show
+  grestore
+} bind def
+
+% Function rhead: prints the right header
+/rhead {  %def
+  lx ly moveto
+  fHelvetica fnfs 0.8 mul scalefont setfont
+  l-show
+} bind def
+
+% Function footer (cf rf lf -> -)
+/footer {
+  fHelvetica fnfs 0.8 mul scalefont setfont
+  dx dy moveto
+  show
+
+  snx sny moveto
+  l-show
+  
+  fnx fny moveto
+  c-show
+} bind def
+%%EndResource
+%%BeginResource: procset a2ps-black+white-Prolog 2.0 1
+
+% Function T(ab), jumps to the n-th tabulation in the current line
+/T { 
+  cw mul x0 add y0 moveto
+} bind def
+
+% Function n: move to the next line
+/n { %def
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+} bind def
+
+% Function N: show and move to the next line
+/N {
+  Show
+  /y0 y0 bfs sub store
+  x0 y0 moveto
+}  bind def
+
+/S {
+  Show
+} bind def
+
+/p {
+  false UL
+  false BX
+  fCourier bfs scalefont setfont
+  Show
+} bind def
+
+/sy {
+  false UL
+  false BX
+  fSymbol bfs scalefont setfont
+  Show
+} bind def
+
+/k {
+  false UL
+  false BX
+  fCourier-Oblique bfs scalefont setfont
+  Show
+} bind def
+
+/K {
+  false UL
+  false BX
+  fCourier-Bold bfs scalefont setfont
+  Show
+} bind def
+
+/c {
+  false UL
+  false BX
+  fCourier-Oblique bfs scalefont setfont
+  Show
+} bind def
+
+/C {
+  false UL
+  false BX
+  fCourier-BoldOblique bfs scalefont setfont
+  Show 
+} bind def
+
+/l {
+  false UL
+  false BX
+  fHelvetica bfs scalefont setfont
+  Show
+} bind def
+
+/L {
+  false UL
+  false BX
+  fHelvetica-Bold bfs scalefont setfont
+  Show 
+} bind def
+
+/str{
+  false UL
+  false BX
+  fTimes-Roman bfs scalefont setfont
+  Show
+} bind def
+
+/e{
+  false UL
+  true BX
+  fHelvetica-Bold bfs scalefont setfont
+  Show
+} bind def
+
+%%EndResource
+%%EndProlog
+%%BeginSetup
+%%IncludeResource: font Courier
+%%IncludeResource: font Courier-Oblique
+%%IncludeResource: font Courier-Bold
+%%IncludeResource: font Times-Roman
+%%IncludeResource: font Symbol
+%%IncludeResource: font Courier-BoldOblique
+%%BeginResource: encoding EUC-JPEncoding
+/EUC-JPEncoding [
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/space /exclam /quotedbl /numbersign /dollar /percent /ampersand /quoteright 
+/parenleft /parenright /asterisk /plus /comma /minus /period /slash 
+/zero /one /two /three /four /five /six /seven 
+/eight /nine /colon /semicolon /less /equal /greater /question 
+/at /A /B /C /D /E /F /G 
+/H /I /J /K /L /M /N /O 
+/P /Q /R /S /T /U /V /W 
+/X /Y /Z /bracketleft /backslash /bracketright /asciicircum /underscore 
+/quoteleft /a /b /c /d /e /f /g 
+/h /i /j /k /l /m /n /o 
+/p /q /r /s /t /u /v /w 
+/x /y /z /braceleft /bar /braceright /asciitilde /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef /.notdef 
+/space /exclamdown /cent /sterling /currency /yen /brokenbar /section 
+/dieresis /copyright /ordfeminine /guillemotleft /logicalnot /hyphen /registered /macron 
+/degree /plusminus /twosuperior /threesuperior /acute /mu /paragraph /bullet 
+/cedilla /onesuperior /ordmasculine /guillemotright /onequarter /onehalf /threequarters /questiondown 
+/Agrave /Aacute /Acircumflex /Atilde /Adieresis /Aring /AE /Ccedilla 
+/Egrave /Eacute /Ecircumflex /Edieresis /Igrave /Iacute /Icircumflex /Idieresis 
+/Eth /Ntilde /Ograve /Oacute /Ocircumflex /Otilde /Odieresis /multiply 
+/Oslash /Ugrave /Uacute /Ucircumflex /Udieresis /Yacute /Thorn /germandbls 
+/agrave /aacute /acircumflex /atilde /adieresis /aring /ae /ccedilla 
+/egrave /eacute /ecircumflex /edieresis /igrave /iacute /icircumflex /idieresis 
+/eth /ntilde /ograve /oacute /ocircumflex /otilde /odieresis /divide 
+/oslash /ugrave /uacute /ucircumflex /udieresis /yacute /thorn /ydieresis 
+] def
+%%EndResource
+% Initialize page description variables.
+/sh 842 def
+/sw 595 def
+/llx 24 def
+/urx 571 def
+/ury 818 def
+/lly 24 def
+/#copies 1 def
+/th 20.000000 def
+/fnfs 15 def
+/bfs 11.199836 def
+/cw 6.719901 def
+
+% Dictionary for EUC-JP support
+/euc-jpdict 18 dict begin
+  /fCourier EUC-JPEncoding /Courier reencode_font
+  /fCourier-Bold EUC-JPEncoding /Courier-Bold reencode_font
+  /fCourier-BoldOblique EUC-JPEncoding /Courier-BoldOblique reencode_font
+  /fCourier-Oblique EUC-JPEncoding /Courier-Oblique reencode_font
+  /fHelvetica EUC-JPEncoding /Helvetica reencode_font
+  /fHelvetica-Bold EUC-JPEncoding /Helvetica-Bold reencode_font
+  /fTimes-Bold EUC-JPEncoding /Times-Bold reencode_font
+  /fTimes-Roman EUC-JPEncoding /Times-Roman reencode_font
+  /Ryumin-Light-EUC-H-Italic /Ryumin-Light-EUC-H 0.200000 slantfont  definefont pop
+  /GothicBBB-Medium-EUC-H-Italic /GothicBBB-Medium-EUC-H 0.200000 slantfont  definefont pop
+  /fCourier /fCourier /Ryumin-Light-EUC-H 1.100000 0.000000 false  compositefont 0.909091 scalefont def
+  /fCourier-Bold /fCourier-Bold /GothicBBB-Medium-EUC-H 1.100000 0.000000 false  compositefont 0.909091 scalefont def
+  /fCourier-BoldOblique /fCourier-BoldOblique /GothicBBB-Medium-EUC-H-Italic 1.100000 0.000000 false  compositefont 0.909091 scalefont def
+  /fCourier-Oblique /fCourier-Oblique /Ryumin-Light-EUC-H-Italic 1.100000 0.000000 false  compositefont 0.909091 scalefont def
+  /fHelvetica /fHelvetica /GothicBBB-Medium-EUC-H 1.100000 0.000000 false  compositefont 0.909091 scalefont def
+  /fHelvetica-Bold /fHelvetica-Bold /GothicBBB-Medium-EUC-H 1.100000 0.000000 false  compositefont 0.909091 scalefont def
+  /fTimes-Bold /fTimes-Bold /GothicBBB-Medium-EUC-H 1.100000 0.000000 false  compositefont 0.909091 scalefont def
+  /fTimes-Roman /fTimes-Roman /Ryumin-Light-EUC-H 1.100000 0.000000 false  compositefont 0.909091 scalefont def
+currentdict end def
+/bgcolor [ 0 0 0 ] def
+/bg false def
+/ul false def
+/bx false def
+% The font for line numbering
+/f# /Helvetica findfont bfs .6 mul scalefont def
+/fSymbol /Symbol findfont def
+/hm fnfs 0.25 mul def
+/pw
+   cw 81.400000 mul
+def
+/ph
+   747.029046 th add
+def
+/pmw 0 def
+/pmh 0 def
+/v 0 def
+/x [
+  0
+] def
+/y [
+  pmh ph add 0 mul ph add
+] def
+/scx sw 2 div def
+/scy sh 2 div def
+/snx urx def
+/sny lly 2 add def
+/dx llx def
+/dy sny def
+/fnx scx def
+/fny dy def
+/lx snx def
+/ly ury fnfs 0.8 mul sub def
+/sx 0 def
+/tab 8 def
+/x0 0 def
+/y0 0 def
+%%EndSetup
+
+%%Page: (1) 1
+%%BeginPageSetup
+/pagesave save def
+%%EndPageSetup
+euc-jpdict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 4.703931 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(i386-linux-thread-multUserGContributed Perl i386-linux-thread-multi::PGPLOT\(3\)) p n
+() N
+(NAME) N
+(       PGPLOT - allow subroutines in the PGPLOT graphics library to be called) N
+(       from Perl.) N
+() N
+(SYNOPSIS) N
+(        use PGPLOT;) N
+() N
+(        pgbegin\(0,"/xserve",1,1\);) N
+(        pgenv\(1,10,1,10,0,0\);) N
+(        pglabel\('X','Y','My plot'\);) N
+(        pgpoint\(7,[2..8],[2..8],17\);) N
+() N
+(        # etc...) N
+() N
+(        pgend;) N
+() N
+(DESCRIPTION) N
+(       Originally developed in the olden days of Perl4 \(when it was known as) N
+(       'pgperl' due to the necessity of making a special perl executable\)) N
+(       PGPLOT is now a dynamically loadable perl module which interfaces to) N
+(       the FORTRAN graphics library of the same name.) N
+() N
+(       PGPLOT, originally developed as a FORTRAN library, is now available) N
+(       with C bindings \(which the Perl module uses\), though a FORTRAN compiler) N
+(       is still required to build it.) N
+() N
+(       For every PGPLOT C/FORTRAN function the module provides an equivalent) N
+(       Perl function with the same arguments. Thus the user of the module) N
+(       should refer to the PGPLOT manual to learn all about how to use PGPLOT) N
+(       and for the complete list of available functions.  This manual comes) N
+(       with the PGPLOT distribution and is also available at the WWW address:) N
+() N
+(       http://astro.caltech.edu/~tjp/pgplot/) N
+() N
+(       Also refer to the extensive set of test scripts \("test*.p"\) included in) N
+(       the module distribution for examples of usage of all kinds of PGPLOT) N
+(       routines.) N
+() N
+(       How the FORTRAN/C function calls map on to Perl calls is detailed) N
+(       below.) N
+() N
+(       ARGUMENT MAPPING - SIMPLE NUMBERS AND ARRAYS) N
+() N
+(       This is more or less as you might expect - use Perl scalars and Perl) N
+(       arrays in place of FORTRAN/C variables and arrays.) N
+() N
+(       Any FORTRAN REAL/INTEGER/CHARACTER* scalar variable maps to a Perl) N
+(       scalar \(Perl doesn't care about the differences between strings and) N
+(       numbers and ints and floats\).) N
+() N
+(       Thus you can say:) N
+() N
+(       To draw a line to point \(42,$x\):) N
+() N
+(        pgdraw\(42,$x\);) N
+() N
+(       To plot 10 points with data in Perl arrays @x and @y with plot symbol) N
+(       no. 17. Note the Perl arrays are passed by reference:) N
+() N
+(        pgpoint\(10, \\@x, \\@y, 17\);) N
+() N
+(       You can also use the old Perl4 style:) N
+() N
+(        pgpoint\(10, *x, *y, 17\);) N
+(man.txt) (1/3 \245\332\241\274\245\270) (04\307\257  6\267\35617\306\374 12:28) title
+border
+grestore
+(\245\346\241\274\245\266\314\276: ) rhead
+() (1/3) (2004\307\257  6\267\35617\306\374 \314\332\315\313\306\374) footer
+end % of euc-jpdict
+pagesave restore
+showpage
+%%Page: (2) 2
+%%BeginPageSetup
+/pagesave save def
+%%EndPageSetup
+euc-jpdict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 4.703931 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+() p n
+(       but this is deprecated in Perl5.) N
+() N
+(       Label the axes:) N
+() N
+(        pglabel\("X axis", "Data units", $label\);) N
+() N
+(       Draw ONE point, see how when "N=1" "pgpoint\(\)" can take a scalar as) N
+(       well as a array argument:) N
+() N
+(         pgpoint\(1, $x, $y, 17\);) N
+() N
+(       ARGUMENT MAPPING - IMAGES AND 2D ARRAYS) N
+() N
+(       Many of the PGPLOT commands \(e.g. "pggray"\) take 2D arrays as argu-) N
+(       ments. Several schemes are provided to allow efficient use from Perl:) N
+() N
+(       1.  Simply pass a reference to a 2D array, e.g:) N
+() N
+(             # Create 2D array) N
+() N
+(             $x=[];) N
+(             for\($i=0; $i<128; $i++\) {) N
+(                for\($j=0; $j<128; $j++\) {) N
+(                  $$x[$i][$j] = sqrt\($i*$j\);) N
+(                }) N
+(             }) N
+(             pggray\( $x, 128, 128, ...\);) N
+() N
+(       2.  Pass a reference to a 1D array:) N
+() N
+(             @x=\(\);) N
+(             for\($i=0; $i<128; $i++\) {) N
+(                for\($j=0; $j<128; $j++\) {) N
+(                  $x[$i][$j] = sqrt\($i*$j\);) N
+(                }) N
+(             }) N
+(             pggray\( \\@x, 128, 128, ...\);) N
+() N
+(           Here @x is a 1D array of 1D arrays. \(Confused? - see perldata\(1\)\).) N
+(           Alternatively @x could be a flat 1D array with 128x128 elements, 2D) N
+(           routines such as "pggray\(\)" etc. are programmed to do the right) N
+(           thing as long as the number of elements match.) N
+() N
+(       3.  If your image data is packed in raw binary form into a character) N
+(           string you can simply pass the raw string. e.g.:) N
+() N
+(              read\(IMG, $img, 32768\);) N
+(              pggray\($img, $xsize, $ysize, ...\);) N
+() N
+() N
+(           Here the "read\(\)" function reads the binary data from a file and) N
+(           the "pggray\(\)" function displays it as a grey-scale image.) N
+() N
+(           This saves unpacking the image data in to a potentially very large) N
+(           2D perl array. However the types must match. The string must be) N
+(           packed as a "f*" for example to use "pggray". This is intended as a) N
+(           short-cut for sophisticated users. Even more sophisticated users) N
+(           will want to download the "PDL" module which provides a wealth of) N
+(           functions for manipulating binary data.) N
+() N
+(           PLEASE NOTE: As PGPLOT is a Fortran library it expects it's images) N
+(           to be be stored in row order. Thus a 1D list is interpreted as a) N
+(           sequence of rows end to end. Perl is similar to C in that 2D arrays) N
+(           are arrays of pointers thus images end up stored in column order.) N
+() N
+(man.txt) (2/3 \245\332\241\274\245\270) (04\307\257  6\267\35617\306\374 12:28) title
+border
+grestore
+(\245\346\241\274\245\266\314\276: ) rhead
+() (2004\307\257  6\267\35617\306\374 \314\332\315\313\306\374) (2/3) footer
+end % of euc-jpdict
+pagesave restore
+showpage
+%%Page: (3) 3
+%%BeginPageSetup
+/pagesave save def
+%%EndPageSetup
+euc-jpdict begin
+gsave
+llx lly 12 add translate
+/v 0 store
+/x0 x v get 4.703931 add sx cw mul add store
+/y0 y v get bfs th add sub store
+x0 y0 moveto
+(           Thus using perl multidimensional arrays the coordinate \($i,$j\)) p n
+(           should be stored in $img[$j][$i] for things to work as expected,) N
+(           e.g:) N
+() N
+(              $img = [];) N
+(              for $j \(0..$nx-1\) for $i \(0..$ny-1\) {) N
+(                 $$img[$j][$i] = whatever\(\);) N
+(              }}) N
+(              pggray\($$img, $nx, $ny, ...\);) N
+() N
+(           Also PGPLOT displays coordinate \(0,0\) at the bottom left \(this is) N
+(           natural as the subroutine library was written by an astronomer!\).) N
+() N
+(       ARGUMENT MAPPING - FUNCTION NAMES) N
+() N
+(       Some PGPLOT functions \(e.g. "pgfunx"\) take functions as callback argu-) N
+(       ments. In Perl simply pass a subroutine reference or a name, e.g.:) N
+() N
+(        # Anonymous code reference:) N
+() N
+(        pgfunx\(sub{ sqrt\($_[0]\) },  500, 0, 10, 0\);) N
+() N
+(        # Pass by ref:) N
+() N
+(        sub foo {) N
+(          my $x=shift;) N
+(          return sin\(4*$x\);) N
+(        }) N
+() N
+(        pgfuny\(\\&foo, 360, 0, 2*$pi, 0\);) N
+() N
+(        # Pass by name:) N
+() N
+(        pgfuny\("foo", 360, 0, 2*$pi, 0\);) N
+() N
+(       ARGUMENT MAPPING - GENERAL HANDLING OF BINARY DATA) N
+() N
+(       In addition to the implicit rules mentioned above PGPLOT now provides a) N
+(       scheme for explictly handling binary data in all routines.) N
+() N
+(       If your scalar variable \(e.g. $x\) holds binary data \(i.e. 'packed'\)) N
+(       then simply pass PGPLOT a reference to it \(e.g. "\\$x"\). Thus one can) N
+(       say:) N
+() N
+(          read\(MYDATA, $wavelens, $n*4\);) N
+(          read\(MYDATA, $spectrum, $n*4\);) N
+(          pgline\($n, \\$wavelens, \\$spectrum\);) N
+() N
+(       This is very efficient as we can be sure the data never gets copied and) N
+(       will always be interpreted as binary.) N
+() N
+(       Again see the "PDL" module for sophisticated manipulation of binary) N
+(       data. "PDL" takes great advantage of these facilities.) N
+() N
+(       Be VERY careful binary data is of the right size or your segments might) N
+(       get violated.) N
+() N
+(perl v5.8.0                       2000-07-11i386-linux-thread-multi::PGPLOT\(3\)) N
+(man.txt) (3/3 \245\332\241\274\245\270) (04\307\257  6\267\35617\306\374 12:28) title
+border
+grestore
+(\245\346\241\274\245\266\314\276: ) rhead
+() (3/3) (2004\307\257  6\267\35617\306\374 \314\332\315\313\306\374) footer
+end % of euc-jpdict
+pagesave restore
+showpage
+
+%%Trailer
+end
+%%EOF

@@ -1,0 +1,28 @@
+/*---------------------------------------------------------*/
+/*  README                                                 */
+/*---------------------------------------------------------*/
+/* PAM-Blox version 1.1:                                   */
+/* object-oriented circuit generators for custom computing */
+/*                     Oskar Mencer                        */ 
+/*      Computer Architecture and Arithmetic Group         */
+/*                  Stanford University                    */
+/*                                                         */
+/* PAM-Blox are distributed under the GNU Public license   */
+/*      check GNUlicense.h for the license notice          */
+/*      check GNUlicense.txt for all the details           */
+/*                                                         */
+/*  Questions ? email: pamblox@umunhum.stanford.edu        */
+/*         Web: http://umunhum.stanford.edu/PAM-Blox/      */ 
+/***********************************************************/
+
+This directory contains: 
+
+FAQ.txt	Frequently Asked Questions (see also PAM-Blox webpage)
+GNU	detailed GNU license information 
+inc	PAM-Blox include files. (PamBlox, PaModules, ...)
+bin 	binary files of utilities (currently only DEC Alpha)
+AUtest	Arithmetic Unit (PamBlox) testbench application
+cordic	CORDIC PaModule test application
+jacobi	RAW benchmark implementation
+matmult	variation on the RAW bechmark Matrix Multiply	 
+des	RAW benchmark implementation of DES encryption

@@ -1,0 +1,9 @@
+#5	1450	ln14man5 pot
+#8	1950	ln17man8 pot
+
+5	1201	ln14man5
+8	1659	ln17man8
+11	1998	ln20man11
+8	2644	fp18man8
+12	3138	fp22man12
+16	4631	fp26man16

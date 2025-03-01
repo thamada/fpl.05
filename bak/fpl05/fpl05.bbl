@@ -1,0 +1,63 @@
+\begin{thebibliography}{1}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{j:chandrakasan92}
+A.~Chandrakasan, S.~Sheng, and R.~Brodersen, ``Low-power {CMOS} digital
+  design,'' \emph{{IEEE} J. Solid-State Circuits}, vol.~27, no.~4, pp.
+  473--484, Apr. 1992.
+
+\bibitem{j:cijvat02}
+E.~Cijvat, S.~Tadjpour, and A.~Abidi, ``Spurious mixing of off-channel signals
+  in a wireless receiver and the choice of {IF},'' \emph{{IEEE} Trans. Circuits
+  Syst. {II}}, vol.~49, no.~8, pp. 539--544, Aug. 2002.
+
+\bibitem{j:considine}
+V.~Considine, ``Digital complex sampling,'' \emph{{IEE} Electron. Lett.},
+  vol.~19, no.~16, pp. 608--609, Aug. 1983.
+
+\vfill\pagebreak
+
+\bibitem{j:polyphase}
+M.~Bellanger, G.~Bonnerot, and M.~Coudreuse, ``Digital filtering by polyphase
+  network: {A}pplication to sample-rate alteration and filter banks,''
+  \emph{{IEEE} Trans. Acoust., Speech, Signal Processing}, vol.~24, no.~2, pp.
+  109--114, Apr. 1976.
+
+\bibitem{j:vaidyanathan90}
+P.~P. Vaidyanathan, ``Multirate digital filters, filter banks, polyphase
+  networks, and applications: a tutorial,'' \emph{Proc. {IEEE}}, vol.~78,
+  no.~1, pp. 56--93, Jan. 1990.
+
+\bibitem{c:fettweis99}
+M.~Henker, T.~Hentschel, and G.~Fettweis, ``Time-variant cic-filters for sample
+  rate conversion with arbitrary rational factors,'' in \emph{Proc. {IEEE} 6th
+  IEEE Int. Conf. Electronics, Circuits and Systems}, vol.~1, Sept. 1999, pp.
+  67--70.
+
+\bibitem{c:yang96}
+H.-K. Yang and W.~M. Snelgrove, ``High speed polyphase {CIC} decimation
+  filters,'' in \emph{Proc. {IEEE} Int. Symp. Circuits Syst.}, vol.~2, May
+  1996, pp. 229--232.
+
+\bibitem{p:mecchia02}
+A.~Mecchia, G.~Nicollini, and C.~Pinna, ``Digital filter,'' U.S. Patent
+  6\,501\,406, Dec. 31, 2002.
+
+\end{thebibliography}

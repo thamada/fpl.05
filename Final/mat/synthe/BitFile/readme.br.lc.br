@@ -1,0 +1,277 @@
+Data : 2004/05/21
+arch : g5cut6
+--------------------------------------------------
+list.nst : bit file                :O/X:fmax(MHz): delay@cpath : FF/np: LUT/np
+
+list.11  : ddr_top.bit.NP 1.33MHz  : O :  54.334 : DELAY_X2Y2  : 1120 : 3204
+list.11  : ddr_top.bit.NP20.33MHz  : O :  52.853 : DELAY_X2Y2  :  948 : 2902 :  667 (33MHz)
+list.11  : ddr_top.bit.NP21.33MHz  : over map
+list.11  : ddr_top.bit.NP 1.66MHz  : O :  54.334 : DELAY_X2Y2  : 1120 : 3201
+list.11  : ddr_top.bit.NP19.50MHz  : O :  58.805 : DELAY_X2Y2  :  949 : 2927 :  950 (50MHz)
+list.11  : ddr_top.bit.NP20.50MHz  : X :  52.854 : DELAY_X2Y2  :  943 : 2900
+list.11  : ddr_top.bit.NP10.66MHz  : O :  54.334 : DELAY_X2Y2  :  963 : 3002
+list.11  : ddr_top.bit.NP15.66MHz  : O :  54.334 : DELAY_X2Y2  :  957 : 2998 : 1000 (66MHz)
+list.11  : ddr_top.bit.NP16.66MHz  : X :  54.334 : DELAY_X2Y2  :  956 : 2993
+list.11  : ddr_top.bit.NP18.66MHz  : X :  54.334 : DELAY_X2Y2  :  955 : 2971
+list.11  : ddr_top.bit.NP 1.83MHz  : X :  54.335 : DELAY_X2Y2  : 1120 : 3202 :    0 (83MHz) 
+list.11  : ddr_top.bit.NP 1.100MHz : X :  54.334 : DELAY_X2Y2  : 1120 : 3201 :    0 (100MHz)
+list.11  : ddr_top.bit.NP 1.117MHz : X :  54.334 : DELAY_X2Y2  : 1120 : 3203 :    0 (117MHz)
+list.11  : ddr_top.bit.NP 1.133MHz : X :  54.336 : DELAY_X2Y2  : 1120 : 3201 :    0 (133MHz)
+
+list.13  : ddr_top.bit.NP 1.33MHz  : O :  65.020 : DELAY_FL    : 1269 : 3275 
+list.13  : ddr_top.bit.NP19.33MHz  : O :  54.655 : DELAY_FL    : 1098 : 2956 :  633 (33MHz)
+list.13  : ddr_top.bit.NP20.33MHz  : over map
+list.13  : ddr_top.bit.NP19.50MHz  : O :  54.656 : DELAY_FL    : 1098 : 2956 :  950 (50MHz)
+list.13  : ddr_top.bit.NP20.50MHz  : X :  63.036 : DELAY_FL    : 1104 : 3053
+list.13  : ddr_top.bit.NP 1.66MHz  : O :  65.020 : DELAY_FL    : 1269 : 3275
+list.13  : ddr_top.bit.NP16.66MHz  : O :  62.634 : DELAY_FL    : 1106 : 3061
+list.13  : ddr_top.bit.NP19.66MHz  : O :  81.981 : DELAY_FL    : 1098 : 2956 : 1267 (66MHz)
+list.13  : ddr_top.bit.NP20.66MHz  : X :  63.036 : DELAY_FL    : 1103 : 3049
+list.13  : ddr_top.bit.NP 1.83MHz  : O :  65.020 : DELAY_FL    : 1269 : 3275
+list.13  : ddr_top.bit.NP 2.83MHz  : O :  65.020 : DELAY_FL    : 1183 : 3142 :  167 (83MHz)
+list.13  : ddr_top.bit.NP 3.83MHz  : X :  65.020 : DELAY_FL    : 1153 : 3114
+list.13  : ddr_top.bit.NP 5.83MHz  : X :  62.633 : DELAY_FL    : 1130 : 3102
+list.13  : ddr_top.bit.NP 1.100MHz : X :  65.020 : DELAY_FL    : 1269 : 3275 :    0 (100MHz)
+list.13  : ddr_top.bit.NP 1.117MHz : X :  65.020 : DELAY_FL    : 1269 : 3275 :    0 (117MHz)
+list.13  : ddr_top.bit.NP 1.133MHz : X :  65.020 : DELAY_FL    : 1269 : 3275 :    0 (133MHz)
+
+list.14  : ddr_top.bit.NP 1.33MHz  : O :  93.906 : DELAY_X2Y2  : 1363 : 3154
+list.14  : ddr_top.bit.NP20.33MHz  : O :  92.697 : DELAY_X2Y2  : 1191 : 2944
+list.14  : ddr_top.bit.NP21.33MHz  : O :  93.906 : DELAY_X2Y2  : 1200 : 2944 :  700 (33MHz)
+list.14  : ddr_top.bit.NP22.33MHz  : over map
+list.14  : ddr_top.bit.NP19.50MHz  : O :  74.291 : adr->xi     : 1192 : 2946 :  950 (50MHz)
+list.14  : ddr_top.bit.NP20.50MHz  : over map
+list.14  : ddr_top.bit.NP 1.66MHz  : O :  93.906 : DELAY_X2Y2  : 1363 : 3154
+list.14  : ddr_top.bit.NP18.66MHz  : O :  92.696 : DELAY_X2Y2  : 1192 : 2917 : 1200 (66MHz)
+list.14  : ddr_top.bit.NP19.66MHz  : X :  93.906 : DELAY_X2Y2  : 1201 : 2946
+list.14  : ddr_top.bit.NP 2.83MHz  : O :  93.905 : DELAY_X2Y2  : 1311 : 3059
+list.14  : ddr_top.bit.NP10.83MHz  : O :  75.803 : adr->ieps2  : 1205 : 2962
+list.14  : ddr_top.bit.NP15.83MHz  : O :  77.018 : adr->xi     : 1199 : 2949
+list.14  : ddr_top.bit.NP18.83MHz  : O :  85.020 : adr->ieps2  : 1204 : 2927 : 1500(83MHz)
+list.14  : ddr_top.bit.NP19.83MHz  : X :  74.290 : adr->xi     : 1192 : 2946
+list.14  : ddr_top.bit.NP20.83MHz  : X :  76.405 : adr_dec     : 1195 : 2950
+list.14  : ddr_top.bit.NP 1.100MHz : O :  93.906 : DELAY_X2Y2  : 1363 : 3154
+list.14  : ddr_top.bit.NP15.100MHz : O :  93.906 : DELAY_X2Y2  : 1200 : 2942
+list.14  : ddr_top.bit.NP17.100MHz : O :  93.906 : DELAY_X2Y2  : 1234 : 2937 : 1700(100MHz)
+list.14  : ddr_top.bit.NP18.100MHz : X :  92.697 : DELAY_X2Y2  : 1192 : 2917
+list.14  : ddr_top.bit.NP19.100MHz : X :  93.906 : DELAY_X2Y2  : 1201 : 2946
+list.14  : ddr_top.bit.NP20.100MHz : X :  93.906 : DELAY_X2Y2  : 1200 : 2944
+list.14  : ddr_top.bit.NP21.100MHz : X :  93.906 : DELAY_X2Y2  : 1200 : 2944
+list.14  : ddr_top.bit.NP 1.117MHz : O :  93.906 : DELAY_X2Y2  : 1363 : 3178
+list.14  : ddr_top.bit.NP 2.117MHz : O :  93.906 : DELAY_X2Y2  : 1276 : 3030 :  233 (117MHz)
+list.14  : ddr_top.bit.NP 3.117MHz : X :  93.906 : DELAY_X2Y2  : 1246 : 2996
+list.14  : ddr_top.bit.NP 5.117MHz : X :  93.906 : DELAY_X2Y2  : 1223 : 2985
+list.14  : ddr_top.bit.NP10.117MHz : X :  93.906 : DELAY_X2Y2  : 1206 : 2957
+list.14  : ddr_top.bit.NP20.117MHz : X :  93.906 : DELAY_X2Y2  : 1200 : 2944
+list.14  : ddr_top.bit.NP 1.133MHz : X :  93.906 : DELAY_X2Y2  : 1363 : 3154 :    0 (133MHz)
+
+list.16  : ddr_top.bit.NP 1.33MHz  : O :  93.906 : DELAY_X2Y2  : 1458 : 3157
+list.16  : ddr_top.bit.NP20.33MHz  : O :  93.906 : DELAY_X2Y2  : 1295 : 2948
+list.16  : ddr_top.bit.NP21.33MHz  : O :  93.906 : DELAY_X2Y2  : 1295 : 2931 :  700 (33MHz)
+list.16  : ddr_top.bit.NP22.33MHz  : over map
+list.16  : ddr_top.bit.NP19.50MHz  : O :  74.291 : adr->xi     : 1287 : 2949  
+list.16  : ddr_top.bit.NP20.50MHz  : X :  76.406 : adr->xi     : 1290 : 2954
+list.16  : ddr_top.bit.NP 1.66MHz  : O :  93.906 : DELAY_X2Y2  : 1458 : 3156
+list.16  : ddr_top.bit.NP17.66MHz  : O :  93.906 : DELAY_X2Y2  : 1294 : 2934
+list.16  : ddr_top.bit.NP18.66MHz  : O :  92.696 : DELAY_X2Y2  : 1287 : 2921
+list.16  : ddr_top.bit.NP19.66MHz  : O :  93.906 : DELAY_X2Y2  : 1296 : 2950 : 1267 (66MHz)
+list.16  : ddr_top.bit.NP20.66MHz  : X :  93.906 : DELAY_X2Y2  : 1475 : 2948
+list.16  : ddr_top.bit.NP 5.83MHz  : O :  77.483 : adr->xi     : 1320 : 2995
+list.16  : ddr_top.bit.NP16.83MHz  : O :  81.150 : adr->xi     : 1292 : 2952
+list.16  : ddr_top.bit.NP17.83MHz  : O :  73.838 : adr->ieps2  : 1301 : 2942 : 1417 (83MHz)
+list.16  : ddr_top.bit.NP18.83MHz  : X :  83.855 : adr->ieps2  : 1448 : 2920
+list.16  : ddr_top.bit.NP 1.100MHz : O :  93.906 : DELAY_X2Y2  : 1458 : 3156
+list.16  : ddr_top.bit.NP15.100MHz : O :  93.906 : DELAY_X2Y2  : 1295 : 2945
+list.16  : ddr_top.bit.NP17.100MHz : O :  93.906 : DELAY_X2Y2  : 1294 : 2934
+list.16  : ddr_top.bit.NP18.100MHz : O :  92.697 : DELAY_X2Y2  : 1287 : 2921 : 1800 (100MHz)
+list.16  : ddr_top.bit.NP19.100MHz : X :  93.906 : DELAY_X2Y2  : 1296 : 2950
+list.16  : ddr_top.bit.NP21.100MHz : X :  93.906 : DELAY_X2Y2  : 1295 : 2932
+list.16  : ddr_top.bit.NP 1.117MHz : X :  93.906 : DELAY_X2Y2  : 1458 : 3181 :    0 (117MHz)
+list.16  : ddr_top.bit.NP15.117MHz : X :  93.906 : DELAY_X2Y2  : 1295 : 2945
+list.16  : ddr_top.bit.NP 1.133MHz : X :  93.906 : DELAY_X2Y2  : 1458 : 3156 :    0 (133MHz)
+
+
+list.18  : ddr_top.bit.NP 1.33MHz  : O : 111.309 : DELAY_FL    : 1575 : 3171
+list.18  : ddr_top.bit.NP19.33MHz  : O :  95.721 : DELAY_FL    : 1392 : 2949 :  633 (33MHz)
+list.18  : ddr_top.bit.NP20.33MHz  : X :  95.721 : DELAY_FL    : 1397 : 2947
+list.18  : ddr_top.bit.NP21.33MHz  : over map
+list.18  : ddr_top.bit.NP18.50MHz  : O :  86.550 : adr->ieps2  : 1407 : 2928
+list.18  : ddr_top.bit.NP19.50MHz  : O :  74.291 : adr->xi     : 1392 : 2948 :  950 (50MHz)
+list.18  : ddr_top.bit.NP20.50MHz  : X :  76.406 : adr->xi     : 1395 : 2953
+list.18  : ddr_top.bit.NP 1.66MHz  : O : 111.309 : DELAY_FL    : 1575 : 3171
+list.18  : ddr_top.bit.NP17.66MHz  : O :  96.730 : DELAY_FL    : 1396 : 2937
+list.18  : ddr_top.bit.NP18.66MHz  : O :  95.722 : DELAY_FL    : 1392 : 2920 : 1200 (66MHz)
+list.18  : ddr_top.bit.NP19.66MHz  : X :  95.722 : DELAY_FL    : 1398 : 2949
+list.18  : ddr_top.bit.NP17.83MHz  : O :  86.943 : we->ieps2   : 1405 : 2947
+list.18  : ddr_top.bit.NP18.83MHz  : O :  83.855 : adr->zi     : 1392 : 2919 : 1500 (83MHz)
+list.18  : ddr_top.bit.NP19.83MHz  : X :  74.290 : adr->xi     : 1392 : 2948
+list.18  : ddr_top.bit.NP 1.100MHz : O : 111.309 : DELAY_FL    : 1575 : 3171
+list.18  : ddr_top.bit.NP18.100MHz : O :  95.721 : DELAY_FL    : 1392 : 2920 : 1800 (100MHz)
+list.18  : ddr_top.bit.NP19.100MHz : X : 123.477 : DELAY_FL    : 1603 : 2853 
+list.18  : ddr_top.bit.NP 1.117MHz : X : 111.311 : DELAY_FL    : 1575 : 3226 :    0 (117MHz)
+list.18  : ddr_top.bit.NP 1.133MHz : X : 111.309 : DELAY_FL    : 1575 : 3171 :    0 (133Mhz)
+
+list.19  : ddr_top.bit.NP 1.33MHz  : O : 111.309 : DELAY_FL    : 1602 : 3172
+list.19  : ddr_top.bit.NP20.33MHz  : O :  95.841 : DELAY_FL    : 1436 : 2951 :  667 (33MHz)
+list.19  : ddr_top.bit.NP21.33MHz  : X :  95.841 : DELAY_FL    : 1436 : 2947
+list.19  : ddr_top.bit.NP19.50MHz  : O :  74.291 : adr->xi     : 1431 : 2952 :  950 (50MHz)
+list.19  : ddr_top.bit.NP20.50MHz  : X :  76.406 : adr->xi     : 1434 : 2957
+list.19  : ddr_top.bit.NP 1.66MHz  : O : 111.309 : DELAY_FL    : 1602 : 3172
+list.19  : ddr_top.bit.NP17.66MHz  : O :  96.852 : DELAY_FL    : 1435 : 2937
+list.19  : ddr_top.bit.NP18.66MHz  : O :  95.840 : DELAY_FL    : 1431 : 2924 : 1200 (66MHz)
+list.19  : ddr_top.bit.NP19.66MHz  : X :  95.840 : DELAY_FL    : 1437 : 29521
+list.19  : ddr_top.bit.NP17.83MHz  : O :  86.943 : we->ieps2   : 1444 : 2947 : 1417 (83MHz)
+list.19  : ddr_top.bit.NP18.83MHz  : X :  86.550 : adr->ieps2  : 1446 : 2932
+list.19  : ddr_top.bit.NP 1.100MHz : O : 111.309 : DELAY_FL    : 1602 : 3172
+list.19  : ddr_top.bit.NP10.100MHz : O :  96.852 : DELAY_FL    : 1442 : 2956
+list.19  : ddr_top.bit.NP16.100MHz : O :  96.852 : DELAY_FL    : 1209 : 2481 : 1600 (100MHz)
+list.19  : ddr_top.bit.NP17.100MHz : X :  96.852 : DELAY_FL    : 1435 : 2937
+list.19  : ddr_top.bit.NP18.100MHz : X :  95.841 : DELAY_FL    : 1431 : 2924
+list.19  : ddr_top.bit.NP 1.117MHz : O : 111.311 : DELAY_FL    : 1602 : 3227
+list.19  : ddr_top.bit.NP 3.117MHz : O :  96.852 : DELAY_FL    : 1482 : 3014 :  350 (117MHz)
+list.19  : ddr_top.bit.NP 4.117MHz : X :  96.852 : DELAY_FL    : 1468 : 2985
+list.19  : ddr_top.bit.NP 5.117MHz : X :  96.852 : DELAY_FL    : 1459 : 2999
+list.19  : ddr_top.bit.NP 1.133MHz : X : 111.309 : DELAY_FL    : 1602 : 3172 :    0 (133MHz)
+list.19  : ddr_top.bit.NP20.100MHz : X :  95.841 : DELAY_FL    : 1436 : 2950
+
+list.20  : ddr_top.bit.NP 1.33MHz  : O : 113.869 : DELAY_AC    : 1689 : 3157
+list.20  : ddr_top.bit.NP20.33MHz  : O : 113.869 : DELAY_AC    : 1524 : 2953 :  667 (33MHz)
+list.20  : ddr_top.bit.NP21.33MHz  : can't gen bitfile .. partial routed(?) (20 hours needs to compile)
+list.20  : ddr_top.bit.NP19.50MHz  : O :  76.401 : adr->xi     : 1524 : 2955 :  950 (50MHz)
+list.20  : ddr_top.bit.NP20.50MHz  : X :  76.406 : adr->xi     : 1524 : 2955  
+list.20  : ddr_top.bit.NP 1.66MHz  : O : 113.869 : DELAY_AC    : 1689 : 3157
+list.20  : ddr_top.bit.NP18.66MHz  : O : 113.870 : DELAY_AC    : 1524 : 2921 : 1200 (66MHz)
+list.20  : ddr_top.bit.NP19.66MHz  : X : 113.870 : DELAY_AC    : 1524 : 2953
+list.20  : ddr_top.bit.NP17.83MHz  : O :  86.943 : we->ieps2   : 1535 : 2937 : 1417 (83MHz)
+list.20  : ddr_top.bit.NP18.83MHz  : X :  83.855 : adr->ieps2  : 1524 : 2921
+list.20  : ddr_top.bit.NP 1.100MHz : O : 113.869 : DELAY_AC    : 1689 : 3157
+list.20  : ddr_top.bit.NP16.100MHz : O : 113.868 : DELAY_AC    : 1526 : 2948
+list.20  : ddr_top.bit.NP17.100MHz : X : 113.868 : DELAY_AC    : 1525 : 2927 : 1700 (100MHz sometimes miss)
+list.20  : ddr_top.bit.NP18.100MHz : X : 113.869 : DELAY_AC    : 1524 : 2921
+list.20  : ddr_top.bit.NP 1.117MHz : X : 113.869 : DELAY_AC    : 1689 : 3212 :    0 (117MHz)
+list.20  : ddr_top.bit.NP 1.133MHz : X : 113.869 : DELAY_AC    : 1689 : 3157 :    0 (133MHz)
+list.20  : ddr_top.bit.NP20.100MHz : X : 113.869 : DELAY_AC    : 1524 : 2952
+
+list.21  : ddr_top.bit.NP 1.33MHz  : O : 126.486 : DELAY_AC    : 1777 : 3054
+list.21  : ddr_top.bit.NP20.33MHz  : O : 126.486 : DELAY_AC    : 1612 : 2858 :  667 (33MHz)
+list.21  : ddr_top.bit.NP21.33MHz  : X : 126.486 : DELAY_AC    : 1612 : 2857
+list.21  : ddr_top.bit.NP18.50MHz  : O :  86.550 : adr->ieps2  : 1612 : 2846 :  900 (50MHz)
+list.21  : ddr_top.bit.NP19.50MHz  : X :  74.291 : adr->xi     : 1603 : 2866
+list.21  : ddr_top.bit.NP20.50MHz  : X :  76.406 : adr->xi     : 1603 : 2872
+list.21  : ddr_top.bit.NP 1.66MHz  : O : 126.486 : DELAY_AC    : 1777 : 3055
+list.21  : ddr_top.bit.NP18.66MHz  : O : 126.486 : DELAY_AC    : 1613 : 2829
+list.21  : ddr_top.bit.NP19.66MHz  : O : 123.476 : DELAY_AC    : 1603 : 2853 : 1267 (66MHz)
+list.21  : ddr_top.bit.NP20.66MHz  : X : 126.486 : DELAY_AC    : 1612 : 2856
+list.21  : ddr_top.bit.NP 1.83MHz  : O :  98.795 : adr->unit2  : 1814 : 3220
+list.21  : ddr_top.bit.NP16.83MHz  : O :  76.710 : adr->xi     : 1605 : 2872
+list.21  : ddr_top.bit.NP17.83MHz  : O :  86.943 : we->ieps2   : 1614 : 2855 : 1417 (83MHz)
+list.21  : ddr_top.bit.NP18.83MHz  : X :  86.550 : adr->ieps2  : 1612 : 2846
+list.21  : ddr_top.bit.NP 1.100MHz : O : 126.486 : DELAY_AC    : 1777 : 3055
+list.21  : ddr_top.bit.NP 5.100MHz : X : 126.486 : DELAY_AC    : 1638 : 2891
+list.21  : ddr_top.bit.NP16.100MHz :   : 126.486 : DELAY_AC    : 1614 : 2852
+list.21  : ddr_top.bit.NP17.100MHz : O : 126.486 : DELAY_AC    : 1613 : 2836 : 1700 (100MHz sometimes miss)
+list.21  : ddr_top.bit.NP18.100MHz : X : 126.486 : DELAY_AC    : 1613 : 2829
+list.21  : ddr_top.bit.NP19.100MHz : X : 123.477 : DELAY_AC    : 1603 : 2853
+list.21  : ddr_top.bit.NP 1.117MHz : O : 121.447 : unit9->ODBUS: 1777 : 3105
+list.21  : ddr_top.bit.NP 3.117MHz : O : 120.687 : unit9->ODBUS: 1661 : 2912 :  350 (117MHz)
+list.21  : ddr_top.bit.NP 4.117MHz : X : 120.309 : unit9->ODBUS: 1647 : 2881
+list.21  : ddr_top.bit.NP 5.117MHz : X : 119.935 : unit9->ODBUS: 1640 : 2895
+list.21  : ddr_top.bit.NP10.117MHz : X : 105.529 : unit9->ODBUS: 1620 : 2866
+list.21  : ddr_top.bit.NP 1.133MHz : X : 126.486 : DELAY_AC    : 1777 : 3055 :    0 (133MHz)
+
+list.22  : ddr_top.bit.NP 1.33MHz  : O : 135.208 : DELAY_AC    : 1856 : 3159
+list.22  : ddr_top.bit.NP19.33MHz  : O : 135.208 : DELAY_AC    : 1689 : 2965 :  633 (33MHz)
+list.22  : ddr_top.bit.NP20.33MHz  : X : 135.208 : DELAY_AC    : 1688 : 2963
+list.22  : ddr_top.bit.NP15.50MHz  : O :  85.529 : adr->xi     : 1690 : 2983
+list.22  : ddr_top.bit.NP17.50MHz  : O :  86.942 : we->ieps2   : 1693 : 2971 :  850 (50MHz)
+list.22  : ddr_top.bit.NP18.50MHz  : X :  83.856 : adr->ieps2  : 1682 : 2944
+list.22  : ddr_top.bit.NP19.50MHz  : X :  76.406 : adr->xi     : 1682 : 2979
+list.22  : ddr_top.bit.NP 1.66MHz  : O : 135.208 : DELAY_AC    : 1856 : 3161
+list.22  : ddr_top.bit.NP17.66MHz  : O : 135.208 : DELAY_AC    : 1689 : 2952 : 1133 (66MHz)
+list.22  : ddr_top.bit.NP18.66MHz  : X : 132.172 : DELAY_AC    : 1682 : 2930
+list.22  : ddr_top.bit.NP19.66MHz  : X : 135.208 : DELAY_AC    : 1688 : 2964
+list.22  : ddr_top.bit.NP17.83MHz  : O :  86.943 : we->ieps2   : 1693 : 2971 : 1417 (83MHz)
+list.22  : ddr_top.bit.NP18.83MHz  : X :  83.855 : adr->ieps2  : 1682 : 2944
+list.22  : ddr_top.bit.NP 1.100MHz : O : 135.208 : DELAY_AC    : 1856 : 3161
+list.22  : ddr_top.bit.NP 5.100MHz : O : 135.208 : DELAY_AC    : 1717 : 2937
+list.22  : ddr_top.bit.NP10.100MHz : O : 135.208 : DELAY_AC    : 1700 : 2977
+list.22  : ddr_top.bit.NP16.100MHz : O : 135.208 : DELAY_AC    : 1693 : 2958 : 1600 (100MHz)
+list.22  : ddr_top.bit.NP17.100MHz : X : 135.208 : DELAY_AC    : 1596 : 2788
+list.22  : ddr_top.bit.NP18.100MHz : X : 132.171 : DELAY_AC    : 1682 : 2930
+list.22  : ddr_top.bit.NP19.100MHz : X : 135.208 : DELAY_AC    : 1688 : 2964
+list.22  : ddr_top.bit.NP 1.117MHz : O : 121.447 : unit9->ODBUS: 1856 : 3212
+list.22  : ddr_top.bit.NP 2.117MHz : O : 121.065 : unit9->ODBUS: 1770 : 3053 :  233 (117MHz)
+list.22  : ddr_top.bit.NP 3.117MHz : X : 120.687 : unit9->ODBUS: 1740 : 3018
+list.22  : ddr_top.bit.NP 4.117MHz : X : 120.309 : unit9->ODBUS: 1726 : 2987
+list.22  : ddr_top.bit.NP 5.117MHz : X : 119.935 : unit9->ODBUS: 1719 : 3002
+list.22  : ddr_top.bit.NP10.117MHz : X : 105.529 : unit9->ODBUS: 1693 : 2982
+list.22  : ddr_top.bit.NP16.117MHz : X : 111.433 : unit9->ODBUS: 1687 : 2954
+list.22  : ddr_top.bit.NP 1.133MHz : X : 135.208 : DELAY_AC    : 1856 : 3161 :    0 (133MHz)
+
+list.23  : ddr_top.bit.NP 1.33MHz  : O : 138.850 : DELAY_AC    : 1905 : 3308
+list.23  : ddr_top.bit.NP19.33MHz  : O : 138.850 : DELAY_AC    : 1741 : 3108 :  633 (33MHz)
+list.23  : ddr_top.bit.NP20.33MHz  : over map
+list.23  : ddr_top.bit.NP13.50MHz  : can't gen bitfile .. partial routed(?)
+list.23  : ddr_top.bit.NP14.50MHz  : O :  82.590 : adr->ieps2  : 1747 : 3125 :  700 (50MHz)
+list.23  : ddr_top.bit.NP15.50MHz  : X :  75.029 : adr->xi     : 1745 : 3132
+list.23  : ddr_top.bit.NP17.50MHz  : X :  83.856 : adr->ieps2  : 1738 : 3121
+list.23  : ddr_top.bit.NP18.50MHz  : X :  86.55  : adr->ieps2  : 1746 : 3099
+list.23  : ddr_top.bit.NP19.50MHz  : compilation dosen't end
+list.23  : ddr_top.bit.NP20.50MHz  : over map
+list.23  : ddr_top.bit.NP 1.66MHz  : O : 138.850 : DELAY_AC    : 1905 : 3309
+list.23  : ddr_top.bit.NP16.66MHz  : O : 138.850 : DELAY_AC    : 1742 : 3103 : 1067 (66MHz)
+list.23  : ddr_top.bit.NP17.66MHz  : X : 136.542 : DELAY_AC    : 1738 : 3106
+list.23  : ddr_top.bit.NP 1.83MHz  : O :  98.795 : adr->calc   : 1939 : 3475
+list.23  : ddr_top.bit.NP 2.83MHz  : O :  98.290 : adr->calc   : 1834 : 3270
+list.23  : ddr_top.bit.NP10.83MHz  : O :  83.850 : adr->ieps2  : 1753 : 3155
+list.23  : ddr_top.bit.NP14.83MHz  : O :  82.590 : adr->ieps2  : 1747 : 3125 : 1167 (83MHz)
+list.23  : ddr_top.bit.NP15.83MHz  : X :  85.528 : adr->xi     : 1745 : 3132
+list.23  : ddr_top.bit.NP16.83MHz  : X :  76.71  : adr->xi     : 1739 : 3127
+list.23  : ddr_top.bit.NP 1.100MHz : X : 138.850 : DELAY_AC    : 1905 : 3309
+list.23  : ddr_top.bit.NP 5.100MHz : O : 138.850 : DELAY_AC    : 1766 : 3143
+list.23  : ddr_top.bit.NP 9.100MHz : O : 138.849 : DELAY_AC    : 1750 : 3127 :  900 (100MHz)
+list.23  : ddr_top.bit.NP10.100MHz : can't gen bitfile .. partial routed(?)
+list.23  : ddr_top.bit.NP11.100MHz : X : 138.849 : DELAY_AC    : 1747 : 3093
+list.23  : ddr_top.bit.NP17.100MHz : X : 136.542 : DELAY_AC    : 1738 : 3106
+list.23  : ddr_top.bit.NP19.100MHz : X : 138.850 : DELAY_AC    : 1740 : 3107
+list.23  : ddr_top.bit.NP 1.117MHz : O : 121.447 : unit9->ODBUS: 1905 : 3361
+list.23  : ddr_top.bit.NP 2.117MHz : O : 121.065 : unit9->ODBUS: 1819 : 3200 :  233 (117MHz)
+list.23  : ddr_top.bit.NP 3.117MHz : X : 120.687 : unit9->ODBUS: 1789 : 3167
+list.23  : ddr_top.bit.NP 1.133MHz : X : 138.850 : DELAY_AC    : 1905 : 3309 :    0 (133MHz)
+
+list.27  : ddr_top.bit.NP 1.33MHz  : O : 145.985 : DELAY_AC    : 1930 : 3465
+list.27  : ddr_top.bit.NP16.33MHz  : O : 145.038 : adr->xi     : 1767 : 3225
+list.27  : ddr_top.bit.NP17.33MHz  : O : 145.985 : DELAY_AC    : 1767 : 3267 :  567 (33MHz)
+list.27  : ddr_top.bit.NP18.33MHz  : can't gen bitfile .. partial routed(?) 
+list.27  : ddr_top.bit.NP19.33MHz  : can't gen bitfile .. partial routed(?) 
+list.27  : ddr_top.bit.NP 1.50MHz  : O :  98.795 : unit2.calc  : 1967 : 3631
+list.27  : ddr_top.bit.NP14.50MHz  : O :  82.590 : adr->ieps2  : 1775 : 3281
+list.27  : ddr_top.bit.NP15.50MHz  : O :  85.529 : adr->xi     : 1773 : 3288 :  750 (50MHz)
+list.27  : ddr_top.bit.NP16.50MHz  : X :  72.519 : adr->xi     : 1767 : 3272
+list.27  : ddr_top.bit.NP15.66MHz  : O : 145.986 : DELAY_AC    : 1767 : 3262 : 1000 (66MHz)
+list.27  : ddr_top.bit.NP16.66MHz  : X : 145.038 : adr->xi     : 1767 : 3064
+list.27  : ddr_top.bit.NP17.66MHz  : X : 145.986 : DELAY_AC    : 1766 : 3267
+list.27  : ddr_top.bit.NP18.66MHz  : can't gen bitfile .. partial routed(?)  
+list.27  : ddr_top.bit.NP10.83MHz  : O :  83.850 : adr->ieps2  : 1781 : 3311
+list.27  : ddr_top.bit.NP13.83MHz  : O :  85.150 : adr->xi     : 1776 : 3292
+list.27  : ddr_top.bit.NP14.83MHz  : O :  82.590 : adr->ieps2  : 1775 : 3281 : 1167 (83MHz)
+list.27  : ddr_top.bit.NP15.83MHz  : X :  85.528 : adr->xi     : 1773 : 3288
+list.27  : ddr_top.bit.NP 5.100MHz : O : 145.986 : DELAY_AC    : 1791 : 3299
+list.27  : ddr_top.bit.NP 6.100MHz : O : 145.986 : DELAY_AC    : 1785 : 3295 :  600 (100MHz)
+list.27  : ddr_top.bit.NP 7.100MHz : X : 145.986 : DELAY_AC    : 1781 : 3283
+list.27  : ddr_top.bit.NP 8.100MHz : X : 145.986 : DELAY_AC    : 1778 : 3244
+list.27  : ddr_top.bit.NP 9.100MHz : X : 145.986 : DELAY_AC    : 1775 : 3283
+list.27  : ddr_top.bit.NP10.100MHz : X : 145.986 : DELAY_AC    : 1774 : 3277
+list.27  : ddr_top.bit.NP15.100MHz : X : 145.986 : DELAY_AC    : 1767 : 3262
+list.27  : ddr_top.bit.NP 1.117MHz : O : 121.447 : jmem->ODBUS : 1930 : 3517 :  117 (117MHz)
+list.27  : ddr_top.bit.NP 2.117MHz : X : 121.065 : jmem->ODBUS : 1844 : 3356
+list.27  : ddr_top.bit.NP 3.117MHz : X : 120.687 : jmem->ODBUS : 1814 : 3223
+list.27  : ddr_top.bit.NP 4.117MHz : X : 120.309 : jmem->ODBUS : 1800 : 3292
+list.27  : ddr_top.bit.NP 5.117MHz : X : 119.935 : jmem->ODBUS : 1793 : 3304
+list.27  : ddr_top.bit.NP 6.117MHz : X : 119.189 : jmem->ODBUS : 1785 : 3297
+list.27  : ddr_top.bit.NP 7.117MHz : X : 116.498 : jmem->ODBUS : 1781 : 3300
+list.27  : ddr_top.bit.NP 8.117MHz : X : 115.794 : jmem->ODBUS : 1777 : 3260
+list.27  : ddr_top.bit.NP 1.133MHz : X : 145.985 : DELAY_AC    : 1930 : 3464 :   0 (133MHz)
+list.27  : ddr_top.bit.NP 2.133MHz : X : 145.984 : DELAY_AC    : 1844 : 3330
+
+

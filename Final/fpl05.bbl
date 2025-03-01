@@ -1,0 +1,93 @@
+\begin{thebibliography}{10}
+\providecommand{\url}[1]{#1}
+\csname url@rmstyle\endcsname
+\providecommand{\newblock}{\relax}
+\providecommand{\bibinfo}[2]{#2}
+\providecommand\BIBentrySTDinterwordspacing{\spaceskip=0pt\relax}
+\providecommand\BIBentryALTinterwordstretchfactor{4}
+\providecommand\BIBentryALTinterwordspacing{\spaceskip=\fontdimen2\font plus
+\BIBentryALTinterwordstretchfactor\fontdimen3\font minus
+  \fontdimen4\font\relax}
+\providecommand\BIBforeignlanguage[2]{{%
+\expandafter\ifx\csname l@#1\endcsname\relax
+\typeout{** WARNING: IEEEtran.bst: No hyphenation pattern has been}%
+\typeout{** loaded for the language `#1'. Using the pattern for}%
+\typeout{** the default language instead.}%
+\else
+\language=\csname l@#1\endcsname
+\fi
+#2}}
+
+\bibitem{HFKM00}
+T.~Hamada, T.~Fukushige, A.~Kawai, and J.~Makino, ``{PROGRAPE-1: A
+  Programmable, Multi-Purpose Computer for Many-Body Simulations},''
+  \emph{Publication of Astronomical Society of Japan}, vol.~52, pp. 943--954,
+  2000.
+
+\bibitem{LKM02}
+G.~L. Lienhart, A.~Kugel, and R.~M{\"a}nner, ``{Using Floating Point Arithmetic
+  on FPGAs to Accelerate Scientific N-Body Simulations},'' in \emph{Proc. of
+  IEEE Symposium on Field-Programmable Custom Computing Machines}, Apr. 2002,
+  pp. 182--191.
+
+\bibitem{SS03}
+W.~D. Smith and A.~R. Schore, ``{Towards an RCC-based accelerator for
+  computational fluid dynamics applications},'' in \emph{Proc. of the 2003
+  International Conference on Engineering Reconfigurable Systems and
+  Algorithms}, 2003.
+
+\bibitem{AKEDC04}
+N.~Azizi, I.~Kuon, A.~Egier, A.~Darabiha, and P.~Chow, ``{Reconfigurable
+  Molecular Dynamics Simulator},'' in \emph{Proc. of IEEE Symposium on
+  Field-Programmable Custom Computing Machines}, Apr. 2004, pp. 197--206.
+
+\bibitem{JL01}
+A.~Jaenicke and A.~Luk, ``{Parametrized Floating-Point Arithmetic on FPGAs},''
+  in \emph{Proc. of IEEE ICASSP}, vol.~2, 2001, pp. 897--900.
+
+\bibitem{WN04}
+X.~Wang and B.~E. Nelson, ``{Tradeoffs of Designing Floating-Point Division and
+  Square Root on Virtex FPGAs},'' in \emph{Proc. of IEEE Symposium on
+  Field-Programmable Custom Computing Machines}, Apr. 2003, pp. 195--203.
+
+\bibitem{FO01}
+J.~M. Flynn and F.~S. Oberman, ``{Advanced Computer Arithmetic Design},'' in
+  \emph{John Wiley \& Sons}, 2001.
+
+\bibitem{M97}
+M.~J. Muller, ``{Elementary Functions: Algorithms and Implementation},'' in
+  \emph{Brikhauser Verlag AG}, 1997.
+
+\bibitem{MMF97}
+O.~Mencer, M.~Morf, and J.~M. Flynn, ``{PAM-Blox: High Performance FPGA Design
+  for Adaptive Computing},'' in \emph{Proc. of IEEE Symposium on
+  Field-Programmable Custom Computing Machines}, Apr. 1997, pp. 167--174.
+
+\bibitem{BH98}
+P.~Bellows and B.~Hutchings, ``{JHDL - An HDL for Reconfigurable Systems},'' in
+  \emph{Proc. of IEEE Symposium on Field-Programmable Custom Computing
+  Machines}, Apr. 1998, pp. 175--184.
+
+\bibitem{MT98}
+J.~Makino and M.~Taiji, ``{Scientific Simulations with Special-Purpose
+  Computers --- The GRAPE Systems},'' in \emph{John Wiley \& Sons}, 1998.
+
+\bibitem{MPMF01}
+O.~Mencer, M.~Platzner, M.~Morf, and J.~M. Flynn, ``{Object-Oriented
+  Domain-Specific Compilers for Programming FPGAs},'' 2001.
+
+\bibitem{KFMT00}
+A.~Kawai, T.~Fukushige, J.~Makino, and M.~Taiji, ``{GRAPE-5: A Special-Purpose
+  Computer for {$N$-body} Simulation},'' \emph{Publication of Astronomical
+  Society of Japan}, vol.~52, pp. 659--676, 2000.
+
+\bibitem{THYL04}
+K.~Tsoi, C.~Ho, H.~Yeung, and P.~Leong, ``{An Arithmetic Library and its
+  Application to the N-body Problem},'' in \emph{Proc. of IEEE Symposium on
+  Field-Programmable Custom Computing Machines}, Apr. 2004, pp. 68--78.
+
+\bibitem{SS99}
+J.~Stine and M.~Schulte, ``{The symmetric table addition method for accurate
+  function approximation},'' 1999, pp. 167--177.
+
+\end{thebibliography}

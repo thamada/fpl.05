@@ -1,0 +1,77 @@
+# PAM Samples - prom configuration utility
+#
+# Copyright 1997 Digital Equipment Corporation.
+# Distributed only by permission.
+# Last modified on Tue Dec  2 06:58:42 1997 by moll
+
+ComSpec=cmd.exe
+NODEBUG=1
+APPVER=4.0
+TARGETOS=WINNT
+
+!include <ntwin32.mak>
+
+SRCDIR=..\src
+
+COPTIMIZE=-Zl
+EXCEPTIONS=-Utry -GX
+
+PAMDCLIB=PamDC.lib
+PAMDCINCLUDE=
+PAMMERGEBIT=mergebit
+PAMDCF2XNF=dcf2xnf
+
+!IFDEF PAMKIT
+!INCLUDE $(PAMKIT)\PamKT-NT\common\pamkit.mak
+!ENDIF
+
+PPRCMD=xnfmerge $* && xnfprep $* && ppr $* && makebits -b -mbo=$(SRCDIR)\makebits.mbo $*
+M1CMD=ngdbuild $*.xnf && map $*.ngd && par -w -ol 4 $*.ncd $*.ncd && bitgen $*.ncd -l -b -w -f $(SRCDIR)\bitgen.bgo
+
+#choose the tool you have (XACT or M1)
+TOOLCMD=$(M1CMD)
+
+DESIGN_NAME = prom
+DES_OBJ_FILES = Design.obj
+DES_SRC_FILES = Design.cxx
+DCF_FILES = $(DESIGN_NAME)10e.dcf $(DESIGN_NAME)20e.dcf
+
+.SUFFIXES:
+.SUFFIXES: .xnf .rbt .cxx .obj
+
+#************************************************************
+# DESIGN
+
+all: $(DCF_FILES) \
+	lca0-10e.xnf lca0-10e.rbt \
+	lca1-10e.xnf lca1-10e.rbt \
+	lcaem10e.xnf lcaem10e.rbt \
+	lca0-20e.xnf lca0-20e.rbt \
+	lca1-20e.xnf lca1-20e.rbt \
+	lcaem20e.xnf lcaem20e.rbt \
+	$(DESIGN_NAME)_pam.c
+
+$(DESIGN_NAME)_pam.c: $(DCF_FILES) 
+	$(PAMMERGEBIT) -c $(DESIGN_NAME) -o $(DESIGN_NAME)_pam.c $(DESIGN_NAME)10e $(DESIGN_NAME)20e ../4028ex/$(DESIGN_NAME)28ex
+
+Design.exe: $(DES_OBJ_FILES)
+	$(link) $(ldebug) $(conlflags) $(DES_OBJ_FILES) -nologo -out:Design.exe $(conlibs) $(PAMDCLIB)
+
+$(DCF_FILES): Design.exe
+	Design.exe
+
+lca0-10e.xnf: $(DESIGN_NAME)10e.dcf
+	$(PAMDCF2XNF) -input $(DESIGN_NAME)10e.dcf
+
+lca0-20e.xnf: $(DESIGN_NAME)20e.dcf
+	$(PAMDCF2XNF) -input $(DESIGN_NAME)20e.dcf
+
+
+#************************************************************
+
+.xnf.rbt:
+	$(TOOLCMD)
+
+{$(SRCDIR)}.cxx.obj:
+	$(cc) $(cflags) $(cdebug) $(cvars) $(EXCEPTIONS) $(COPTIMIZE) $(PAMDCINCLUDE) $<
+

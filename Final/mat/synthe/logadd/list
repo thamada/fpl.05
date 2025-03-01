@@ -1,0 +1,23 @@
+
+
+--pg_log_unsigned_add_itp(x,y,z,   20,11, 4, 9);
+--pg_log_unsigned_add_itp(x,y,z,   19,10, 4, 8);
+--pg_log_unsigned_add_itp(x,y,z,   18, 9, 4, 7);
+--pg_log_unsigned_add_itp(x,y,z,   17, 8, 4, 6);
+--pg_log_unsigned_add_itp(x,y,z,   16, 7, 4, 5);
+--pg_log_unsigned_add_itp(x,y,z,   15, 6, 4, 4);
+--pg_log_unsigned_add_itp(x,y,z,   14, 5, 4, 3);
+
+
+
+
+
+--pg_log_unsigned_add   (x,y,z,   16, 7, 3);
+--pg_log_unsigned_add   (x,y,z,   15, 6, 3);
+pg_log_unsigned_add   (x,y,z,   14, 5, 3);
+--pg_log_unsigned_add   (x,y,z,   13, 4, 3);
+--pg_log_unsigned_add   (x,y,z,   12, 3, 3);
+--pg_log_unsigned_add   (x,y,z,   11, 2, 3);
+
+
+

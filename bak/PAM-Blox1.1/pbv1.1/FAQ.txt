@@ -1,0 +1,169 @@
+		  Frequently Asked Questions
+	Details on using the PAM-Blox / PamDC Environment
+	=================================================
+		      last mod 4/26/1998
+			by Oskar Mencer
+
+Contents:
+	- Installation
+	- Designing with PAM-Blox / PamDC
+	- Don'ts
+        - Dos        
+	- ERROR & WARNING Messages
+
+
+Installation:
+=============
+
+Q1: How do I install PamDC on a PC with WindowsNT ?
+
+A1: Download the self-extracting distribution file from
+    http://www.research.digital.com/SRC/pamette
+    and run the executable from a DOS shell.
+
+Q2: How do I install PamDC on DIGITAL Unix ?
+
+A2: Download the distribution from the website (see A1),
+    cd <directory of distribution>
+    su
+    /usr/sbin/setld -l .
+
+remark: installing the PCI Pamette Device Driver on DIGITAL Unix:
+    after A2:
+      cp /vmunix /vmunix.save
+      cd /usr/sys/conf
+      /usr/sbin/doconfig  (no options necessary; don't have to edit conf)
+      (doconfig print the location of the new kernel: /xxx/vmunix)
+      cp /xxx/vmunix /vmunix
+      /usr/sbin/shutdown -r now
+
+
+Designing with PAM-Blox / PamDC
+===============================
+
+Q1: Why are pamblox, pamodules in *.h files ?
+
+A1: Older versions of the DIGITAL C++ required explicit template instantiation.
+    This would be cumbersome in the context of PAM-Blox, so we decided to 
+    avoid this issue by making PAM-Blox methods inlined, thereby avoiding the 
+    instantiation issue.
+
+    When creating new PamBlox or PaModules it is advisable to also put them
+    into *.h files and simply include them in Design.cxx after PAM-Blox.
+
+Q2: Why are PamBlox usually templates and PaModules objects ?
+
+A2: PamBlox are parametrizable, while PaModules are more complex objects that
+    are optimized for a specific size. Templates are used for parametrization
+    because they implicitly create array bound checking, a common bug.
+
+Q3: Why are placement funtions for PamBlox in the top PamBlox object, 
+    and placement functions of PaModules inside of each module ?
+
+A3: There are few options to place simple objects, while most simple objects 
+    would need to be place in a similar fashion. PaModules, on the other hand, 
+    are no expected to exhibit a sufficiently similar placement requirement 
+    could be shared among all PaModules.
+
+Q4: Why does LOC(5,5) place the wire in R6C6 ?
+
+A4: PamDC places wires on a grid [0..x][0..y] while Xilinx tools work on a 
+    grid [1..x][1..y]
+
+Q5: How do I get my design to work ?
+
+A5: 1. PamDC has a simulation feature. => simulate single chip.
+    2. Use SRAM: dump interesting bits to SRAM while the SRAM address is a 
+	      free spinning counter -> get a cycle by cycle check
+
+Q6: I'm simulating my design with PamDC. One signal refuses to simulate
+    while all other are fine. What is happening ?
+
+A6: All signals for simulation have to have some influence on at least
+    one of the output pins. If your signal doesn't have any effect on
+    a pin, it won't simulate !
+
+Q7: What is the difference between 'alias' and '=' ?
+    
+A7: 2 Signals joined with alias create a wire with two names. '=' creates
+    two wires with a buffer inbetween. Although in both cases the values
+    of the two signals is the same, '=' allows the designer two place
+    the two signals in different CLBs while aliased signals always have to
+    reside in the same CLB. 
+    For PAM-Blox, input parameters are always assigned with '=' to internal
+    signals, while output signals are aliased to the given output parameters.
+
+Q8: How do I set the initial values of flip-flops ?
+
+A8: On the first cycle after reconfiguration, all the flip-flops are
+    in their initial state. For Xilinx 4000 series FPGAs the initial state
+    is always 0.
+    An initial state of 1 can be achieved by writing:
+	A = ~reg(~B,clk);
+    The same register with an initial value of 0 is created by:
+        A =  reg( B,clk);
+    
+Q9: How do I create RAMs and ROMs with PamDC ?
+
+A9: Take a look at include file <PamDC/XC4000E.h> for the exact interface.
+
+Q10: It seems that simulation of internal busses does not create
+     a '2' (undefined) correctly when the bus is not driven by anyone ?
+
+A10: In fact in the 4000E the internal busses have "weak keepers"
+     which retain the last value driven onto the bus (see the data book),
+     so it would not be correct of the simulation to set undriven busses
+     to 2 once they have been driven to some value.
+
+
+Don'ts
+======
+
+DN1 avoid specifying two inputs to the same object with the same wire:
+	e.g. bad: add(vec1,vec1,...)
+
+DN2 avoid combinational loops (check warnings in lcax.rpt)
+    they make designs harder to debug and simulation won't work!
+
+Dos
+===
+
+D1 always design completely sequential 
+	i.e. no data output should be used as a clock
+
+D2 avoid combinational loops. they are evil and also won't simulate.
+
+D3 use #define DEBUG printf
+   to track the instantiation of objects during the execution of 'Design'
+
+ERROR & WARNING Messages:
+=========================
+
+E1 WARNING: found undeclared internal net. Name made up from 0x140042190
+	There is a net without an "internal" or "NAME" declaration.
+	Wires in PaModules which are declared with NAME can be accessed
+	hierarchically during simulation.
+
+E2 ERROR: In this statement, "WireVector::WireVector" is not accessible.
+	A parameter of a method is not declared "type referenced" (&)
+
+E3 ERROR: Assertion failed: defined_wires[i] == defined_wires[i]->dereference()
+          , file write_output.cxx, line 905
+
+	There is an instantiation of an object inside of logic() instead
+	of inside the constructor for lcax.
+
+E4 ERROR: bool "xxx" Globally in a design, cannot create a Bool after 
+	  having deleted one
+
+	Most probably you defined a Bool in a local context. Bools can only 
+	be defined in a class that is a descendant of class Node (i.e. PBtop
+        or PMtop)
+
+E5 ERROR: <some_wire>_CLB no carry config consistent with carry logic used...
+
+	'dcf2xnf' is complaining that the specified carry logic can not
+        be implemented in a Xilix XC4000 FPGA. For a detailed description
+        of the available carry logic please read Xilinx Application Note
+ 	XAPP 013: "Using the Dedicated Carry Logic in XC4000E"
+

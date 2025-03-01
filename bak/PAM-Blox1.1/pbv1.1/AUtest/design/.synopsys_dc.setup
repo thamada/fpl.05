@@ -1,0 +1,49 @@
+/* FPGA COMPILER STARTUP FILE - .synopsys_dc.setup */ 
+/* FOR XC4000/A/H/D PARTYPES  --                           */
+/* Modified by Vince and Oskar 5-5-97 */
+
+synopsys_path = get_unix_variable("SYNOPSYS")
+xilinx_path = get_unix_variable("XACT")
+search_path = { . 	\
+	synopsys_path + "/libraries/syn" \
+	xilinx_path + "/synopsys/libraries/syn"}
+/*        /umunhum/user2/Xact/synopsys/libraries/syn} */
+
+define_design_lib WORK -path ./WORK
+
+define_design_lib xblox_4000e -path \
+	/umunhum/user2/Xact/synopsys/libraries/dw/lib/fpga
+
+/*	$XACT/synopsys/libraries/dw/lib/fpga/xc4000e */
+
+compile_fix_multiple_port_nets = true
+
+xlnx_hier_blknm = 1 
+
+xnfout_library_version = "2.0.0"
+
+bus_naming_style = "%s[%d]"
+bus_dimension_separator_style = "_"
+bus_inference_style = "%s[%d]"
+
+/* the following was found with "synlibs 4010e-3" */
+link_library = {xprim_4010e-4.db xprim_4000e-4.db xgen_4000e.db xfpga_4000e-4.db xio_4000e-4.db}
+target_library = {xprim_4010e-4.db xprim_4000e-4.db xgen_4000e.db xfpga_4000e-4.db xio_4000e-4.db}
+symbol_library = {xc4000e.sdb}
+synthetic_library = {xblox_4000e.sldb standard.sldb}
+
+/* the following was found with "synlibs -dc 4010e-4" */
+/* we don't want to use the design compiler
+link_library = {xprim_4010e-4.db xprim_4000e-4.db xgen_4000e.db xdc_4000e-4.db xio_4000e-4.db}
+target_library = {xprim_4010e-4.db xprim_4000e-4.db xgen_4000e.db xdc_4000e-4.db xio_4000e-4.db}
+symbol_library = {xc4000e.sdb}
+synthetic_library = {xblox_4000e.sldb standard.sldb}
+*/
+/* old setup
+link_library = {"*" xprim_4010e-4.db xprim_4000e-4.db xgen_4000e.db \
+	xio_4000e-4.db xfpga_4000e-4.db}
+target_library = {xprim_4010e-4.db xprim_4000e-4.db xgen_4000e.db \
+	xio_4000e-4.db xfpga_4000e-4.db}
+symbol_library = xc4000e.sdb
+synthetic_library = {xblox_4000e.sldb standard.sldb}
+*/

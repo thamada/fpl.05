@@ -1,0 +1,293 @@
+% Template for FPL 2005 papers; to be used with:
+%          spconf.sty   - ICASSP/ICIP LaTeX style file
+%          IEEEtran.bst - IEEE bibliography style file
+
+% Created:  Apr-May 2005 - Riku Uusikartano -- riku.uusikartano@tut.fi
+
+% --------------------------------------------------------------------------
+\documentclass{article}
+
+% The amsmath and epsfig packages greatly simplify the process of adding
+% equations and figures to the document, and thus their use is highly
+% recommended.
+% ------------
+\usepackage{spconf,amsmath,epsfig}
+
+
+
+
+
+% Title.
+% ------
+\title{PGR : A Software Package for Reconfigurable Super-Computing}
+
+\name{Tsuyoshi~Hamada}
+
+\twoauthors {Tsuyoshi~Hamada, Naohito~Nakasato
+%
+% Optional sponsor acknowledgments.
+% ---------------------------------
+  \sthanks{Sponsor acknowledgments for Mullett and Kurgan}}
+%
+  {Department / Institute\\
+  University / Company\\
+  Address\\
+  email: email1@fpl.org, email2@fpl.org}
+
+%\twoauthors {Tsuyoshi~Hamada, Naohito~Nakasato}
+%\twoauthors
+%{
+%  Computational Astrophysics Laboratory\\
+%  The institute of physical and chemical research~(RIKEN)\\
+%  2-1, Hirosawa, Wako, Saitama 351-0198, Japan\\
+%  email: thamada@riken.jp, nakasato@riken.jp}
+
+
+
+
+
+% Hyphenation (hyphenate all names and non-english words here).
+% -------------------------------------------------------------
+\hyphenation{Tam-pe-re micro-soft}
+
+
+
+
+\begin{document}
+
+
+\maketitle
+
+
+
+
+% Abstract.
+% ---------
+\begin{abstract}
+The abstract should clearly and concisely describe the main results of the work. The abstract must appear on the first page, at the top of the left-hand column of text, 11 mm below the title area. The abstract should contain about 100 to 150 words. References should not be introduced in the abstract.
+\end{abstract}
+
+
+
+
+% First section, often named as Introduction.
+% -------------------------------------------
+\section{Introduction}
+\label{sec:intro}
+
+This paper provides the formatting guidelines for final paper submissions to the 15th International Field Programmable Logic and Applications (FPL) conference 2005. Using the \LaTeX and microsoft word templates provided on the conference web site is highly recommended.
+
+
+
+
+% Second section.
+% ---------------
+\section{Formatting the Paper}
+\label{sec:formatting}
+
+The paper size used in the FPL-05 proceedings is A4 (210 mm wide by 297 mm tall). All printed material, including text, illustrations, charts, footnotes, and tables, must be kept within a print area of 176 mm wide by 227 mm tall. Do not write or print anything outside the print area.
+
+The top margin must be 35 mm, and the left margin 18 mm.  All {\it text} must be in a two-column format. Figures, tables, equations, and such can span two columns, where necessary. The columns are to be 84 mm wide, with a 8-mm space between them.
+
+
+
+\subsection{Fonts and Alignments}
+\label{ssec:fonts}
+
+The font to be used in the text is Times New Roman. The font size for the text is 10 points, and line spacing a single line. The text must be fully justified.
+
+The first paragraph of each section and subsection begins at the left edge of the column. All subsequent paragraphs have a 5-mm indentation in the first sentence.
+
+The sections are numbered, excluding the abstract. The section titles are centered on the columns, and typed in bold 10-point uppercase font. Subsection titles are numbered and left-aligned. The typeface for subsection titles is bold 10 points. Using sub-subsections is strongly discouraged.
+
+The title of the paper is typed using bold 12-point uppercase typeface. The font size for the author name(s) and affiliation(s) is 12 points, the names being in \emph{italic}.
+
+
+
+
+\section{Equations}
+\label{sec:equations}
+
+All equations must be numbered, the equation number being parenthesized and right-aligned. The equation itself is centered on the column and vertically separated from the text by one text line. In the case of multi-line formulas, the equation number is vertically centered on the equation. An example equation can be written as
+%
+%
+%
+% Example equation: two lines.
+% ----------------------------
+\begin{equation}\label{eq:example1}
+  H(z) = \frac{z^{-N}(1-z^{-R})^{N}}{(1-z^{-1})^{N}},
+\end{equation}
+%
+where ${N}$ and ${R}$ are some variables, which are typed in $italic$ both in the text and in the equation itself.
+
+If some formulas are inherently connected, the following equation numbering scheme can be used:
+%
+%
+%
+% Example equation: multiple aligned sub-equations.
+% -------------------------------------------------
+\begin{subequations}\begin{align}
+  \label{eq:example2} y(n)& = x(n-1) + a(n-1)\\
+  \label{eq:example3} a(n-1)& = x(n-2) + b(n-2)\\
+  \label{eq:example4}\begin{split}
+  b(n)& = x(n-2) + a(n-2) + 1\\
+  & = y(n-1) + 1.\end{split}
+\end{align}\end{subequations}
+
+
+
+In the \LaTeX environment, the use of amsmath-package is highly recommended. Equations should appear in the text where they are introduced. However, if a formula is exceptionally long, it may span two columns. In this case, the correct placement is on the top of the page, as illustrated in (\ref{eq:example5}).
+
+
+
+% Example equation: long equation, top of the page.
+% -------------------------------------------------
+\begin{figure*}[t]
+\begin{equation}\label{eq:example5}
+f_{h,\varepsilon}(x,y)= \int L_{x,z}\varphi(x)\rho_x(dz)+\biggl[\biggl(\int_0^{t_\varepsilon}L_{x,y^x(s)}\varphi(x)\,ds
+  \biggr)+(\int_0^{t_\varepsilon}L_{x,y^x(s)}
+    \varphi(x)\,ds -\mathbf{E}_{x,y}\int_0^{t_\varepsilon} L_{x,y_\varepsilon(\varepsilon s)}\varphi(x)\,ds\biggr)\biggr]\\
+\end{equation}%
+\end{figure*}
+
+
+
+
+\section{Figures and Tables}
+\label{sec:figures}
+
+All figures and tables must be numbered. The figure subtitle must be centered below the figure, and the table subtitle centered above the table. The notations for the figure and table subtitles are "\textbf{Fig. X.} YY." and "\textbf{Table X.} YY.", where X is the number of the figure/table, and YY the actual subtitle.
+
+All figures and tables should be placed on the top of the columns. No 'floating' figures or tables are allowed, i.e., no text may reside beside a figure/table within the column(s) the figure/table is placed at. The figures and tables should be introduced in the text on the same or the previous page in which the figure/table resides.
+
+Only high-quality original illustrations should be used as figures in the paper. The preferred file format for figures is encapsulated Postscript (eps). In the \LaTeX environment, the use of epsfig-package is highly recommended. An example figure is shown in Fig.~\ref{fig1}.
+
+
+
+% Example figure: single-column, width scaled to 84mm (one column width).
+% -----------------------------------------------------------------------
+\begin{figure}[t]
+\begin{minipage}[b]{1.0\linewidth}\centering
+  \centerline{\epsfig{figure=figure1.eps,width=84mm}}
+\end{minipage}
+\caption{Randomly generated curve.}\label{fig1}
+\end{figure}
+
+
+
+
+Tables can be moderately easily constructed using the \LaTeX commands. An example of a table is shown in Table~\ref{table1}.
+
+A large figure or table can span two columns, when necessary. The correct placement of full page-width figures and tables is on the top of the page. Sub-figures can also be used, in which case the numbering scheme is similar to (\ref{eq:example2})-(\ref{eq:example4}).
+
+
+
+% Example table: some alternative text alignments and cell divisions.
+% -------------------------------------------------------------------
+\begin{table}[t]
+\caption{Example table.}\label{table1}
+
+\begin{minipage}[b]{1.0\linewidth}\centering
+\renewcommand{\arraystretch}{1.2}
+\begin{center}
+\begin{tabular}{l|c|c}
+ & Proposed design & Reference design
+\\\hline\hline
+ Data 1 & 1.12 mm$^2$ & 1.91 mm$^2$\\
+\hline
+ Data 2 & 32412 & 54213\\
+\hline
+  \hspace{-6pt}\begin{tabular}{l}Data 3\\[-5pt] (measured) \end{tabular}  & 8.2 mW & 11.3 mW\\
+\hline
+ Data 4 & \multicolumn{2}{c}{\begin{tabular}{c}some common properties\\[-5pt] for both designs \end{tabular}}\\
+\hline
+\end{tabular}
+\end{center}
+\end{minipage}
+\end{table}
+
+
+
+
+%% Example figure: double-column, width scaled to be 0.98 times the width of
+%% the print area (two columns and the gap between them). The width can also
+%% be expressed in millimeters, as shown in the previous example.
+%% -------------------------------------------------------------------------
+%\begin{figure*}[!t]\centering
+%\includegraphics[width=0.98\textwidth]{fig2.eps}
+%\caption{Example of a full page-width figure.}\label{fig2}
+%\end{figure*}
+
+
+
+
+\section{Footnotes, Headers, and Footers}
+\label{sec:footnotes}
+
+Using footnotes is not recommended. If they are used, however, they should be placed at the bottom of the column on the page on which they are referenced to\footnote{As shown here}. The font size for footnotes is 9 points.
+
+Do not insert any headers or footers, such as page numbers, date, or conference name into the paper. All necessary information will be added later by the conference organizers.
+
+
+
+
+\section{Technical Guidelines and Restrictions}
+\label{sec:latex}
+
+Negative vertical space (\verb=\vspace(x)=)
+%
+% A negative vertical space would result from the command \vspace(x), in which x is negative.
+%
+must not be used outside figures and tables. Type 3 fonts must not be used in the document. This restriction also applies to the figures.
+
+Each author name must be kept on a single line. In the \LaTeX environment, this is accomplished by placing a tilde ($\sim$) between the first and last name, and possible middle name initials. In \LaTeX, a tilde should also be placed between 'Fig.'/'Table' and the reference to the figure/table.
+%
+% The references to figures/tables in the text should be typed as: Table~\ref{table1}
+
+The log file which is automatically generated during the \LaTeX translation should be checked to see that there are no \verb=overfull \hbox= error messages.
+
+
+
+
+\section{Formatting the References}
+\label{sec:reform}
+
+All references are numbered and formatted using the format adopted by IEEE journals and transactions. The references are listed in the order they are referenced to in the text. The font size for the references is 9 points.
+
+In the \LaTeX environment, the proper format for the references can be easily attained by using the bibtex extension in conjunction with the IEEE reference and abbreviation style files provided on the conference web site. Examples of different types of references, such as journals \cite{j:chandrakasan92}, \cite{j:cijvat02}, \cite{j:considine}, \cite{j:polyphase}, \cite{j:vaidyanathan90}, conference papers \cite{c:fettweis99}, \cite{c:yang96}, and patents \cite{p:mecchia02}, are listed in the References section of this paper.
+
+
+
+
+\section{Conclusion}
+\label{sec:conclusion}
+
+If the last page of the paper is not completely full, arrange, if possible, the columns so that they are evenly balanced, rather than having one long and one short column on the last page.
+
+% To start a new column (but not a new page) and help balance the last-page
+% column length use the command \vfill\pagebreak. If column is to be balanced
+% in the middle of the references, the command must be placed into the
+% reference bibliography file (e.g. fpl.bbl) in an appropriate place.
+% ---------------------------------------------------------------------------
+%\vfill\pagebreak
+
+
+
+
+
+\small
+
+% IEEEtran is a LaTeX style file defining the reference formatting.
+% -----------------------------------------------------------------
+\bibliographystyle{IEEEtran}
+
+% IEEEabrv is a LaTeX style file defining the abbreviations of different
+% journals and conferences. fpl_refs contains the actual reference data
+% from which the references are selected into the paper using \cite{}.
+% ----------------------------------------------------------------------
+\bibliography{IEEEabrv,fpl_refs}
+
+
+
+
+\end{document}

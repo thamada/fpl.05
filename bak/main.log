@@ -1,0 +1,301 @@
+This is pTeX, Version p2.1.11, based on TeX, Version 3.14159 (EUC) (Web2C 7.3.1) (format=platex 2002.8.29)  27 JUN 2005 02:18
+**main.tex
+(main.tex
+pLaTeX2e <2000/11/03>+0 (based on LaTeX2e <2000/06/01> patch level 0)
+(llncs.cls
+Document Class: llncs 2002/01/28 v2.13 
+ LaTeX document class for Lecture Notes in Computer Science
+(/usr/share/texmf/tex/latex/base/article.cls
+Document Class: article 2000/05/19 v1.4b Standard LaTeX document class
+(/usr/share/texmf/tex/latex/base/size10.clo
+File: size10.clo 2000/05/19 v1.4b Standard LaTeX file (size option)
+)
+\c@part=\count81
+\c@section=\count82
+\c@subsection=\count83
+\c@subsubsection=\count84
+\c@paragraph=\count85
+\c@subparagraph=\count86
+\c@figure=\count87
+\c@table=\count88
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen118
+)
+(/usr/share/texmf/tex/latex/tools/multicol.sty
+Package: multicol 2000/07/10 v1.5z multicolumn formatting (FMi)
+\c@tracingmulticols=\count89
+\mult@box=\box41
+\multicol@leftmargin=\dimen119
+\c@unbalance=\count90
+\c@collectmore=\count91
+\doublecol@number=\count92
+\multicoltolerance=\count93
+\multicolpretolerance=\count94
+\full@width=\dimen120
+\page@free=\dimen121
+\premulticols=\dimen122
+\postmulticols=\dimen123
+\multicolsep=\skip43
+\multicolbaselineskip=\skip44
+\partial@page=\box42
+\last@line=\box43
+\mult@rightbox=\box44
+\mult@grightbox=\box45
+\mult@gfirstbox=\box46
+\mult@firstbox=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\@tempa=\box51
+\@tempa=\box52
+\@tempa=\box53
+\@tempa=\box54
+\@tempa=\box55
+\@tempa=\box56
+\@tempa=\box57
+\@tempa=\box58
+\@tempa=\box59
+\@tempa=\box60
+\@tempa=\box61
+\@tempa=\box62
+\@tempa=\box63
+\@tempa=\box64
+\c@columnbadness=\count95
+\c@finalcolumnbadness=\count96
+\last@try=\dimen124
+\multicolovershoot=\dimen125
+\multicolundershoot=\dimen126
+\mult@nat@firstbox=\box65
+\colbreak@box=\box66
+)
+\c@chapter=\count97
+LaTeX Font Info:    Redeclaring math symbol \Gamma on input line 363.
+LaTeX Font Info:    Redeclaring math symbol \Delta on input line 364.
+LaTeX Font Info:    Redeclaring math symbol \Theta on input line 365.
+LaTeX Font Info:    Redeclaring math symbol \Lambda on input line 366.
+LaTeX Font Info:    Redeclaring math symbol \Xi on input line 367.
+LaTeX Font Info:    Redeclaring math symbol \Pi on input line 368.
+LaTeX Font Info:    Redeclaring math symbol \Sigma on input line 369.
+LaTeX Font Info:    Redeclaring math symbol \Upsilon on input line 370.
+LaTeX Font Info:    Redeclaring math symbol \Phi on input line 371.
+LaTeX Font Info:    Redeclaring math symbol \Psi on input line 372.
+LaTeX Font Info:    Redeclaring math symbol \Omega on input line 373.
+\tocchpnum=\dimen127
+\tocsecnum=\dimen128
+\tocsectotal=\dimen129
+\tocsubsecnum=\dimen130
+\tocsubsectotal=\dimen131
+\tocsubsubsecnum=\dimen132
+\tocsubsubsectotal=\dimen133
+\tocparanum=\dimen134
+\tocparatotal=\dimen135
+\tocsubparanum=\dimen136
+\@tempcntc=\count98
+\fnindent=\dimen137
+\c@@inst=\count99
+\c@@auth=\count100
+\c@auco=\count101
+\instindent=\dimen138
+\authrun=\box67
+\authorrunning=\toks15
+\tocauthor=\toks16
+\titrun=\box68
+\titlerunning=\toks17
+\toctitle=\toks18
+\c@theorem=\count102
+\c@case=\count103
+\c@conjecture=\count104
+\c@corollary=\count105
+\c@definition=\count106
+\c@example=\count107
+\c@exercise=\count108
+\c@lemma=\count109
+\c@note=\count110
+\c@problem=\count111
+\c@property=\count112
+\c@proposition=\count113
+\c@question=\count114
+\c@solution=\count115
+\c@remark=\count116
+\headlineindent=\dimen139
+) (llncsdoc.sty)
+(/usr/share/texmf/tex/latex/graphics/epsfig.sty
+Package: epsfig 1999/02/16 v1.7a (e)psfig emulation (SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/graphicx.sty
+Package: graphicx 1999/02/16 v1.0f Enhanced LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/keyval.sty
+Package: keyval 1999/03/16 v1.13 key=value parser (DPC)
+\KV@toks@=\toks19
+)
+(/usr/share/texmf/tex/latex/graphics/graphics.sty
+Package: graphics 1999/02/16 v1.0l Standard LaTeX Graphics (DPC,SPQR)
+
+(/usr/share/texmf/tex/latex/graphics/trig.sty
+Package: trig 1999/03/16 v1.09 sin cos tan (DPC)
+)
+(/usr/share/texmf/tex/latex/config/graphics.cfg)
+Package graphics Info: Driver file: dvips.def on input line 80.
+
+(/usr/share/texmf/tex/latex/graphics/dvips.def
+File: dvips.def 1999/02/16 v3.0i Driver-dependant file (DPC,SPQR)
+))
+\Gin@req@height=\dimen140
+\Gin@req@width=\dimen141
+)
+\epsfxsize=\dimen142
+\epsfysize=\dimen143
+) (main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for JY1/mc/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Checking defaults for JT1/mc/m/n on input line 6.
+LaTeX Font Info:    ... okay on input line 6.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 22.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <14.4> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 22.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <5> on input line 22.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 24.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <9> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 24.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 42.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <12> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 42.
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 59.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <10> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 59.
+ [1
+
+]
+
+LaTeX Font Warning: Font shape `JY1/mc/m/it' undefined
+(Font)              using `JY1/mc/m/n' instead on input line 155.
+
+
+LaTeX Font Warning: Font shape `JT1/mc/m/it' undefined
+(Font)              using `JT1/mc/m/n' instead on input line 155.
+
+[2]
+File: ./mat/designflow.eps Graphic file (type eps)
+ <./mat/designflow.eps> [3]
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <9> on input line 268.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <6> on input line 268.
+ [4]
+File: ./mat/synthe/logadd/Graph/slice.eps Graphic file (type eps)
+ <./mat/synthe/logadd/Graph/slice.eps>
+Overfull \hbox (26.32034pt too wide) in paragraph at lines 346--347
+[][] 
+ []
+
+File: ./mat/5model.eps Graphic file (type eps)
+<./mat/5model.eps>
+Overfull \hbox (27.86076pt too wide) in paragraph at lines 361--365
+[]\OT1/cmr/m/n/10 In some rel-e-vant works, Ho et.al.[16] has used Sym-met-ric 
+Ta-ble Ad-di-tion Method(STAM)[14]
+ []
+
+File: ./mat/PROGRAPE-3.eps Graphic file (type eps)
+<./mat/PROGRAPE-3.eps> [5]
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 478.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 478
+.
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 478.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 478
+.
+
+
+LaTeX Font Warning: Command \boldmath invalid in math mode on input line 480.
+
+
+LaTeX Font Warning: Command \mathversion invalid in math mode on input line 480
+.
+
+[6]
+Overfull \hbox (32.64365pt too wide) in paragraph at lines 484--494
+[]\OT1/cmr/m/n/10 As an ex-am-ple tar-get, we con-sider the fol-low-ing ar-ti-f
+i-cial cal-cu-la-tions; $\OML/cmm/m/it/10 f[] \OT1/cmr/m/n/10 = [][] []\OML/cmm
+/m/it/10 :[]$
+ []
+
+File: ./mat/simple.eps Graphic file (type eps)
+<./mat/simple.eps>
+Overfull \hbox (12.0922pt too wide) in paragraph at lines 521--522
+ [] 
+ []
+
+LaTeX Font Info:    Font shape `JY1/mc/bx/n' in size <7> not available
+(Font)              Font shape `JY1/gt/m/n' tried instead on input line 542.
+LaTeX Font Info:    Font shape `JT1/mc/bx/n' in size <7> not available
+(Font)              Font shape `JT1/gt/m/n' tried instead on input line 542.
+File: ./mat/SrGraph.eps Graphic file (type eps)
+<./mat/SrGraph.eps>
+Overfull \hbox (40.55025pt too wide) in paragraph at lines 567--568
+[][] 
+ []
+
+File: ./mat/synthe/pipe/Graph.eps Graphic file (type eps)
+<./mat/synthe/pipe/Graph.eps>
+Overfull \hbox (40.5415pt too wide) in paragraph at lines 575--576
+[][] 
+ []
+
+[7]
+Overfull \hbox (3.4012pt too wide) in paragraph at lines 712--720
+[]\OT1/cmr/m/n/10 We note that a sim-i-lar pack-age to PGR has been re-ported i
+n [16]. The CAST(Computer
+ []
+
+File: ./mat/grav_float_delay.eps Graphic file (type eps)
+<./mat/grav_float_delay.eps>
+File: ./mat/perform/graph.eps Graphic file (type eps)
+ <./mat/perform/graph.eps>
+Overfull \hbox (26.31876pt too wide) in paragraph at lines 779--780
+ [] 
+ []
+
+[8] [9] [10] (main.aux)
+
+LaTeX Font Warning: Some font shapes were not available, defaults substituted.
+
+ ) 
+Here is how much of TeX's memory you used:
+ 1027 strings out of 20654
+ 11285 string characters out of 194715
+ 77683 words of memory out of 350001
+ 4147 multiletter control sequences out of 10000+15000
+ 16635 words of font info for 64 fonts, out of 400000 for 1000
+ 14 hyphenation exceptions out of 10000
+ 32i,11n,21p,274b,569s stack positions out of 3000i,100n,1500p,50000b,4000s
+
+Output written on main.dvi (10 pages, 47060 bytes).

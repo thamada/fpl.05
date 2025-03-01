@@ -1,0 +1,11 @@
+
+    *** PPR: WARNING 5527: 
+          The design uses no global buffers (BUFGS or BUFGP). Their use can
+          improve performance for clocks or widely distributed signals.
+
+    *** PPR: WARNING 7034: 
+          In categories of paths that have NO timing specifications, the design
+          has 2 path end-point pairs.  Note that there may be multiple paths
+          between any listed pair of end-points.  To limit the number of paths
+          reported in each category, set PPR parameter show_tsi_paths = <value>.
+          

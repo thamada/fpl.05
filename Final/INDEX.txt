@@ -1,0 +1,11 @@
+figure1.eps	- Example figure (encapsulated Postscript)
+fpl_refs.bib	- Example bibliography file
+fpl05.bbl	- Generated bibliography for the paper
+fpl05.dvi	- Generated preview of the paper
+fpl05.tex	- LaTeX template paper with the formatting instructions
+fpl05_bare.tex	- Bare LaTeX template paper
+IEEEabrv.bib	- LaTeX style file defining the abbreviations of different
+		  journals and conferences
+IEEEtran.bst	- LaTeX style file defining the reference formatting
+INDEX.txt	- This file
+spconf.sty	- LaTeX style file for FPL 2005

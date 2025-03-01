@@ -1,0 +1,4 @@
+RAW bechmark: Matrix Multiplication
+
+Multiply 2 x 2 matrices
+using a pipelined serial Booth multiplier

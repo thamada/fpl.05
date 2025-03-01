@@ -1,0 +1,9 @@
+mktexpk --mfmode cx --bdpi 1000 --mag 1+0/1000 --dpi 1000 cmbx10
+mktexpk --mfmode cx --bdpi 1000 --mag 1+0/1000 --dpi 1000 cmsy10
+mktexpk --mfmode cx --bdpi 1000 --mag 1+0/1000 --dpi 1000 cmsy7
+mktexpk --mfmode cx --bdpi 1000 --mag 1+0/1000 --dpi 1000 cmmi10
+mktexpk --mfmode cx --bdpi 1000 --mag 1+0/1000 --dpi 1000 cmmi7
+mktexpk --mfmode cx --bdpi 1000 --mag 1+0/1000 --dpi 1000 cmmi5
+mktexpk --mfmode cx --bdpi 1000 --mag 1+0/1000 --dpi 1000 cmr10
+mktexpk --mfmode cx --bdpi 1000 --mag 1+0/1000 --dpi 1000 cmr7
+mktexpk --mfmode cx --bdpi 1000 --mag 1+0/1000 --dpi 1000 cmex10

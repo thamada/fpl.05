@@ -1,0 +1,7 @@
+Constant(K) Coefficient Multiply Testbench
+
+This design tests all 3 KCMs
+	- parallel
+	- 4-bit serial
+	- bit-serial
+

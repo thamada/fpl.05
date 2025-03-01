@@ -1,0 +1,44 @@
+Data : 2004/05/21
+arch : g5cut6
+--------------------------------------------------
+list     :stage: bit file                :O/X: delay@cpath
+list.10  : 10  : ddr_top.bit.NP1.133MHz  : X : DELAY_X2Y2
+list.10  : 10  : ddr_top.bit.NP1.100MHz  : X : DELAY_X2Y2
+list.10  : 10  : ddr_top.bit.NP1.33MHz   : O : DELAY_X2Y2
+list.10  : 10  : ddr_top.bit.NP12.66MHz  : X : DELAY_FL
+list.10  : 10  : ddr_top.bit.NP12.33MHz  : O : DELAY_FL    ---->  60.192 Gflops
+list.10  : 10  : ddr_top.bit.NP13.33MHz  : -- OVERMAPED --
+----------
+list.12  : 12  : ddr_top.bit.NP1.100MHz  : X : DELAY_FL
+list.12  : 12  : ddr_top.bit.NP1.66MHz   : O : DELAY_FL
+list.12  : 12  : ddr_top.bit.NP12.66MHz  : X : DELAY_FL
+list.12  : 12  : ddr_top.bit.NP11.66MHz  : O : DELAY_FL    ----> 110.352 Gflops
+----------
+list.13  : 13  : ddr_top.bit.NP1.133MHz  : X : DELAY_X2Y2
+list.13  : 13  : ddr_top.bit.NP1.100MHz  : O : DELAY_X2Y2
+list.13  : 13  : ddr_top.bit.NP4.100MHz  : O : DELAY_X2Y2
+list.13  : 13  : ddr_top.bit.NP5.100MHz  : X : DELAY_X2Y2
+list.13  : 13  : ddr_top.bit.NP12.100MHz : X : DELAY_X2Y2
+list.13  : 13  : ddr_top.bit.NP11.100MHz : X : DELAY_X2Y2
+list.13  : 13  : ddr_top.bit.NP10.100MHz : --- UNKOWN COMP ERR ---
+list.13  : 13  : ddr_top.bit.NP10.66MHz  : --- UNKOWN COMP ERR ---
+list.13  : 13  : ddr_top.bit.NP10.33MHz  : O : DELAY_X2Y2
+
+list.13  : 13  : ddr_top.bit.NP9.100MHz  : X : DELAY_X2Y2
+list.13  : 13  : ddr_top.bit.NP8.100MHz  :   : DELAY_X2Y2
+
+----------
+list.15  : 15  : ddr_top.bit.NP1.133MHz  : X : DELAY_X2Y2
+list.15  : 15  : ddr_top.bit.NP10.100MHz : X : DELAY_X2Y2
+
+
+----------
+list.25  : 25  : ddr_top.bit.NP10.133MHz : X
+list.25  : 25  : ddr_top.bit.NP10.66MHz  : O
+list.25  : 25  : ddr_top.bit.NP1.133MHz  : X
+list.25  : 25  : ddr_top.bit.NP1.100MHz  : O
+list.25  : 25  : ddr_top.bit.NP1.66MHz   : O
+list.26  : 26  : ddr_top.bit.NP1.133MHz  : X
+list.26  : 26  : ddr_top.bit.NP1.100MHz  : O
+list.26  : 26  : ddr_top.bit.NP3.100MHz  : O
+

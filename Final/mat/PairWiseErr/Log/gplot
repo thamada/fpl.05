@@ -1,0 +1,15 @@
+#!/usr/bin/gnuplot
+
+plot "log.b3"  using 3:2 title "b3" with linespo,\
+     "log.emu" using 3:2 title "em" with lines, \
+     "log.emu.nonofset" using 3:2 title "em nofst" with lines
+
+pause -1
+
+set log y
+plot "log.b3.g5"  using 1:2 title "b3g5" with linespo,\
+     "log.b3"  using 1:2 title "b3" with linespo,\
+     "log.emu" using 1:2 title "em" with lines, \
+     "log.emu.nonofset" using 1:2 title "em nofst" with lines
+
+pause -1

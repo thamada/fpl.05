@@ -1,0 +1,12 @@
+#!/usr/bin/gnuplot
+
+set log y
+plot [:-0.3][:1.0] \
+     (5.3868*(10.0**(-20.0-2.0*x))+6.3882e-6)**0.5 notitle  with lines 1, \
+     "log.g3b3" using 1:2 title "g3b3" with lines,\
+     "log.g5emu"  using 1:2 title "g5.emu" with lines, \
+     "log.g5cut6.emu"  using 1:2 title "g5cut6.emu" with do, \
+     "log.g5cut6.b3"  using 1:2 title "g5cut6.b3" with do, \
+     "tmp"  using 1:2 title "g5cut6.b3" with do \
+
+pause -1

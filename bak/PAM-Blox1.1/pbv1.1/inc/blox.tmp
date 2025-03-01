@@ -1,0 +1,29 @@
+// PamBlox template template
+
+
+//template<int N> 
+//class Add: public Counter<N>{
+//public:
+// declare local vars
+
+//Add(WireVector<Bool, N>& vvv, Bool& zzz, 
+//    Bool *clock=NULL,const char *name=NULL): 
+//	 Counter<N>(clock,name){
+//  internal();
+//  assign inputs to internal vars (use =)
+//}
+
+//virtual void out(WireVector<Bool, N>& yyy, Bool& xxx) {
+// alias xxx,yyy to local vars;
+// assign values to outp;
+//} 
+     
+//virtual void place(const Rect& box){
+//  PBtop<N>::placecarry2(box,carryIn,cin_dummy,carryOut,carry,outp);
+//}
+
+//virtual void place(){
+//  PBtop<N>::placecarry2(carryIn,cin_dummy,carryOut,carry,outp);
+//}
+
+//}; // end template template
